@@ -80,6 +80,7 @@
     },
     "collapsible-content": {
       "type": "collapsible-content",
+      "disabled": true,
       "blocks": {
         "row-0": {
           "type": "collapsible_row",
