@@ -646,18 +646,19 @@
     data() {
       return {
         message: 'this-is-a-class'
-      },
-      methods: {
-        logToConsole() {
-          console.log(this.message)
-        }
-      },
-      mounted() {
-        this.logToConsole();
       }
+    },
+    methods: {
+      logToConsole() {
+        console.log(this.message)
+      }
+    },
+    mounted() {
+      this.logToConsole();
     }
   }
-  Vue.createApp(ProductPage).mount('#product_page')
+  const ProductApp = Vue.createApp(ProductPage).mount('#product_page');
+
 </script>
 {% schema %}
 {
