@@ -180,7 +180,10 @@
         "settings": {
         }
       }
-    }
+    },
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Default": {
