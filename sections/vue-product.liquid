@@ -646,6 +646,14 @@
     data() {
       return {
         message: 'this-is-a-class'
+      },
+      methods: {
+        logToConsole() {
+          console.log(this.message)
+        }
+      },
+      mounted() {
+        this.logToConsole();
       }
     }
   }
