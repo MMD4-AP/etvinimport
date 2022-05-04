@@ -4,5 +4,3 @@
 
     shopify theme serve
 
-
-# test
