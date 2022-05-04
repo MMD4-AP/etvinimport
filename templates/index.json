@@ -21,7 +21,7 @@
           "type": "button",
           "settings": {
             "button_label": "Se alle vine",
-            "button_link": ""
+            "button_link": "shopify:\/\/collections"
           }
         }
       },
