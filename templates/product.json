@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "product",
+      "type": "vue-product",
       "blocks": {
         "vendor": {
           "type": "text",
@@ -64,8 +64,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "description",
-        "share"
+        "description"
       ],
       "settings": {
         "enable_sticky_info": true,
