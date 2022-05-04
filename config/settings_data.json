@@ -121,7 +121,8 @@
         "type": "header",
         "settings": {
           "color_scheme": "background-1",
-          "logo_width": 100,
+          "logo": "shopify:\/\/shop_images\/ET-Kvalitetsvine-igennem-25-aar-high.png",
+          "logo_width": 170,
           "logo_position": "middle-left",
           "menu": "main-menu",
           "show_line_separator": false,
