@@ -109,10 +109,20 @@
               "color_scheme": "accent-1",
               "link": ""
             }
+          },
+          "12bf2cb9-875f-47da-890d-0610c11b0284": {
+            "type": "announcement",
+            "disabled": true,
+            "settings": {
+              "text": "Welcome to our store",
+              "color_scheme": "accent-1",
+              "link": ""
+            }
           }
         },
         "block_order": [
-          "announcement-bar-0"
+          "announcement-bar-0",
+          "12bf2cb9-875f-47da-890d-0610c11b0284"
         ],
         "settings": {
         }
@@ -123,7 +133,7 @@
           "color_scheme": "background-1",
           "logo": "shopify:\/\/shop_images\/ET-Kvalitetsvine-igennem-25-aar-high.png",
           "logo_width": 170,
-          "logo_position": "middle-left",
+          "logo_position": "top-center",
           "menu": "main-menu",
           "show_line_separator": false,
           "enable_sticky_header": true,
