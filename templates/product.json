@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "vue-product",
+      "type": "product",
       "blocks": {
         "vendor": {
           "type": "text",

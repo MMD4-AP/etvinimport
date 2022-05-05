@@ -31,7 +31,8 @@
   <link id="ModelViewerOverride" rel="stylesheet" href="{{ 'component-model-viewer-ui.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
 
-<section class="page-width section-{{ section.id }}-padding test {{ message }}" id="product_page">
+<section class="page-width section-{{ section.id }}-padding" id="product_page">
+  <h1 v-html="messageHere"></h1>
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.gallery_layout }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper">
       <media-gallery id="MediaGallery-{{ section.id }}" role="region" {% if section.settings.enable_sticky_info %}class="product__media-gallery"{% endif %} aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="{{ section.settings.gallery_layout }}">
@@ -644,15 +645,25 @@
   const ProductPage = {
     data() {
       return {
-        message: 'this-is-a-class'
+        messageHere: 'this-is-a-class-yo',
+        currentVariantID: "{{ product.selected_or_first_available_variant.id }}",
       }
+    },
+    methods: {
+      logToConsole() {
+        console.log(this.messageHere)
+      }
+    },
+    mounted() {
+      this.logToConsole();
     }
   }
-  Vue.createApp(ProductPage).mount('#product_page')
+  const ProductApp = Vue.createApp(ProductPage).mount('#product_page');
+
 </script>
 {% schema %}
 {
-  "name": "t:sections.main-alternate.name",
+  "name": "t:sections.main-product.name",
   "tag": "section",
   "class": "section",
   "blocks": [
