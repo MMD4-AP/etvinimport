@@ -113,7 +113,7 @@
         "decrease": "Reducer antallet for {{ product }}"
       },
       "price": {
-        "from_price_html": "Fra {{ price }}",
+        "from_price_html": "{{ price }}",
         "regular_price": "Normalpris",
         "sale_price": "Udsalgspris",
         "unit_price": "Stykpris"
