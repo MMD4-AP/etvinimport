@@ -71,6 +71,7 @@
 .card__media {
   margin: var(--card-image-padding);
   width: calc(100% - 2 * var(--card-image-padding));
+  position: relative;
 }
 
 .card--standard .card__media {
@@ -128,6 +129,14 @@
   height: 100%;
   object-fit: contain;
   object-position: center center;
+  width: 100%;
+}
+.card__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #B7B7A4;
+  height: 80%;
   width: 100%;
 }
 
