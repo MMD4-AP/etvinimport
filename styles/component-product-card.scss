@@ -4,7 +4,7 @@
     align-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(to bottom, #B7B7A4 60%, transparent 0%);
+    background: linear-gradient(to bottom, #B7B7A4 58%, transparent 0%);
 
 
     &__add {
@@ -24,14 +24,22 @@
             width: 100%;
             color: white;
             background-color: #B7B7A4;
+            width: 100%;
         }
         input[type=number]::-webkit-inner-spin-button {
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none; 
         }
+        &.btn {
+            &:hover {
+                background-color: hsl(60, 12%, 8    8%);
+            }
+        }
     }
-
+    &__content {
+        width: 100%;
+    }
     &__media {
         img {
             margin: 30px auto;
