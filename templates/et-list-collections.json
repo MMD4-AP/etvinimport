@@ -1,9 +1,9 @@
 {
   "sections": {
     "main": {
-      "type": "main-list-collections",
+      "type": "et-list-collections",
       "settings": {
-        "title": "Alle kategorier",
+        "title": "Collections",
         "sort": "alphabetical",
         "image_ratio": "square"
       }

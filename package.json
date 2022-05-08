@@ -1,0 +1,33 @@
+{
+  "name": "etvinimport",
+  "version": "1.0.0",
+  "description": "### Serve local environment:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:watch": "gulp watch",
+    "watch:shopify": "shopify theme serve",
+    "dev": "concurrently npm:watch:*",
+    "build": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MMD4-AP/etvinimport.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MMD4-AP/etvinimport/issues"
+  },
+  "homepage": "https://github.com/MMD4-AP/etvinimport#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "node-sass": "^7.0.1",
+    "sass": "^1.51.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.1.0"
+  }
+}
