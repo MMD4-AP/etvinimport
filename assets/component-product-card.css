@@ -1,0 +1,41 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+.card__add {
+  display: flex;
+  justify-content: center;
+  height: 55px;
+}
+.card__add input {
+  border: 2px solid #B7B7A4;
+}
+.card__add input[type=number] {
+  width: 30px;
+  text-align: center;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  margin: 0;
+}
+.card__add input[type=submit] {
+  width: 150px;
+  color: white;
+  background-color: #B7B7A4;
+}
+.card__information > span {
+  text-transform: uppercase;
+}
+.card__origin {
+  display: flex;
+  max-height: 30px;
+}
+.card__origin div {
+  display: flex;
+  flex-basis: 50%;
+  flex-direction: row;
+  justify-content: center;
+}
