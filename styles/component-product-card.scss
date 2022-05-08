@@ -6,6 +6,13 @@
     text-align: center;
     background: linear-gradient(to bottom, #B7B7A4 58%, transparent 0%);
 
+    &__heading {
+        font-family: var(--font-body-family);
+        
+        a {
+            font-size: 2rem;
+        }
+    }
 
     &__add {
         display: flex;
@@ -33,7 +40,7 @@
         }
         &.btn {
             &:hover {
-                background-color: hsl(60, 12%, 8    8%);
+                background-color: hsl(60, 2%, 12%);
             }
         }
     }

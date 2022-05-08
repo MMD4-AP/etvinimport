@@ -17,9 +17,8 @@
 
 {%- if card_product and card_product != empty -%}
 <div class="card__wrapper">
-  <a href="{{ card_product.url }}">
     <div class="card">
-      <div class="card__media">
+    <div class="card__media">
           {% if card_product.featured_media %}
               <img srcset="{%- if card_product.featured_media.width >= 165 -%}{{ card_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
               {%- if card_product.featured_media.width >= 360 -%}{{ card_product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
@@ -60,9 +59,9 @@
       <div class="card__content">
         <div class="card__information">
           {%- if show_vendor -%}
-          <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
-        <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
-        {%- endif -%}
+            <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
+            <span class="caption-with-letter-spacing light">{{ card_product.vendor }}</span>
+          {%- endif -%}
         <h3 class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}">
           <a href="{{ card_product.url }}" class="full-unstyled-link">
             {{ card_product.title }}
@@ -109,7 +108,6 @@
         </div>
       </div>
     </div>
-  </a>
   </div>
   {%- else -%}
   <a href="{{ card_product.url }}">
