@@ -23,7 +23,7 @@
   height: 55px;
 }
 .card__add input {
-  border: 2px solid #B7B7A4;
+  border: 2px solid rgb(var(--color-button));
 }
 .card__add input[type=number] {
   width: 30px;
@@ -32,8 +32,8 @@
 }
 .card__add input[type=submit] {
   width: 100%;
-  color: white;
-  background-color: #B7B7A4;
+  background-color: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
   width: 100%;
 }
 .card__add input[type=number]::-webkit-inner-spin-button {
