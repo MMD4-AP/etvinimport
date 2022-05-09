@@ -1,8 +1,11 @@
-$tablet: 768px;
-$desktop: 1000px;
+$mobile: 500px;
+$tablet: 750px;
+$desktop: 990px;
 
-$screen-tablet: "(min-width: #{$tablet})";
-$desktop-tablet: "(min-width: #{$desktop})";
+$screen-mobile: "only screen and (min-width: #{$mobile})";
+$screen-tablet: "only screen and (min-width: #{$tablet})";
+$desktop-tablet: "only screen and (min-width: #{$desktop})";
 
-$screen-tablet-max: "(max-width: #{$tablet})";
-$desktop-tablet-max: "(max-width: #{$desktop})";
+$screen-mobile-max: "only screen and (max-width: #{$mobile})";
+$screen-tablet-max: "only screen and (max-width: #{$tablet})";
+$desktop-tablet-max: "only screen and (max-width: #{$desktop})";

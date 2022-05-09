@@ -96,8 +96,8 @@
             {% render 'country', product: card_product %}
             {% render 'grape-sort', product: card_product %}
           </div>
-          {% render 'buy-button', product: card_product %}
         </div>
+        {% render 'buy-button', product: card_product %}
         </div>
         <div class="card__badge {{ settings.badge_position }}">
           {%- if card_product.available == false -%}
