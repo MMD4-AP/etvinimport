@@ -1,7 +1,7 @@
 {
   "current": {
     "colors_solid_button_labels": "#ffffff",
-    "colors_accent_1": "#020912",
+    "colors_accent_1": "#b7b7a4",
     "gradient_accent_1": "",
     "colors_accent_2": "#020912",
     "gradient_accent_2": "",
@@ -9,7 +9,7 @@
     "colors_outline_button_labels": "#020912",
     "colors_background_1": "#fcfcfc",
     "gradient_background_1": "",
-    "colors_background_2": "#5f8fa7",
+    "colors_background_2": "#b7b7a4",
     "gradient_background_2": "",
     "type_header_font": "playfair_display_n4",
     "heading_scale": 125,
