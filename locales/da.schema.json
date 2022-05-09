@@ -1344,6 +1344,24 @@
         "columns_desktop": {
           "label": "Antallet af kolonner på computer"
         },
+        "header_tablet": {
+          "content": "Tabletlayout"
+        },
+        "columns_tablet": {
+          "label": "Antallet af kolonner på tablet",
+          "options__1": {
+            "label": "1 kolonne"
+          },
+          "options__2": {
+            "label": "2 kolonner"
+          },
+          "options__3": {
+            "label": "3 kolonner"
+          },
+          "options__4": {
+            "label": "4 kolonner"
+          }
+        },
         "header_mobile": {
           "content": "Mobillayout"
         },
@@ -1354,6 +1372,9 @@
           },
           "options__2": {
             "label": "2 kolonner"
+          },
+          "options__3": {
+            "label": "3 kolonner"
           }
         }
       }
