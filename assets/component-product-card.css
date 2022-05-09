@@ -35,14 +35,15 @@
   background-color: rgb(var(--color-button));
   color: rgb(var(--color-button-text));
   width: 100%;
+  cursor: pointer;
+}
+.card__add input[type=submit]:hover {
+  background-color: #7a7a6c;
 }
 .card__add input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-}
-.card__add.btn:hover {
-  background-color: hsl(60deg, 2%, 12%);
 }
 .card__content {
   width: 100%;

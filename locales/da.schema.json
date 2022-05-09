@@ -1938,7 +1938,7 @@
       }
     },
     "newsletter": {
-      "name": "Tilmelding med mail",
+      "name": "Nyhedsbrev",
       "settings": {
         "color_scheme": {
           "label": "Farveskema",

@@ -17,6 +17,17 @@
 
 <div class="newsletter center {% if section.settings.full_width == false %}newsletter--narrow page-width{% endif %}">
   <div class="newsletter__wrapper color-{{ section.settings.color_scheme }} gradient content-container isolate{% if section.settings.full_width %} content-container--full-width{% endif %} section-{{ section.id }}-padding">
+      {%- if section.settings.newsletter_bg != blank -%}
+      <img class="newsletter_bg"
+        src="{{ section.settings.newsletter_bg | image_url: width: 990 }}"
+        alt="{{ section.settings.newsletter_bg.alt | escape }}"
+        loading="lazy"
+        width="{{ section.settings.newsletter_bg.width }}"
+        height="{{ section.settings.newsletter_bg.height }}"
+      >
+    {%- else -%}
+      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
     {%- for block in section.blocks -%}
       {%- case block.type -%}
         {%- when '@app' -%}
@@ -105,6 +116,11 @@
       ],
       "default": "background-1",
       "label": "t:sections.newsletter.settings.color_scheme.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "newsletter_bg",
+      "label": "Baggrundsbillede"
     },
     {
       "type": "checkbox",
