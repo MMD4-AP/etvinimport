@@ -143,6 +143,14 @@
       "footer": {
         "type": "footer",
         "blocks": {
+          "image": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/ET_Logo_Rewa_2.png",
+              "image_width": 200,
+              "alignment": ""
+            }
+          },
           "link-list": {
             "type": "link_list",
             "settings": {
@@ -156,19 +164,12 @@
               "heading": "ET Vinimport",
               "subtext": "<p>ET Vinimport Vejle<\/p>"
             }
-          },
-          "image": {
-            "type": "image",
-            "settings": {
-              "image_width": 95,
-              "alignment": "right"
-            }
           }
         },
         "block_order": [
+          "image",
           "link-list",
-          "text",
-          "image"
+          "text"
         ],
         "settings": {
           "color_scheme": "accent-1",
