@@ -25,9 +25,9 @@
         width="{{ section.settings.newsletter_bg.width }}"
         height="{{ section.settings.newsletter_bg.height }}"
       >
-    {%- else -%}
-      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-    {%- endif -%}
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
     {%- for block in section.blocks -%}
       {%- case block.type -%}
         {%- when '@app' -%}
@@ -140,21 +140,21 @@
       "type": "range",
       "id": "padding_top",
       "min": 0,
-      "max": 100,
+      "max": 160,
       "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
-      "default": 40
+      "default": 120
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "min": 0,
-      "max": 100,
+      "max": 160,
       "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
-      "default": 52
+      "default": 120
     }
   ],
   "blocks": [
