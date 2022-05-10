@@ -16,28 +16,6 @@
 
 
 <footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
-  <div>
-    <ul>
-      <li>
-        <img src="" alt="">
-        <p>
-          Fri fragt ved køb over 799,-
-        </p>
-      </li>
-      <li>
-        <img src="" alt="">
-        <p>
-
-        </p>
-      </li>
-      <li>
-        <img src="" alt="">
-        <p>
-
-        </p>
-      </li>
-    </ul>
-  </div>
   {%- if section.blocks.size > 0 or section.settings.newsletter_enable or section.settings.show_social -%}
     <div class="footer__content-top page-width">
       {%- if section.blocks.size > 0 -%}
@@ -154,6 +132,7 @@
                   <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
                 </a>
               </li>
+            {%- endif -%}
             {%- if settings.social_instagram_link != blank -%}
               <li class="list-social__item">
                 <a href="{{ settings.social_instagram_link }}" class="link list-social__link" >
@@ -190,7 +169,6 @@
     </div>
   </div>
 </footer>
-
 
 {% schema %}
 {
