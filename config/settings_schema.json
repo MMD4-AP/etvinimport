@@ -30,13 +30,6 @@
       },
       {
         "type": "color",
-        "id": "colors_footer_color",
-        "default": "#B7B7A4",
-        "label": "t:settings_schema.colors.settings.colors_footer_color.label",
-        "info": "t:settings_schema.colors.settings.colors_footer_color.info"
-      },
-      {
-        "type": "color",
         "id": "colors_solid_button_labels",
         "default": "#FFFFFF",
         "label": "t:settings_schema.colors.settings.colors_solid_button_labels.label",
