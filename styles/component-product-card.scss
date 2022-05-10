@@ -1,0 +1,110 @@
+@import 'variables';
+.card {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to bottom, #B7B7A4 46%, transparent 0%);
+
+    @media #{$screen-tablet} {
+        background: linear-gradient(to bottom, #B7B7A4 61%, transparent 0%);
+    }
+
+    &__heading {
+        font-family: var(--font-body-family);
+        
+        a {
+            font-size: 2rem;
+        }
+    }
+
+    &__add {
+        display: flex;
+        justify-content: center;
+        height: 55px;
+
+
+        input {
+            border: 2px solid rgb(var(--color-button));
+        }
+        input[type=number] {
+            width: 30px;
+            text-align: center;
+            margin: 0;
+        }
+        input[type=submit] {
+            width: 100%;
+            background-color: rgb(var(--color-button));
+            color: rgb(var(--color-button-text));
+            width: 100%;
+            cursor: pointer;
+            &:hover {
+                background-color: #7a7a6c;
+            }
+        }
+        input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none; 
+        }
+    }
+    &__content {
+        width: 100%;
+    }
+    &__media {
+        img {
+            height: 245px;
+            width: auto;
+            margin: 10px auto;
+
+            @media #{$screen-tablet} {
+                height: 415px;
+                margin: 30px auto;
+            }
+        }
+    }
+
+    &__information {
+        > span {
+            text-transform: uppercase;
+        }
+    }
+    &__origin {
+        display: flex;
+        flex-direction: column;
+        max-height: 24px;
+        margin: 15px 0 30px 0;
+        font-size: 1.2rem;
+
+        @media #{$screen-mobile} {
+            flex-direction: row;
+            margin: 15px 0;
+        }
+
+        div {
+            display: flex;
+            flex-basis: 50%;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            @media #{$screen-mobile} {
+                &:first-of-type {
+                    margin-right: 15px;
+                }
+            }
+
+            img {
+                max-height: 14px;
+                width: auto;
+                margin-right: 3px;
+
+                @media #{$screen-mobile} {
+                    max-height: 20px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}

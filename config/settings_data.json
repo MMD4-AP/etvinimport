@@ -1,7 +1,7 @@
 {
   "current": {
-    "colors_solid_button_labels": "#fcfcfc",
-    "colors_accent_1": "#020912",
+    "colors_solid_button_labels": "#ffffff",
+    "colors_accent_1": "#b7b7a4",
     "gradient_accent_1": "",
     "colors_accent_2": "#020912",
     "gradient_accent_2": "",
@@ -9,20 +9,20 @@
     "colors_outline_button_labels": "#020912",
     "colors_background_1": "#fcfcfc",
     "gradient_background_1": "",
-    "colors_background_2": "#e4f6ff",
+    "colors_background_2": "#b7b7a4",
     "gradient_background_2": "",
-    "type_header_font": "avenir_next_n5",
+    "type_header_font": "playfair_display_n4",
     "heading_scale": 125,
-    "type_body_font": "anonymous_pro_n4",
-    "body_scale": 105,
+    "type_body_font": "montserrat_n4",
+    "body_scale": 100,
     "page_width": 1400,
     "spacing_sections": 20,
     "spacing_grid_horizontal": 24,
     "spacing_grid_vertical": 24,
-    "buttons_border_thickness": 1,
-    "buttons_border_opacity": 100,
+    "buttons_border_thickness": 0,
+    "buttons_border_opacity": 0,
     "buttons_radius": 0,
-    "buttons_shadow_opacity": 0,
+    "buttons_shadow_opacity": 100,
     "buttons_shadow_horizontal_offset": 0,
     "buttons_shadow_vertical_offset": 0,
     "buttons_shadow_blur": 0,
@@ -51,14 +51,14 @@
     "card_shadow_horizontal_offset": 0,
     "card_shadow_vertical_offset": 0,
     "card_shadow_blur": 0,
-    "text_boxes_border_thickness": 2,
+    "text_boxes_border_thickness": 0,
     "text_boxes_border_opacity": 100,
     "text_boxes_radius": 0,
     "text_boxes_shadow_opacity": 0,
     "text_boxes_shadow_horizontal_offset": 0,
     "text_boxes_shadow_vertical_offset": 0,
     "text_boxes_shadow_blur": 0,
-    "media_border_thickness": 2,
+    "media_border_thickness": 0,
     "media_border_opacity": 100,
     "media_radius": 0,
     "media_shadow_opacity": 0,
@@ -84,7 +84,7 @@
     "sold_out_badge_color_scheme": "inverse",
     "accent_icons": "text",
     "social_twitter_link": "",
-    "social_facebook_link": "",
+    "social_facebook_link": "https:\/\/www.facebook.com\/ETVinImport\/",
     "social_pinterest_link": "",
     "social_instagram_link": "",
     "social_tiktok_link": "",
@@ -93,15 +93,26 @@
     "social_youtube_link": "",
     "social_vimeo_link": "",
     "predictive_search_enabled": true,
-    "predictive_search_show_vendor": false,
-    "predictive_search_show_price": false,
+    "predictive_search_show_vendor": true,
+    "predictive_search_show_price": true,
     "currency_code_enabled": true,
+    "checkout_logo_image": "shopify:\/\/shop_images\/ET-Kvalitetsvine-igennem-25-aar-high.png",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
         "blocks": {
           "announcement-bar-0": {
             "type": "announcement",
+            "disabled": true,
+            "settings": {
+              "text": "Welcome to our store",
+              "color_scheme": "accent-1",
+              "link": ""
+            }
+          },
+          "12bf2cb9-875f-47da-890d-0610c11b0284": {
+            "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "Welcome to our store",
               "color_scheme": "accent-1",
@@ -110,7 +121,8 @@
           }
         },
         "block_order": [
-          "announcement-bar-0"
+          "announcement-bar-0",
+          "12bf2cb9-875f-47da-890d-0610c11b0284"
         ],
         "settings": {
         }
@@ -119,9 +131,10 @@
         "type": "header",
         "settings": {
           "color_scheme": "background-1",
-          "logo_width": 100,
-          "logo_position": "middle-left",
-          "menu": "main-menu",
+          "logo": "shopify:\/\/shop_images\/ET-Kvalitetsvine-igennem-25-aar-high.png",
+          "logo_width": 170,
+          "logo_position": "top-center",
+          "menu": "header",
           "show_line_separator": false,
           "enable_sticky_header": true,
           "margin_bottom": 0
@@ -140,8 +153,8 @@
           "text": {
             "type": "text",
             "settings": {
-              "heading": "Heading",
-              "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+              "heading": "ET Vinimport",
+              "subtext": "<p>ET Vinimport Vejle<\/p>"
             }
           },
           "image": {
@@ -180,7 +193,10 @@
         "settings": {
         }
       }
-    }
+    },
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Default": {

@@ -1,0 +1,44 @@
+{% layout none %}
+<div id="app">
+    <template v-if="dataReady">
+        <pre>{{ collection.title }}</pre>
+        <pre>{{ collection.description }}</pre>
+
+        <ul v-for="(product, index) in collection.products" :key="index">
+            <li>
+                {{ product.id }}
+                <ul v-for="(variant, index) in product.variants" :key="index">
+                    <li>
+                        {{ variant.id }}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        {{ products }}
+    </template>
+</div>
+<script src="https://unpkg.com/vue@3"></script>
+
+<script>
+    const options = {
+        name: "CollectionsApp",
+        data() {
+            return {
+                collection: null,
+                dataReady: false
+            }
+        },
+        methods: {
+            async getCollection() {
+                await fetch('https://www.etvinimport.dk/collections/{{collection.handle}}?view=json')
+                .then(response => response.json())
+                .then(data => this.collection = data)
+                .then(data => this.dataReady = true)
+            }
+        },
+        mounted() {
+            this.getCollection();
+        }
+    }
+    const CollectionsApp = Vue.createApp(options).mount('#app');
+</script>

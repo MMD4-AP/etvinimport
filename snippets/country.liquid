@@ -1,0 +1,22 @@
+{% comment %}
+    Renders a list of product's country
+
+    Accepts:
+    - product: {Object} Product Liquid object (optional)
+    - use_variant: {Boolean} Renders selected or first variant price instead of overall product pricing (optional)
+    - show_badges: {Boolean} Renders 'Sale' and 'Sold Out' tags if the product matches the condition (optional)
+    - price_class: {String} Adds a price class to the price element (optional)
+
+    Usage:
+    {% render 'price', product: product %}
+{% endcomment %}
+{% if product.metafields %}
+  <div>
+    {% if product.metafields.meta.country_flag %}
+      <img src="{{ product.metafields.meta.country_flag | image_url }}" />
+    {% endif %}
+    {% if product.metafields.meta.country %}
+    <span>{{ product.metafields.meta.country | capitalize }}</span>
+    {% endif %}
+  </div>
+{% endif %}

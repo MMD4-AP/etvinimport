@@ -64,6 +64,8 @@
 
 .card .media {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .card__media {
@@ -123,9 +125,17 @@
 }
 
 .card__media .media img {
-  height: 100%;
-  object-fit: cover;
+  max-height: 413px;
+  object-fit: contain;
   object-position: center center;
+  width: 100%;
+}
+.card__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #B7B7A4;
+  height: 80%;
   width: 100%;
 }
 
