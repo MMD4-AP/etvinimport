@@ -141,11 +141,21 @@
         "label":"t:sections.featured-collection.settings.columns_desktop.label"
      },
      {
-        "type":"checkbox",
-        "id":"show_view_all",
-        "default":true,
-        "label":"t:sections.featured-collection.settings.show_view_all.label"
-     },
+      "type":"select",
+      "id":"columns_mobile",
+      "default":"1",
+      "label":"t:sections.featured-collection.settings.columns_mobile.label",
+      "options":[
+         {
+            "value":"1",
+            "label":"t:sections.featured-collection.settings.columns_mobile.options__1.label"
+         },
+         {
+            "value":"2",
+            "label":"t:sections.featured-collection.settings.columns_mobile.options__2.label"
+         }
+      ]
+   },
      {
         "type":"header",
         "content":"t:sections.featured-collection.settings.header.content"
@@ -172,22 +182,6 @@
      {
         "type":"header",
         "content":"t:sections.featured-collection.settings.header_mobile.content"
-     },
-     {
-        "type":"select",
-        "id":"columns_mobile",
-        "default":"2",
-        "label":"t:sections.featured-collection.settings.columns_mobile.label",
-        "options":[
-           {
-              "value":"1",
-              "label":"t:sections.featured-collection.settings.columns_mobile.options__1.label"
-           },
-           {
-              "value":"2",
-              "label":"t:sections.featured-collection.settings.columns_mobile.options__2.label"
-           }
-        ]
      },
      {
         "type":"header",
