@@ -3,6 +3,18 @@
     "colors": {
       "name": "Farver",
       "settings": {
+        "colors_primary": {
+          "label": "Primærfarve",
+          "info": "Bruges som temaets primære farve."
+        },
+        "colors_bg_color": {
+          "label": "Primær baggrundsfarve",
+          "info": "Bruges som temaets primære baggrundsfarve."
+        },
+        "colors_footer_color": {
+          "label": "Primær baggrundsfarve i footeren",
+          "info": "Bruges som temaets primære baggrundsfarve i footeren."
+        },
         "colors_solid_button_labels": {
           "label": "Udfyldt knaptekst",
           "info": "Bruges som forgrundsfarve på markeringsfarver."

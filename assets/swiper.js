@@ -1,8 +1,3 @@
-const featuredProducts = document.querySelector('.featured-products');
-
-const mobile = featuredProducts.dataset.mobile;
-const desktop = featuredProducts.dataset.desktop;
-
 const featuredSwiper = new Swiper('.featured-swiper', {
     navigation: {
         nextEl: ".swiper-button-next",
@@ -11,15 +6,15 @@ const featuredSwiper = new Swiper('.featured-swiper', {
     breakpoints: {
     // when window width is >= 320px
         500: {
-            slidesPerView: mobile
+            slidesPerView: 1
         },
         // when window width is >= 480px
         768: {
-            slidesPerView: mobile
+            slidesPerView: 2
         },
         // when window width is >= 640px
         990: {
-            slidesPerView: desktop
+            slidesPerView: 4
         }
     }
 });

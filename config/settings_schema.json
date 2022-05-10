@@ -16,6 +16,27 @@
       },
       {
         "type": "color",
+        "id": "colors_primary",
+        "default": "#B7B7A4",
+        "label": "t:settings_schema.colors.settings.colors_primary.label",
+        "info": "t:settings_schema.colors.settings.colors_primary.info"
+      },
+      {
+        "type": "color",
+        "id": "colors_bg_color",
+        "default": "#FAF8F7",
+        "label": "t:settings_schema.colors.settings.colors_bg_color.label",
+        "info": "t:settings_schema.colors.settings.colors_bg_color.info"
+      },
+      {
+        "type": "color",
+        "id": "colors_footer_color",
+        "default": "#B7B7A4",
+        "label": "t:settings_schema.colors.settings.colors_footer_color.label",
+        "info": "t:settings_schema.colors.settings.colors_footer_color.info"
+      },
+      {
+        "type": "color",
         "id": "colors_solid_button_labels",
         "default": "#FFFFFF",
         "label": "t:settings_schema.colors.settings.colors_solid_button_labels.label",
