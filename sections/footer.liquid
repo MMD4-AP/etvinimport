@@ -17,7 +17,6 @@
 
 <footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   <div>
-    {{ section.settings.footer_info }}
     <ul>
       <li>
         <img src="" alt="">
@@ -236,81 +235,81 @@
         ]
      },
      {
-      "type":"image",
-      "name":"Image",
-      "settings":[
-        {
-          "type":"image_picker",
-          "id":"image",
-          "label":"Image"
-        },
-        {
-          "type":"range",
-          "id":"image_width",
-          "min":50,
-          "max":300,
-          "step":5,
-          "unit":"px",
-          "label":"Image width",
-          "default":100
-        },
-        {
-          "type":"select",
-          "id":"alignment",
-          "label":"Image alignment on large screen",
-          "options":[
-              {
-                "value":"",
-                "label":"Left"
-              },
-              {
-                "value":"center",
-                "label":"Center"
-              },
-              {
-                "value":"right",
-                "label":"Right"
-              }
-          ],
-          "default":"center"
-        }
-      ]
+        "type":"image",
+        "name":"Image",
+        "settings":[
+           {
+              "type":"image_picker",
+              "id":"image",
+              "label":"Image"
+           },
+           {
+              "type":"range",
+              "id":"image_width",
+              "min":50,
+              "max":300,
+              "step":5,
+              "unit":"px",
+              "label":"Image width",
+              "default":100
+           },
+           {
+              "type":"select",
+              "id":"alignment",
+              "label":"Image alignment on large screen",
+              "options":[
+                 {
+                    "value":"",
+                    "label":"Left"
+                 },
+                 {
+                    "value":"center",
+                    "label":"Center"
+                 },
+                 {
+                    "value":"right",
+                    "label":"Right"
+                 }
+              ],
+              "default":"center"
+           }
+        ]
      }
   ],
   "settings":[
-    {
-      "type": "image_picker",
-      "id": "message_image_1",
-      "label": "Billede til besked 1"
-    },
-    {
-      "type": "text",
-      "id": "message_1",
-      "label": "Besked 1",
-      "default": "Hello! 1"
-    },
-    {
-      "type": "image_picker",
-      "id": "message_image_2",
-      "label": "Billede til besked 2"
-    },
-    {
-      "type": "text",
-      "id": "message_2",
-      "label": "Besked 2",
-      "default": "Hello! 2"
-    },
-    {
-      "type": "image_picker",
-      "id": "message_image_3",
-      "label": "Billede til besked 3"
-    },
-    {
-      "type": "text",
-      "id": "message_3",
-      "label": "Besked 3",
-      "default": "Hello 3"
-    },
+     {
+        "type":"image_picker",
+        "id":"message_image_1",
+        "label":"Billede til besked 1"
+     },
+     {
+        "type":"text",
+        "id":"message_1",
+        "label":"Besked 1",
+        "default":"Hello! 1"
+     },
+     {
+        "type":"image_picker",
+        "id":"message_image_2",
+        "label":"Billede til besked 2"
+     },
+     {
+        "type":"text",
+        "id":"message_2",
+        "label":"Besked 2",
+        "default":"Hello! 2"
+     },
+     {
+        "type":"image_picker",
+        "id":"message_image_3",
+        "label":"Billede til besked 3"
+     },
+     {
+        "type":"text",
+        "id":"message_3",
+        "label":"Besked 3",
+        "default":"Hello 3"
+     },
      {
         "type":"select",
         "id":"color_scheme",
