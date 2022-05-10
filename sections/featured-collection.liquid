@@ -1,99 +1,46 @@
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-product-card.css' | asset_url | stylesheet_tag }}
+
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-featured-swiper.css' | asset_url | stylesheet_tag }}
 
-<link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'template-collection.css' | asset_url }}" media="print" onload="this.media='all'">
 
-<noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'template-collection.css' | asset_url | stylesheet_tag }}</noscript>
 
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
+<script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-{%- endstyle -%}
 
-{%- liquid
-  assign products_to_display = section.settings.collection.all_products_count
 
-  if section.settings.collection.all_products_count > section.settings.products_to_show
-    assign products_to_display = section.settings.products_to_show
-    assign more_in_collection = true
-  endif
 
-  assign columns_mobile_int = section.settings.columns_mobile | plus: 0
-  assign show_mobile_slider = false
-  if section.settings.swipe_on_mobile and products_to_display > columns_mobile_int
-    assign show_mobile_slider = true
-  endif
--%}
-
-<div class="color-{{ section.settings.color_scheme }} isolate gradient">
-  <div class="collection page-width{% if show_mobile_slider %} page-width-desktop{% endif %} section-{{ section.id }}-padding">
-    {%- unless section.settings.title == blank -%}
-      <div class="title-wrapper-with-link{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %} title-wrapper--no-top-margin">
-        <h2 class="title {{ section.settings.heading_size }}">{{ section.settings.title | escape }}</h2>
-  
-        {%- if section.settings.show_view_all and section.settings.swipe_on_mobile and more_in_collection -%}
-          <a href="{{ section.settings.collection.url }}" class="link underlined-link large-up-hide">{{ 'sections.featured_collection.view_all' | t }}</a>
-        {%- endif -%}
-      </div>
-    {%- endunless -%}
-  
-    <slider-component class="slider-mobile-gutter">
-      <ul id="Slider-{{ section.id }}" class="grid product-grid contains-card{% if settings.card_style == 'standard' %} contains-card--standard{% endif %}{% if section.settings.columns_desktop == 1 %} grid--full-width{% else %} grid--{{ section.settings.columns_desktop }}-col-desktop{% endif %}{% if section.settings.collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider %} slider slider--tablet grid--peek{% endif %}" role="list">
-        {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
-          <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="grid__item{% if show_mobile_slider %} slider__slide{% endif %}">
-            {% render 'card-product',
-              card_product: product,
-              media_aspect_ratio: section.settings.image_ratio,
-              show_secondary_image: section.settings.show_secondary_image,
-              show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating
-            %}
-          </li>
-        {%- else -%}
-          {%- for i in (1..4) -%}
-            <li class="grid__item">
-              {% render 'card-product', show_vendor: section.settings.show_vendor %}
-            </li>
-          {%- endfor -%}
-        {%- endfor -%}
-      </ul>
-      {%- if show_mobile_slider -%}
-        <div class="slider-buttons no-js-hidden">
-          <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
-          <div class="slider-counter caption">
-            <span class="slider-counter--current">1</span>
-            <span aria-hidden="true"> / </span>
-            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-            <span class="slider-counter--total">{{ products_to_display }}</span>
-          </div>
-          <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
+<div class="swiper featured-swiper">
+  <div class="swiper-wrapper">
+      {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+        <div class="swiper-slide grid-item">
+          {% render 'card-product',
+            card_product: product,
+            media_aspect_ratio: section.settings.image_ratio,
+            show_secondary_image: section.settings.show_secondary_image,
+            show_vendor: section.settings.show_vendor,
+            show_rating: section.settings.show_rating,
+            lazy_load: lazy_load
+          %}
         </div>
-      {%- endif -%}
-    </slider-component>
-  
-    {%- if section.settings.show_view_all and more_in_collection -%}
-      <div class="center collection__view-all{% if section.settings.swipe_on_mobile %} small-hide medium-hide{% endif %}">
-        <a href="{{ section.settings.collection.url }}"
-          class="button"
-          aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title }}"
-        >
-          {{ 'sections.featured_collection.view_all' | t }}
-        </a>
-      </div>
-    {%- endif -%}
+      {%- endfor -%}
+  </div>
+  <div class="swiper-button-next">
+    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="27" fill="none" viewBox="0 0 15 27">
+      <path fill="#6B705C" d="m.316 1.942 11.267 11.557L.316 25.057a1.105 1.105 0 0 0 0 1.545 1.053 1.053 0 0 0 1.503 0l11.988-12.295a1.156 1.156 0 0 0 0-1.614L1.821.397a1.052 1.052 0 0 0-1.507 0 1.105 1.105 0 0 0 0 1.545h.002Z"/>
+    </svg>
+  </div>
+  <div class="swiper-button-prev">
+    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="27" fill="none" viewBox="0 0 15 27">
+      <path fill="#6B705C" d="m.316 1.942 11.267 11.557L.316 25.057a1.105 1.105 0 0 0 0 1.545 1.053 1.053 0 0 0 1.503 0l11.988-12.295a1.156 1.156 0 0 0 0-1.614L1.821.397a1.052 1.052 0 0 0-1.507 0 1.105 1.105 0 0 0 0 1.545h.002Z"/>
+    </svg>    
   </div>
 </div>
+
+
+
 
 {% schema %}
 {

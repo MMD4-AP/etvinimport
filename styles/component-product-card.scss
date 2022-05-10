@@ -5,6 +5,7 @@
     align-content: center;
     align-items: center;
     text-align: center;
+    max-width: 220px;
     background: linear-gradient(to bottom, #B7B7A4 46%, transparent 0%);
 
     @media #{$screen-tablet} {
