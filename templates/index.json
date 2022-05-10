@@ -255,10 +255,10 @@
     "featured-collection-1": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured collection",
-        "heading_size": "h2",
+        "title": "Månedens vine",
+        "heading_size": "h1",
         "heading_alignment": "center",
-        "button_label": "Button label",
+        "button_label": "",
         "button_link": "",
         "collection": "all",
         "products_to_show": 4,
