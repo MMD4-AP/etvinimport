@@ -23,7 +23,7 @@
   height: 55px;
 }
 .card__add input {
-  border: 2px solid #B7B7A4;
+  border: 2px solid rgb(var(--color-button));
 }
 .card__add input[type=number] {
   width: 30px;
@@ -32,17 +32,18 @@
 }
 .card__add input[type=submit] {
   width: 100%;
-  color: white;
-  background-color: #B7B7A4;
+  background-color: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
   width: 100%;
+  cursor: pointer;
+}
+.card__add input[type=submit]:hover {
+  background-color: #7a7a6c;
 }
 .card__add input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-}
-.card__add.btn:hover {
-  background-color: hsl(60deg, 2%, 12%);
 }
 .card__content {
   width: 100%;
