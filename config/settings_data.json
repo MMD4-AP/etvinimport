@@ -155,14 +155,14 @@
             "type": "link_list",
             "settings": {
               "heading": "Information",
-              "menu": "footer"
+              "menu": "sidefod"
             }
           },
           "text": {
             "type": "text",
             "settings": {
-              "heading": "ET Vinimport",
-              "subtext": "<p>ET Vinimport Vejle<\/p>"
+              "heading": "Åbningstider",
+              "subtext": "<p>Fredag: 15-18<\/p><p>Lørdag: 10-15<\/p><p>Søndag: 10-14<\/p><p>Efter aftale<\/p>"
             }
           }
         },
@@ -179,7 +179,7 @@
           "enable_country_selector": false,
           "enable_language_selector": false,
           "payment_enable": true,
-          "margin_top": 48,
+          "margin_top": 0,
           "padding_top": 60,
           "padding_bottom": 60
         }
