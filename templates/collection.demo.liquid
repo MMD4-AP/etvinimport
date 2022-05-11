@@ -5,7 +5,6 @@
             <input v-model="searchQuery" type="text" placeholder="Portvin">
             <div v-for="product in resultQuery" :key="product.id">
                 <h3>{{ product.id }}</h3>
-                Test
                 <img :src="product.featured_image" alt="" />
                 <a :href="product.url">Køb</a>
             </div>
@@ -25,24 +24,20 @@
                 filters: ['Fransk'],
                 vendor: 'Bodegas Carballal',
                 newFilteredProducts: [],
+                tags: [],
                 type: "",
                 result: {},
                 searchQuery: null,
             }
         },
         methods: {
-            async filterProducts() {
+            async getProducts() {
                 await fetch(this.fetch_url)
                 .then(res => res.json())
                 .then(data => {
                     this.allProducts = data.products
-                })
-            },
-            async filteredProducts() {
-                await fetch(this.fetch_url)
-                .then(res => res.json())
-                .then(data => {
-                    this.allProducts = data.products
+                    this.tags = data.tags
+
                 })
             },
             filteredArr(type) {
@@ -54,7 +49,7 @@
 
         },
         created() {
-            this.filterProducts();
+            this.getProducts();
         },
         computed: {
             resultQuery() {

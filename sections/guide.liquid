@@ -2,12 +2,13 @@
     <template v-if="allProducts">
         <div>
             <input v-model="searchQuery" type="text" placeholder="Portvin">
-            <div v-for="product in resultQuery" :key="product.id">
-                <h3>{{ product.id }}</h3>
-                Test
-                <img :src="product.featured_image" alt="" />
-                <a :href="product.url">Køb</a>
-            </div>
+            <ul class="grid product-grid">
+                <li class="grid__item" v-for="resultProduct in resultQuery" :key="resultProduct.id">
+                   <h4 v-html="resultProduct.title"></h4>
+                   <img :src="resultProduct.featured_image" alt="" />
+                   <a :href="resultProduct.url">Køb</a>
+                </li>
+            </ul>
             <hr>
         </div>
     </template>
@@ -21,7 +22,7 @@
             return {
                 allProducts: null,
                 fetch_url: "http://127.0.0.1:9292/collections/all?view=json",
-                filters: ['Fransk'],
+                tags: [],
                 vendor: 'Bodegas Carballal',
                 newFilteredProducts: [],
                 type: "",
@@ -30,18 +31,12 @@
             }
         },
         methods: {
-            async filterProducts() {
+            async getProducts() {
                 await fetch(this.fetch_url)
                 .then(res => res.json())
                 .then(data => {
                     this.allProducts = data.products
-                })
-            },
-            async filteredProducts() {
-                await fetch(this.fetch_url)
-                .then(res => res.json())
-                .then(data => {
-                    this.allProducts = data.products
+                    this.tags = data.tags
                 })
             },
             filteredArr(type) {
@@ -50,10 +45,9 @@
                 console.log(filteredType);
                 return filteredType
             }
-
         },
         created() {
-            this.filterProducts();
+            this.getProducts();
         },
         computed: {
             resultQuery() {

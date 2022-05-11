@@ -1,11 +1,30 @@
 {% layout none %}
 { 
-    "title": "{{ collection.title }}", 
+    "title": "{{ collection.title }}",
+    "collection_tags": [
+        {% for tag in collection.tags %}
+            "{{ tag }}"
+        {% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    ],
+    "tags": [
+        {% for tag in collection.all_tags %}
+            "{{ tag }}"
+        {% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    ],
+    "filters": [
+        {% for filters in collection.filters %}
+            "{{ filters.label }}"
+        {% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    ],
     "products": [
         {% paginate collection.products by 250 %}
             {% for product in collection.products %}
                 {
                     "id": {{ product.id }},
+                    "title": {{ product.title | json }},
                     "vendor": {{ product.vendor | json }},
                     "tags": [
                         {% for tag in product.tags %}
@@ -13,16 +32,10 @@
                         {% unless forloop.last %},{% endunless %}
                         {% endfor %}
                     ],
-                    "variants": [
-                        {% for variant in product.variants %}
-                        {
-                            "id": {{ variant.id }},    
-                            "title": "{{ variant.title }}"
-                        }
-                        {% unless forloop.last %},{% endunless %}
-                        {% endfor %}
-                    ],
-                    "featured_image": "{{ product.featured_image | image_url }}",
+                    "taste": "{{ product.metafields.meta.taste_type.value | downcase }}",
+                    "country": "{{ product.metafields.meta.country.value | downcase }}",
+                    "flag": "{{ product.metafields.meta.country_flag | image_url }}",
+                    "featured_media": "{{ product.featured_image | image_url }}",
                     "url": "{{ product.url }}",
                     "price": "{{ product.price_min | money_without_trailing_zeros }}",
                     "type": {{ product.type | json }}
