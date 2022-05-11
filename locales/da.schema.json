@@ -3,6 +3,18 @@
     "colors": {
       "name": "Farver",
       "settings": {
+        "colors_primary": {
+          "label": "Primærfarve",
+          "info": "Bruges som temaets primære farve."
+        },
+        "colors_bg_color": {
+          "label": "Primær baggrundsfarve",
+          "info": "Bruges som temaets primære baggrundsfarve."
+        },
+        "colors_footer_color": {
+          "label": "Primær baggrundsfarve i footeren",
+          "info": "Bruges som temaets primære baggrundsfarve i footeren."
+        },
         "colors_solid_button_labels": {
           "label": "Udfyldt knaptekst",
           "info": "Bruges som forgrundsfarve på markeringsfarver."
@@ -1342,7 +1354,7 @@
           "info": "Hvis du vil vise bedømmelser, skal du tilføje en app til produktbedømmelse. [Få mere at vide](https:\/\/help.shopify.com\/manual\/online-store\/themes\/os20\/themes-by-shopify\/dawn\/page-types#product-grid-show-product-rating)"
         },
         "columns_desktop": {
-          "label": "Antallet af kolonner på computer"
+          "label": "Antallet af kolonner på computer. Hvis der er valgt flere kollektioner på siden, vil den først kollektions antal gælde."
         },
         "header_tablet": {
           "content": "Tabletlayout"
@@ -1366,7 +1378,7 @@
           "content": "Mobillayout"
         },
         "columns_mobile": {
-          "label": "Antallet af kolonner på mobil",
+          "label": "Antallet af kolonner på mobil. Hvis der er valgt flere kollektioner på siden, vil den først kollektions antal gælde.",
           "options__1": {
             "label": "1 kolonne"
           },

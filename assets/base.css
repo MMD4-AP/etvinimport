@@ -1,5 +1,4 @@
 /* Color custom properties */
-
 :root,
 .color-background-1 {
   --color-foreground: var(--color-base-text);
@@ -187,7 +186,12 @@
   --shadow-blur-radius: var(--media-shadow-blur-radius);
   --shadow-opacity: var(--media-shadow-opacity);
 }
-
+:root,
+.color-footer-bg {
+  --color-foreground: var(--color-base-text);
+  --color-background: var(--color-base-background-1);
+  --gradient-background: var(--gradient-base-background-1);
+}
 /* base */
 
 .no-js:not(html) {
@@ -2861,4 +2865,13 @@ details-disclosure > details {
       padding-bottom: var(--grid-desktop-vertical-spacing);
     }
   }
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
 }
