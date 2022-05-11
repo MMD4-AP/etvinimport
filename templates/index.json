@@ -1,5 +1,8 @@
 {
   "sections": {
+    "guide_section": {
+      "type": "guide"
+    },
     "image-with-text": {
       "type": "image-with-text",
       "blocks": {
@@ -367,6 +370,7 @@
     }
   },
   "order": [
+    "guide_section",
     "image-with-text",
     "featured_collection",
     "collection-list",
