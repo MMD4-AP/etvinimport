@@ -107,6 +107,18 @@
     "colors": {
       "name": "Colors",
       "settings": {
+        "colors_primary": {
+          "label": "Primary color",
+          "info": "Used as theme's primary color."
+        },
+        "colors_bg_color": {
+          "label": "Primary background color",
+          "info": "Used as theme's primary background color."
+        },
+        "colors_footer_color": {
+          "label": "Primary background color in the footer",
+          "info": "Used as theme's primary background color in the footer."
+        },
         "colors_solid_button_labels": {
           "label": "Solid button label",
           "info": "Used as foreground color on accent colors."
@@ -807,7 +819,7 @@
       "settings": {
         "color_scheme": {
           "options__1": {
-            "label": "Accent 1"
+            "label": "Footer baggrundfarve"
           },
           "options__2": {
             "label": "Accent 2"

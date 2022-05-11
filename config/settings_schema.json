@@ -4,8 +4,8 @@
     "theme_name": "ETVinimport",
     "theme_version": "1.0.0",
     "theme_author": "Scott_Lind",
-    "theme_documentation_url": "https://etvinimport.dk",
-    "theme_support_url": "https://etvinimport.dk"
+    "theme_documentation_url": "https:\/\/etvinimport.dk",
+    "theme_support_url": "https:\/\/etvinimport.dk"
   },
   {
     "name": "t:settings_schema.colors.name",
@@ -13,6 +13,20 @@
       {
         "type": "header",
         "content": "t:settings_schema.colors.settings.header__1.content"
+      },
+      {
+        "type": "color",
+        "id": "colors_primary",
+        "default": "#B7B7A4",
+        "label": "t:settings_schema.colors.settings.colors_primary.label",
+        "info": "t:settings_schema.colors.settings.colors_primary.info"
+      },
+      {
+        "type": "color",
+        "id": "colors_bg_color",
+        "default": "#FAF8F7",
+        "label": "t:settings_schema.colors.settings.colors_bg_color.label",
+        "info": "t:settings_schema.colors.settings.colors_bg_color.info"
       },
       {
         "type": "color",
