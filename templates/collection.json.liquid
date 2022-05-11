@@ -2,26 +2,33 @@
 { 
     "title": "{{ collection.title }}", 
     "products": [
-        {% for product in collection.products %}
-            {
-                "id": {{ product.id }},
-                "tags": [
-                    {% for tag in product.tags %}
-                    "{{ tag }}"
-                    {% unless forloop.last %},{% endunless %}
-                    {% endfor %}
-                ],
-                "variants": [
-                    {% for variant in product.variants %}
-                    {
-                        "id": {{ variant.id }},    
-                        "title": "{{ variant.title }}"
-                    }
-                    {% unless forloop.last %},{% endunless %}
-                    {% endfor %}
-                ]
-            }
-            {% unless forloop.last %},{% endunless %}
-        {% endfor %}
+        {% paginate collection.products by 250 %}
+            {% for product in collection.products %}
+                {
+                    "id": {{ product.id }},
+                    "vendor": {{ product.vendor | json }},
+                    "tags": [
+                        {% for tag in product.tags %}
+                            "{{ tag }}"
+                        {% unless forloop.last %},{% endunless %}
+                        {% endfor %}
+                    ],
+                    "variants": [
+                        {% for variant in product.variants %}
+                        {
+                            "id": {{ variant.id }},    
+                            "title": "{{ variant.title }}"
+                        }
+                        {% unless forloop.last %},{% endunless %}
+                        {% endfor %}
+                    ],
+                    "featured_image": "{{ product.featured_image | image_url }}",
+                    "url": "{{ product.url }}",
+                    "price": "{{ product.price_min | money_without_trailing_zeros }}",
+                    "type": {{ product.type | json }}
+                }
+                {% unless forloop.last %},{% endunless %}
+            {% endfor %}
+        {% endpaginate %}
     ]
 }
