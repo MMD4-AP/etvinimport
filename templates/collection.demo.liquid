@@ -1,20 +1,7 @@
 {% layout none %}
 <div id="app">
-    <template v-if="dataReady">
-        <pre>{{ collection.title }}</pre>
-        <pre>{{ collection.description }}</pre>
-
-        <ul v-for="(product, index) in collection.products" :key="index">
-            <li>
-                {{ product.id }}
-                <ul v-for="(variant, index) in product.variants" :key="index">
-                    <li>
-                        {{ variant.id }}
-                    </li>
-                </ul>
-            </li>
-        </ul>
-        {{ products }}
+    <template>
+        <pre>{{ allProducts }}</pre>
     </template>
 </div>
 <script src="https://unpkg.com/vue@3"></script>
@@ -25,7 +12,20 @@
         data() {
             return {
                 collection: null,
-                dataReady: false
+                dataReady: false,
+                allProducts: null,
+                query: `
+                query {
+                    products(first: 250) {
+                        edges {
+                        node {
+                            id
+                            title
+                            tags
+                        }
+                        }
+                    }
+                `
             }
         },
         methods: {
@@ -34,11 +34,33 @@
                 .then(response => response.json())
                 .then(data => this.collection = data)
                 .then(data => this.dataReady = true)
+            },
+            async getAllProducts(query) {
+                await fetch("https://et-vinimport.myshopify.com/api/2022-04/graphql.json", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                    },
+                    body: JSON.stringify({
+                        query
+                    })
+                })
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    data = this.allProducts
+                })
+
             }
         },
         mounted() {
             this.getCollection();
+            this.getAllProducts();
         }
     }
     const CollectionsApp = Vue.createApp(options).mount('#app');
 </script>
+
+
