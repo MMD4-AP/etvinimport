@@ -13,7 +13,7 @@
                         <input type="radio" 
                             :value="index"
                         >
-                        <span v-text="option" @click="addToUserOptions(option)"></span>
+                        <span v-text="option" @click="addToUserOptions(option); nextQuestion()"></span>
                     </label>
                 </div>
             </div>
@@ -117,7 +117,6 @@
     }
     const CollectionsApp = Vue.createApp(options).mount('#app');
 </script>
-
 
 
 
