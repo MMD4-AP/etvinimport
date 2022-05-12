@@ -1,4 +1,9 @@
 {{ 'section-guide.css' | asset_url | stylesheet_tag }}
+{% for block in section.blocks %}
+    {% if block.type == 'question' %}
+        {{ block }}
+    {% endif %}
+{% endfor %}
 <div id="app">
     <template v-if="allProducts">
         <div>
@@ -89,41 +94,13 @@ fetch_url: "https://www.etvinimport.dk/collections/all?view=json",
     "blocks":[
        {
           "type":"question",
-          "name":"Spørgsmål",
+          "name":"spørgsmål",
           "settings":[
              {
                 "type":"text",
                 "id":"question_title",
                 "default":"Skriv spørgsmålet",
                 "label":"Spørgsmål"
-             },
-             {
-                "type":"select",
-                "label":"Vælg svar",
-                "id":"question",
-                "options":[
-                   {
-                      "value":"Hvid",
-                      "label":"Hvidvin"
-                   },
-                   {
-                      "value":"Rød",
-                      "label":"Rødvin"
-                   },
-                   {
-                      "value":"Moussenrende",
-                      "label":"Mousserende"
-                   },
-                   {
-                      "value":"Portvin",
-                      "label":"Portvin"
-                   }
-                ]
-             },
-             {
-                "type":"url",
-                "id":"link",
-                "label":"t:sections.multicolumn.blocks.column.settings.link.label"
              }
           ]
        }
