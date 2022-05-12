@@ -84,58 +84,65 @@ fetch_url: "https://www.etvinimport.dk/collections/all?view=json",
 
 {% schema %}
 {
-  "name": "Guide",
-  "tag": "section",
-  "blocks": [
-    {
-      "type": "column",
-      "name": "t:sections.multicolumn.blocks.column.name",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "t:sections.multicolumn.blocks.column.settings.image.label"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "default": "Column",
-          "label": "t:sections.multicolumn.blocks.column.settings.title.label"
-        },
-        {
-          "type": "richtext",
-          "id": "text",
-          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-          "label": "t:sections.multicolumn.blocks.column.settings.text.label"
-        },
-        {
-          "type": "text",
-          "id": "link_label",
-          "label": "t:sections.multicolumn.blocks.column.settings.link_label.label"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "t:sections.multicolumn.blocks.column.settings.link.label"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "t:sections.multicolumn.presets.name",
-      "blocks": [
-        {
-          "type": "column"
-        },
-        {
-          "type": "column"
-        },
-        {
-          "type": "column"
-        }
-      ]
-    }
-  ]
-}
+    "name":"Guide",
+    "tag":"section",
+    "blocks":[
+       {
+          "type":"question",
+          "name":"Spørgsmål",
+          "settings":[
+             {
+                "type":"text",
+                "id":"question_title",
+                "default":"Skriv spørgsmålet",
+                "label":"Spørgsmål"
+             },
+             {
+                "type":"select",
+                "label":"Vælg svar",
+                "id":"question",
+                "options":[
+                   {
+                      "value":"Hvid",
+                      "label":"Hvidvin"
+                   },
+                   {
+                      "value":"Rød",
+                      "label":"Rødvin"
+                   },
+                   {
+                      "value":"Moussenrende",
+                      "label":"Mousserende"
+                   },
+                   {
+                      "value":"Portvin",
+                      "label":"Portvin"
+                   }
+                ]
+             },
+             {
+                "type":"url",
+                "id":"link",
+                "label":"t:sections.multicolumn.blocks.column.settings.link.label"
+             }
+          ]
+       }
+    ],
+    "presets":[
+       {
+          "name":"Spørgsmål",
+          "blocks":[
+             {
+                "type":"question"
+             },
+             {
+                "type":"question"
+             },
+             {
+                "type":"question"
+             }
+          ]
+       }
+    ]
+ }
 {% endschema %}
