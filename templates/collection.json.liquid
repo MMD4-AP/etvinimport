@@ -15,8 +15,8 @@
     ],
     "filters": [
         {% for filters in collection.filters %}
-            "{{ filters.label }}"
-        {% unless forloop.last %},{% endunless %}
+            "{{ filters.label | downcase }}"
+            {% unless forloop.last %},{% endunless %}
         {% endfor %}
     ],
     "products": [
@@ -25,15 +25,15 @@
                 {
                     "id": {{ product.id }},
                     "title": {{ product.title | json }},
-                    "vendor": {{ product.vendor | json }},
+                    "brand": {{ product.vendor | json }},
                     "tags": [
                         {% for tag in product.tags %}
                             "{{ tag }}"
                         {% unless forloop.last %},{% endunless %}
                         {% endfor %}
                     ],
-                    "taste": "{{ product.metafields.meta.taste_type.value | downcase }}",
-                    "country": "{{ product.metafields.meta.country.value | downcase }}",
+                    "smag": "{{ product.metafields.meta.taste_type.value | downcase }}",
+                    "land": "{{ product.metafields.meta.country.value | downcase }}",
                     "flag": 
                         {% if product.metafields.meta.country_flag %}
                             "{{ product.metafields.meta.country_flag | image_url }}",
@@ -43,7 +43,7 @@
                     "featured_media": "{{ product.featured_image | image_url }}",
                     "url": "{{ product.url }}",
                     "price": "{{ product.price_min | money_without_trailing_zeros }}",
-                    "type": {{ product.type | json }}
+                    "produkttype": {{ product.type | json }}
                 }
                 {% unless forloop.last %},{% endunless %}
             {% endfor %}

@@ -5,6 +5,31 @@
         <div>
             <h2 v-text="guideTitle"></h2>
             <p v-text="guideDescription"></p>
+
+            <div>
+                <h3 v-text="getCurrentQuestion.question"></h3>
+                <div class="options">
+                    <label v-for="(option, index) in getCurrentQuestion.options" :key="index">
+                        <input type="radio" 
+                            :value="index"
+                        >
+                        <span v-text="option" @click="addToUserOptions(option)"></span>
+                    </label>
+                </div>
+            </div>
+
+            <p v-text="userOptions"></p>
+            <button @click="filteredProducts()">Få anbefalinger</button>
+            <div v-if="userOptions">
+                <h4>Anbefalinger:</h4>
+                <div>
+                    <ul>
+                        <li v-for="(result, index) in results" :key="index">
+                            <span>{{ result }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </template>
 </div>
@@ -20,6 +45,7 @@
                 guideDescription: "{{ section.settings.guide_description }}",
                 fetch_url: window.location.href + "/collections/all?view=json",
                 tags: [],
+                filters: [],
                 type: "",
                 selectedTaste: null,
                 searchQuery: null,
@@ -36,6 +62,8 @@
                 ],
                 quizCompleted: false,
                 currentQuestion: 0,
+                userOptions: [],
+                results: null
             }
         },
         methods: {
@@ -47,9 +75,11 @@
                 .then(data => {
                     this.allProducts = data.products
                     this.tags = data.tags
+                    this.filters = data.filters
                 })
             },
             filteredArr(type) {
+
                 const filteredType = this.allProducts.filter(products => products.type === type)
                 this.newFilteredProducts = filteredType;
                 return filteredType
@@ -64,6 +94,19 @@
                 } else {
                     this.quizCompleted = true
                 }
+            },
+            addToUserOptions(option) {
+                this.userOptions.push(option);
+            },
+            filteredProducts() {
+                const keysExact = this.filters;
+                const valuesExact = this.userOptions;
+                
+                const resultExact = this.allProducts.filter((item) =>
+                    keysExact.some((a) => valuesExact.includes(item[a]))
+                );
+
+                console.log(resultExact);
             }
         },
         created() {
@@ -72,7 +115,7 @@
         computed: {
             getCurrentQuestion() {
                 let question = this.questions[this.currentQuestion]
-                question.index = currentQuestion
+                question.index = this.currentQuestion
                 return question
             },
             finalQuery() {
