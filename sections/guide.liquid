@@ -9,15 +9,18 @@
             <div>
                 <h3 v-text="getCurrentQuestion.question"></h3>
                 <div class="options">
-                    <label v-for="(option, index) in getCurrentQuestion.options" :key="index" :class="getCurrentQuestion.selected != null && index != getCurrentQuestion.selected ? 'disabled' : ''">
-                        <input type="radio" :value="index" :disabled="getCurrentQuestion.selected">
-                        <span v-text="option" @click="addToUserOptions(option); nextQuestion();"></span>
+                    <label v-for="(option, index) in getCurrentQuestion.options" :key="index">
+                        <input type="radio" 
+                            :value="index"
+                        >
+                        <span v-text="option" @click="addToUserOptions(option)"></span>
                     </label>
                 </div>
             </div>
 
             <p v-text="userOptions"></p>
-            <div v-if="quizCompleted">
+            <button @click="filteredProducts()">Få anbefalinger</button>
+            <div v-if="userOptions">
                 <h4>Anbefalinger:</h4>
                 <div>
                     <ul>
@@ -25,7 +28,6 @@
                             <span v-text="result.title"></span>
                         </li>
                     </ul>
-                    <button @click="startOver()">Start forfra</button>
                 </div>
             </div>
         </div>
