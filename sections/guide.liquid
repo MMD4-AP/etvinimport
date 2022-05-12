@@ -22,7 +22,7 @@
         data() {
             return {
                 allProducts: null,
-                fetch_url: "https://etvinimport.dk/collections/all?view=json",
+                fetch_url: window.location.href + "/collections/all?view=json",
                 tags: [],
                 type: "",
                 result: {},
@@ -31,7 +31,9 @@
         },
         methods: {
             async getProducts() {
-                await fetch(this.fetch_url)
+                await fetch(this.fetch_url, {
+                    mode: 'no-cors'
+                })
                 .then(res => res.json())
                 .then(data => {
                     this.allProducts = data.products
