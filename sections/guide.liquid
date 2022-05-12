@@ -127,10 +127,10 @@ fetch_url: "https://www.etvinimport.dk/collections/all?view=json",
           "type":"question",
           "name":"spørgsmål",
           "settings":[
-              {
-                "type": "header",
-                "content": "Spørgsmål"
-              }
+             {
+                "type":"header",
+                "content":"Spørgsmål"
+             },
              {
                 "type":"text",
                 "id":"question_title",
@@ -138,12 +138,12 @@ fetch_url: "https://www.etvinimport.dk/collections/all?view=json",
                 "label":"Spørgsmål"
              },
              {
-                "type": "paragraph",
-                "content": "Skriv svarene på spørgsmålet nedenfor. Svar skal skrives for stort forbogstav og i anførselsteng ('') efterfulgt af et komma. Eks: 'Hvid', 'Mousserende', 'Portvin'"
-              }
+                "type":"paragraph",
+                "content":"Skriv svarene på spørgsmålet nedenfor. Svar skal skrives for stort forbogstav og i anførselsteng ('') efterfulgt af et komma. Eks: 'Hvid', 'Mousserende', 'Portvin'"
+             },
              {
-                "type":"richtext",
-                "id":"options",
+                "type":"textarea",
+                "id":"answers",
                 "default":"'Hvid', 'Mousserende', 'Portvin'",
                 "label":"Svar"
              }
