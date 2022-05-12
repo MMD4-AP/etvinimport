@@ -34,7 +34,12 @@
                     ],
                     "taste": "{{ product.metafields.meta.taste_type.value | downcase }}",
                     "country": "{{ product.metafields.meta.country.value | downcase }}",
-                    "flag": "{{ product.metafields.meta.country_flag | image_url }}",
+                    "flag": 
+                        {% if product.metafields.meta.country_flag %}
+                            "{{ product.metafields.meta.country_flag | image_url }}",
+                        {% else %}
+                            "",
+                        {% endif %}
                     "featured_media": "{{ product.featured_image | image_url }}",
                     "url": "{{ product.url }}",
                     "price": "{{ product.price_min | money_without_trailing_zeros }}",

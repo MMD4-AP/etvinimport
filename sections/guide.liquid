@@ -2,6 +2,7 @@
     <template v-if="allProducts">
         <div>
             <input v-model="searchQuery" type="text" placeholder="Portvin">
+            <button v-for="(tag, index) in tags" :key="index" :value="tag">{{ tag }}</button>
             <ul class="grid product-grid">
                 <li class="grid__item" v-for="resultProduct in resultQuery" :key="resultProduct.id">
                    <h4 v-html="resultProduct.title"></h4>
@@ -21,10 +22,8 @@
         data() {
             return {
                 allProducts: null,
-                fetch_url: "http://127.0.0.1:9292/collections/all?view=json",
+                fetch_url: "https://etvinimport.dk/collections/all?view=json",
                 tags: [],
-                vendor: 'Bodegas Carballal',
-                newFilteredProducts: [],
                 type: "",
                 result: {},
                 searchQuery: null,
