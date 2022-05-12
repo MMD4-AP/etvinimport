@@ -7,7 +7,7 @@
           "type": "question",
           "settings": {
             "question_title": "Spørgsmål 1",
-            "answers": "'Hvid', 'Mousserende', 'Portvin'"
+            "answers": "'Hvid', 'Mousserende', 'Portvin', 'Rosé'"
           }
         },
         "47a10a7b-5c95-4bbf-8445-b7003fdc93b2": {
@@ -31,6 +31,8 @@
         "5ecd66d7-2815-4688-82b7-e50c14690613"
       ],
       "settings": {
+        "guide_title": "Vinguide",
+        "guide_description": "Dette er en vinguide"
       }
     },
     "image-with-text": {
