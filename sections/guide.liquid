@@ -36,7 +36,6 @@
                 fetch_url: window.location.href + "/collections/all?view=json",
                 tags: [],
                 type: "",
-                result: {},
                 selectedTaste: null,
                 searchQuery: null,
                 questions:[{% for block in section.blocks %}{% case block.type %}{% when 'question' %}
@@ -46,9 +45,12 @@
                             options: [
                                 {{ block.settings.answers }}
                             ], 
-                            selected: null
+                            selected: null,
+                            questionNumber: {{ forloop.index0 }}
                         }{% endcase %}{% unless forloop.last %},{% endunless %}{% endfor %}
-                ]
+                ],
+                quizCompleted: false,
+                currentQuestion: 0,
             }
         },
         methods: {
@@ -65,14 +67,32 @@
             filteredArr(type) {
                 const filteredType = this.allProducts.filter(products => products.type === type)
                 this.newFilteredProducts = filteredType;
-                console.log(filteredType);
                 return filteredType
+            },
+            setAnswer(event) {
+                this.questions[this.currentQuestion].selected = event.target.value
+                event.target.value = null
+            },
+            nextQuestion() {
+                if(this.currentQuestion < this.questions.length - 1) {
+                    this.currentQuestion++
+                } else {
+                    this.quizCompleted = true
+                }
             }
         },
         created() {
             this.getProducts();
         },
         computed: {
+            getCurrentQuestion() {
+                let question = this.questions[this.currentQuestion]
+                question.index = currentQuestion
+                return question
+            },
+            finalQuery() {
+                console.log('hej')
+            },
             resultQuery() {
                 if (this.searchQuery) {
                     return this.filteredArr(this.searchQuery)
