@@ -25,7 +25,7 @@
                 <div>
                     <ul>
                         <li v-for="(result, index) in results" :key="index">
-                            <span>{{ result }}</span>
+                            <span v-text="result.title"></span>
                         </li>
                     </ul>
                 </div>
@@ -105,7 +105,8 @@
                 const resultExact = this.allProducts.filter((item) =>
                     keysExact.some((a) => valuesExact.includes(item[a]))
                 );
-
+                this.results = resultExact
+                this.userOptions = []
                 console.log(resultExact);
             }
         },
