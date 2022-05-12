@@ -20,10 +20,7 @@
     </template>
 </div>
 <script src="https://unpkg.com/vue@3"></script>
-{% comment %}
-fetch_url: window.location.href + "/collections/all?view=json",
-fetch_url: "https://www.etvinimport.dk/collections/all?view=json",
-{% endcomment %}
+
 <script>
     const options = {
         name: "CollectionsApp",
@@ -36,6 +33,11 @@ fetch_url: "https://www.etvinimport.dk/collections/all?view=json",
                 result: {},
                 selectedTaste: null,
                 searchQuery: null,
+                questions: [
+                    {
+
+                    }
+                ]
             }
         },
         methods: {
@@ -58,7 +60,6 @@ fetch_url: "https://www.etvinimport.dk/collections/all?view=json",
         },
         created() {
             this.getProducts();
-            this.getProductsFromCollection();
         },
         computed: {
             resultQuery() {
@@ -73,9 +74,68 @@ fetch_url: "https://www.etvinimport.dk/collections/all?view=json",
     const CollectionsApp = Vue.createApp(options).mount('#app');
 </script>
 
+
+
+
+{% comment %}
+fetch_url: window.location.href + "/collections/all?view=json",
+fetch_url: "https://www.etvinimport.dk/collections/all?view=json",
+{% endcomment %}
+
 {% schema %}
 {
   "name": "Guide",
-  "tag": "section"
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "column",
+      "name": "t:sections.multicolumn.blocks.column.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.multicolumn.blocks.column.settings.image.label"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Column",
+          "label": "t:sections.multicolumn.blocks.column.settings.title.label"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "label": "t:sections.multicolumn.blocks.column.settings.text.label"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "t:sections.multicolumn.blocks.column.settings.link_label.label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.multicolumn.blocks.column.settings.link.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.multicolumn.presets.name",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
