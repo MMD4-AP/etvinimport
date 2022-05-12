@@ -39,14 +39,15 @@
                 result: {},
                 selectedTaste: null,
                 searchQuery: null,
-                questions: [
-                    {
-                        question: "",
-                        answer: 0,
-                        options: [
-
-                        ]
-                    }
+                questions:[{% for block in section.blocks %}{% case block.type %}{% when 'question' %}
+                        {
+                            question: "{{ block.settings.question_title }}",
+                            answer: {{ forloop.index0 }},
+                            options: [
+                                {{ block.settings.answers }}
+                            ], 
+                            selected: null
+                        }{% endcase %}{% unless forloop.last %},{% endunless %}{% endfor %}
                 ]
             }
         },
@@ -84,18 +85,8 @@
     const CollectionsApp = Vue.createApp(options).mount('#app');
 </script>
 
-                    {
-                        question: "{{ block.settings.question_title }}",
-                        answer: {{ forloop.index }},
-                        options: [
-                            
-                        ]
-                    }
-                    [{% for block in section.blocks %}{% case block.type %}{% when 'question' %}
-                    {
-                        "{{ block.settings.question_title }}"
-                    }{% endcase %}{% unless forloop.last %},{% endunless %}{% endfor %}
-                    ]
+
+
 
 {% comment %}
 fetch_url: window.location.href + "/collections/all?view=json",
