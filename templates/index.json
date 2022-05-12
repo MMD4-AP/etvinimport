@@ -6,19 +6,22 @@
         "14fcaedc-7f86-4ab3-b943-ca853d8d768d": {
           "type": "question",
           "settings": {
-            "question_title": "Spørgsmål 1"
+            "question_title": "Spørgsmål 1",
+            "answers": "'Hvid', 'Mousserende', 'Portvin'"
           }
         },
         "47a10a7b-5c95-4bbf-8445-b7003fdc93b2": {
           "type": "question",
           "settings": {
-            "question_title": "Spørgsmål 2"
+            "question_title": "Spørgsmål 2",
+            "answers": "'Sødlig', 'Let', 'Tør'"
           }
         },
         "5ecd66d7-2815-4688-82b7-e50c14690613": {
           "type": "question",
           "settings": {
-            "question_title": "Spørgsmål 3"
+            "question_title": "Spørgsmål 3",
+            "answers": "'Hvid', 'Mousserende', 'Portvin'"
           }
         }
       },
