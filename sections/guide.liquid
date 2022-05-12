@@ -15,14 +15,16 @@
     </template>
 </div>
 <script src="https://unpkg.com/vue@3"></script>
-
+{% comment %}
+fetch_url: window.location.href + "/collections/all?view=json",
+{% endcomment %}
 <script>
     const options = {
         name: "CollectionsApp",
         data() {
             return {
                 allProducts: null,
-                fetch_url: window.location.href + "/collections/all?view=json",
+                fetch_url: "https://etvinimport.dk" + "/collections/all?view=json",
                 tags: [],
                 type: "",
                 result: {},
