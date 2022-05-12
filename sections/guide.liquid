@@ -3,25 +3,8 @@
 <div id="app">
     <template v-if="allProducts">
         <div>
-            <input v-model="searchQuery" type="text" placeholder="Portvin">
-            <label v-for="(tag, index) in tags" :key="index">
-                <input type="radio" :value="tag" v-model="selectedTaste">
-                    <span v-text="tag"></span>
-                </input>
-            </label>
-            <label v-for="(question, index) in questions" :key="index">
-                <input type="radio" :value="question">
-                    <span v-text="question"></span>
-                </input>
-            </label>
-            <ul class="grid product-grid">
-                <li class="grid__item" v-for="resultProduct in resultQuery" :key="resultProduct.id">
-                   <h4 v-html="resultProduct.title"></h4>
-                   <img :src="resultProduct.featured_image" alt="" />
-                   <a :href="resultProduct.url">Køb</a>
-                </li>
-            </ul>
-            <hr>
+            <h2 v-text="guideTitle"></h2>
+            <p v-text="guideDescription"></p>
         </div>
     </template>
 </div>
@@ -33,6 +16,8 @@
         data() {
             return {
                 allProducts: null,
+                guideTitle: "{{ block.settings.guide_title }}",
+                guideDescription: "{{ block.settings.guide_description }}",
                 fetch_url: window.location.href + "/collections/all?view=json",
                 tags: [],
                 type: "",
@@ -127,12 +112,59 @@ fetch_url: "https://www.etvinimport.dk/collections/all?view=json",
         "{{ block.settings.question_title }}"
     }{% endcase %}{% unless forloop.last %},{% endunless %}{% endfor %}
     ]
+
+            <div>
+            <input v-model="searchQuery" type="text" placeholder="Portvin">
+            <label v-for="(tag, index) in tags" :key="index">
+                <input type="radio" :value="tag" v-model="selectedTaste">
+                    <span v-text="tag"></span>
+                </input>
+            </label>
+            <label v-for="(question, index) in questions" :key="index">
+                <input type="radio" :value="question">
+                    <span v-text="question"></span>
+                </input>
+            </label>
+            <ul class="grid product-grid">
+                <li class="grid__item" v-for="resultProduct in resultQuery" :key="resultProduct.id">
+                   <h4 v-html="resultProduct.title"></h4>
+                   <img :src="resultProduct.featured_image" alt="" />
+                   <a :href="resultProduct.url">Køb</a>
+                </li>
+            </ul>
+            <hr>
+        </div>
 {% endcomment %}
 
 {% schema %}
 {
     "name":"Guide",
-    "tag":"section",
+    "settings": [
+        {
+            "type":"header",
+            "content":"Titel på guide"
+        },
+        {
+            "type":"text",
+            "id":"guide_title",
+            "default":"Vinguide",
+            "label":"Vinguide"
+        },
+        {
+            "type":"header",
+            "content":"Titel på guide"
+        },
+        {
+            "type":"paragraph",
+            "content":"Lav en passende beskrivelse af guiden."
+        },
+        {
+            "type":"textarea",
+            "id":"guide_description",
+            "default":"Dette er en vinguide",
+            "label":"Dette er en vinfuide"
+        }
+    ],
     "blocks":[
        {
           "type":"question",
