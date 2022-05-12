@@ -9,18 +9,15 @@
             <div>
                 <h3 v-text="getCurrentQuestion.question"></h3>
                 <div class="options">
-                    <label v-for="(option, index) in getCurrentQuestion.options" :key="index">
-                        <input type="radio" 
-                            :value="index"
-                        >
-                        <span v-text="option" @click="addToUserOptions(option)"></span>
+                    <label v-for="(option, index) in getCurrentQuestion.options" :key="index" :class="getCurrentQuestion.selected != null && index != getCurrentQuestion.selected ? 'disabled' : ''">
+                        <input type="radio" :value="index" :disabled="getCurrentQuestion.selected">
+                        <span v-text="option" @click="addToUserOptions(option); nextQuestion();"></span>
                     </label>
                 </div>
             </div>
 
             <p v-text="userOptions"></p>
-            <button @click="filteredProducts()">Få anbefalinger</button>
-            <div v-if="userOptions">
+            <div v-if="quizCompleted">
                 <h4>Anbefalinger:</h4>
                 <div>
                     <ul>
@@ -28,6 +25,7 @@
                             <span v-text="result.title"></span>
                         </li>
                     </ul>
+                    <button @click="startOver()">Start forfra</button>
                 </div>
             </div>
         </div>
@@ -78,36 +76,30 @@
                     this.filters = data.filters
                 })
             },
-            filteredArr(type) {
-
-                const filteredType = this.allProducts.filter(products => products.type === type)
-                this.newFilteredProducts = filteredType;
-                return filteredType
-            },
-            setAnswer(event) {
-                this.questions[this.currentQuestion].selected = event.target.value
-                event.target.value = null
-            },
             nextQuestion() {
                 if(this.currentQuestion < this.questions.length - 1) {
                     this.currentQuestion++
                 } else {
                     this.quizCompleted = true
+                    this.filteredProducts()
                 }
             },
             addToUserOptions(option) {
                 this.userOptions.push(option);
             },
             filteredProducts() {
-                const keysExact = this.filters;
-                const valuesExact = this.userOptions;
+                const searchFilters = this.filters;
+                const searchParams = this.userOptions;
                 
-                const resultExact = this.allProducts.filter((item) =>
-                    keysExact.some((a) => valuesExact.includes(item[a]))
+                this.results = this.allProducts.filter((item) =>
+                    searchFilters.some((a) => searchParams.includes(item[a]))
                 );
-                this.results = resultExact
+            },
+            startOver() {
+                this.currentQuestion = 0
                 this.userOptions = []
-                console.log(resultExact);
+                this.results = null
+                this.quizCompleted = false
             }
         },
         created() {
@@ -118,17 +110,7 @@
                 let question = this.questions[this.currentQuestion]
                 question.index = this.currentQuestion
                 return question
-            },
-            finalQuery() {
-                console.log('hej')
-            },
-            resultQuery() {
-                if (this.searchQuery) {
-                    return this.filteredArr(this.searchQuery)
-                } else {
-                  return null
-                }
-            },
+            }
         }
     }
     const CollectionsApp = Vue.createApp(options).mount('#app');

@@ -1,3 +1,11 @@
 #app {
   background-color: lime;
 }
+#app input[type=radio] {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+#app .disabled {
+  pointer-events: none;
+}
