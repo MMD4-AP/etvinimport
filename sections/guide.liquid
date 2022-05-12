@@ -16,8 +16,8 @@
         data() {
             return {
                 allProducts: null,
-                guideTitle: "{{ block.settings.guide_title }}",
-                guideDescription: "{{ block.settings.guide_description }}",
+                guideTitle: "{{ section.settings.guide_title }}",
+                guideDescription: "{{ section.settings.guide_description }}",
                 fetch_url: window.location.href + "/collections/all?view=json",
                 tags: [],
                 type: "",
