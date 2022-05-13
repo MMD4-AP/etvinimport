@@ -1,7 +1,7 @@
 {
   "sections": {
     "guide_section": {
-      "type": "guide",
+      "type": "main-guide",
       "blocks": {
         "14fcaedc-7f86-4ab3-b943-ca853d8d768d": {
           "type": "question",
