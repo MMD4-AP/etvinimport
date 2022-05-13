@@ -23,58 +23,58 @@
                     </div>
                 </div>
             </Transition>
-            <div v-if="quizCompleted">
-                <div v-if="userOptions" class="guide__options">
-                    <h4>Dine valg:</h4>
-                    <span v-for="(option, index) in userOptions" :key="index" v-text="option"></span>
-                </div>
-                <h4>Anbefalinger:</h4>
-                <div>
-                    <ul class="grid product-grid grid--2-col-tablet-down grid--4-col-desktop">
-                        <li v-for="(product, index) in results" :key="index" class="grid__item">
-                            <div class="card">
-                                <div class="card__media">
-                                    <img :src="product.featured_media">
-                                </div>
-                                    <div class="card__content">
-                                        <div class="card__information">
-                                            <span class="visually-hidden" v-text="product.vendor"></span>
-                                            <span class="caption-with-letter-spacing light" v-text="product.vendor"></span>
-                                        <h3 class="card__heading h5">
-                                            <a :href="product.url" class="full-unstyled-link" v-text="product.title"></a>
-                                        </h3>
-                                        <div class="card-information">
-                                            <span class="price-item price-item--regular" v-text="product.price">
-                                                </span>
-                                            <div class="card__origin">
-                                            {% render 'country', product: card_product %}
-                                            {% render 'grape-sort', product: card_product %}
+                <div v-if="quizCompleted">
+                    <div v-if="userOptions" class="guide__options">
+                        <h4>Dine valg:</h4>
+                        <span v-for="(option, index) in userOptions" :key="index" v-text="option"></span>
+                    </div>
+                    <h4>Anbefalinger:</h4>
+                    <div>
+                        <ul class="grid product-grid grid--2-col-tablet-down grid--4-col-desktop">
+                            <li v-for="(product, index) in results" :key="index" class="grid__item">
+                                <div class="card">
+                                    <div class="card__media">
+                                        <img :src="product.featured_media">
+                                    </div>
+                                        <div class="card__content">
+                                            <div class="card__information">
+                                                <span class="visually-hidden" v-text="product.vendor"></span>
+                                                <span class="caption-with-letter-spacing light" v-text="product.vendor"></span>
+                                            <h3 class="card__heading h5">
+                                                <a :href="product.url" class="full-unstyled-link" v-text="product.title"></a>
+                                            </h3>
+                                            <div class="card-information">
+                                                <span class="price-item price-item--regular" v-text="product.price">
+                                                    </span>
+                                                <div class="card__origin">
+                                                {% render 'country', product: card_product %}
+                                                {% render 'grape-sort', product: card_product %}
+                                                </div>
                                             </div>
-                                        </div>
-                                        <form class="card__add" method="post" action="/cart/add" onclick="addToCart(event)">
-                                            <input type="hidden" name="id" :value="product.variants[0]" />
-                                            <input min="1" type="number" id="quantity" name="quantity" :value="selectedQuantity"/>
-                                            <input type="submit" value="Læg i kurv" class="btn" />
-                                        </form>
+                                            <form class="card__add" method="post" action="/cart/add" onclick="addToCart(event)">
+                                                <input type="hidden" name="id" :value="product.variants[0]" />
+                                                <input min="1" type="number" id="quantity" name="quantity" :value="selectedQuantity"/>
+                                                <input type="submit" value="Læg i kurv" class="btn" />
+                                            </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div v-if="quizCompleted" class="page-width guide__reset">
+                    <a role="link" class="link animate-arrow" @click="moveUp(); startOver();">
+                        Start forfra 
+                        <span class="icon-wrap">
+                            <svg viewBox="0 0 14 10" fill="none" aria-hidden="true" focusable="false" role="presentation" class="icon icon-arrow" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z" fill="currentColor"></path>
+                            </svg>
+                        </span>
+                    </a>
                 </div>
             </div>
-            <div v-if="quizCompleted" class="page-width guide__reset">
-                <a role="link" class="link animate-arrow" @click="moveUp(); startOver();">
-                    Start forfra 
-                    <span class="icon-wrap">
-                        <svg viewBox="0 0 14 10" fill="none" aria-hidden="true" focusable="false" role="presentation" class="icon icon-arrow" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z" fill="currentColor"></path>
-                        </svg>
-                    </span>
-                </a>
-            </div>
-        </div>
     </template>
 </div>
 <script src="https://unpkg.com/vue@3"></script>
