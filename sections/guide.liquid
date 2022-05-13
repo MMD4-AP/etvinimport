@@ -246,32 +246,45 @@ fetch_url: "https://www.etvinimport.dk/collections/all?view=json",
         }
     ],
     "blocks":[
-       {
-          "type":"question",
-          "name":"spørgsmål",
-          "settings":[
-             {
-                "type":"header",
-                "content":"Spørgsmål"
-             },
-             {
-                "type":"text",
-                "id":"question_title",
-                "default":"Skriv spørgsmålet",
-                "label":"Spørgsmål"
-             },
-             {
-                "type":"paragraph",
-                "content":"Skriv svarene på spørgsmålet nedenfor. Svar skal skrives for stort forbogstav og i anførselsteng ('') efterfulgt af et komma. Eks: 'Hvid', 'Mousserende', 'Portvin'"
-             },
-             {
-                "type":"textarea",
-                "id":"answers",
-                "default":"'Hvid', 'Mousserende', 'Portvin'",
-                "label":"Svar"
-             }
-          ]
-       }
-    ]
+        {
+            "type":"question",
+            "name":"spørgsmål",
+            "settings":[
+                {
+                    "type":"header",
+                    "content":"Spørgsmål"
+                },
+                {
+                    "type":"text",
+                    "id":"question_title",
+                    "default":"Skriv spørgsmålet",
+                    "label":"Spørgsmål"
+                },
+                {
+                    "type":"paragraph",
+                    "content":"Skriv svarene på spørgsmålet nedenfor. Svar skal skrives for stort forbogstav og i anførselsteng ('') efterfulgt af et komma. Eks: 'Hvid', 'Mousserende', 'Portvin'"
+                },
+                {
+                    "type":"textarea",
+                    "id":"answers",
+                    "default":"'Hvid', 'Mousserende', 'Portvin'",
+                    "label":"Svar"
+                }
+            ]
+        }
+    ],
+    "default": {
+        "settings": {
+          "title": "Guide"
+        },
+        "blocks": [
+          {
+            "type": "question"
+          },
+          {
+            "type": "question"
+          }
+        ]
+      }
  }
 {% endschema %}
