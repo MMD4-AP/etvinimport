@@ -2,34 +2,40 @@
 
 <div id="app">
     <template v-if="allProducts">
-        <div>
+        <div class="guide">
             <h2 v-text="guideTitle"></h2>
             <p v-text="guideDescription"></p>
 
-            <div>
-                <h3 v-text="getCurrentQuestion.question"></h3>
-                <div class="options">
-                    <label v-for="(option, index) in getCurrentQuestion.options" :key="index">
-                        <input type="radio" 
+            <Transition name="fade">
+                <div v-if="!quizCompleted" class="question">
+                    <h3 v-text="`${getCurrentQuestion.questionNumber}. ${getCurrentQuestion.question}`" class="question__heading"></h3>
+                    <div class="options">
+                        <label v-for="(option, index) in getCurrentQuestion.options" :key="index">
+                            <input type="radio" 
                             :value="index"
-                        >
-                        <span v-text="option" @click="addToUserOptions(option); nextQuestion()"></span>
-                    </label>
+                            >
+                            <span v-text="option" @click="addToUserOptions(option); nextQuestion()"></span>
+                        </label>
+                    </div>
+                    <div v-if="userOptions">
+                        <h4>Dine valg:</h4>
+                        <span v-for="(option, index) in userOptions" :key="index" v-text="option"></span>
+                    </div>
                 </div>
-            </div>
-
-            <p v-text="userOptions"></p>
-            <div v-if="quizCompleted">
-                <h4>Anbefalinger:</h4>
-                <div>
-                    <ul>
-                        <li v-for="(result, index) in results" :key="index">
-                            <span v-text="result.title"></span>
-                        </li>
-                    </ul>
+            </Transition>
+            <Transition name="fade">
+                <div v-else>
+                    <h4>Anbefalinger:</h4>
+                    <div>
+                        <ul>
+                            <li v-for="(result, index) in results" :key="index">
+                                <span v-text="result.title"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button @click="startOver()">Start forfra</button>
                 </div>
-                <button @click="startOver()">Start forfra</button>
-            </div>
+            </Transition>
         </div>
     </template>
 </div>
@@ -57,7 +63,7 @@
                                 {{ block.settings.answers }}
                             ], 
                             selected: null,
-                            questionNumber: {{ forloop.index0 }}
+                            questionNumber: {{ forloop.index }}
                         }{% endcase %}{% unless forloop.last %},{% endunless %}{% endfor %}
                 ],
                 quizCompleted: false,
@@ -96,6 +102,8 @@
                 this.results = this.allProducts.filter((item) =>
                     searchFilters.some((a) => searchParams.includes(item[a]))
                 );
+                const recommendations = this.results.slice(0,4);
+                this.results = recommendations;
             },
             startOver() {
                 this.currentQuestion = 0
