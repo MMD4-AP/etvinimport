@@ -6,8 +6,8 @@
         "14fcaedc-7f86-4ab3-b943-ca853d8d768d": {
           "type": "question",
           "settings": {
-            "question_title": "Spørgsmål 1",
-            "answers": "'Hvid', 'Mousserende', 'Portvin', 'Rosé'"
+            "question_title": "Hvilken vintype du foretrækker du?",
+            "answers": "'Hvid', 'Mousserende', 'Portvin', 'Rosé', 'Boblende'"
           }
         },
         "47a10a7b-5c95-4bbf-8445-b7003fdc93b2": {
