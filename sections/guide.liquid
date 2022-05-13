@@ -23,47 +23,44 @@
                     </div>
                 </div>
             </Transition>
-            <Transition name="fade">
-                <span></span>
-                <div v-if="quizCompleted">
-                    <h4>Anbefalinger:</h4>
-                    <div>
-                        <ul class="grid product-grid grid--2-col-tablet-down grid--4-col-desktop">
-                            <li v-for="(product, index) in results" :key="index" class="grid__item">
-                                <div class="card">
-                                    <div class="card__media">
-                                        <img :src="product.featured_media">
-                                    </div>
-                                      <div class="card__content">
-                                        <div class="card__information">
-                                            <span class="visually-hidden" v-text="product.vendor"></span>
-                                            <span class="caption-with-letter-spacing light" v-text="product.vendor"></span>
-                                        <h3 class="card__heading h5">
-                                          <a :href="product.url" class="full-unstyled-link" v-text="product.title"></a>
-                                        </h3>
-                                        <div class="card-information">
-                                            <span class="price-item price-item--regular" v-text="product.price">
-                                              </span>
-                                          <div class="card__origin">
-                                            {% render 'country', product: card_product %}
-                                            {% render 'grape-sort', product: card_product %}
-                                          </div>
+            <div v-if="quizCompleted">
+                <h4>Anbefalinger:</h4>
+                <div>
+                    <ul class="grid product-grid grid--2-col-tablet-down grid--4-col-desktop">
+                        <li v-for="(product, index) in results" :key="index" class="grid__item">
+                            <div class="card">
+                                <div class="card__media">
+                                    <img :src="product.featured_media">
+                                </div>
+                                    <div class="card__content">
+                                    <div class="card__information">
+                                        <span class="visually-hidden" v-text="product.vendor"></span>
+                                        <span class="caption-with-letter-spacing light" v-text="product.vendor"></span>
+                                    <h3 class="card__heading h5">
+                                        <a :href="product.url" class="full-unstyled-link" v-text="product.title"></a>
+                                    </h3>
+                                    <div class="card-information">
+                                        <span class="price-item price-item--regular" v-text="product.price">
+                                            </span>
+                                        <div class="card__origin">
+                                        {% render 'country', product: card_product %}
+                                        {% render 'grape-sort', product: card_product %}
                                         </div>
-                                        <form class="card__add" method="post" action="/cart/add" onclick="addToCart(event)">
-                                            <input type="hidden" name="id" :value="product.variants[0]" />
-                                            <input min="1" type="number" id="quantity" name="quantity" :value="selectedQuantity"/>
-                                            <input type="submit" value="Læg i kurv" class="btn" />
-                                        </form>
-                                        </div>
-                                      </div>
                                     </div>
-                                  </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <button @click="startOver()">Start forfra</button>
+                                    <form class="card__add" method="post" action="/cart/add" onclick="addToCart(event)">
+                                        <input type="hidden" name="id" :value="product.variants[0]" />
+                                        <input min="1" type="number" id="quantity" name="quantity" :value="selectedQuantity"/>
+                                        <input type="submit" value="Læg i kurv" class="btn" />
+                                    </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                        </li>
+                    </ul>
                 </div>
-            </Transition>
+                <button @click="startOver()">Start forfra</button>
+            </div>
         </div>
     </template>
 </div>
