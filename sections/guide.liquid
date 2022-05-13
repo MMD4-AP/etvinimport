@@ -17,13 +17,17 @@
                             <span v-text="option" @click="addToUserOptions(option); nextQuestion()"></span>
                         </label>
                     </div>
-                    <div v-if="userOptions">
+                    <div v-if="userOptions" class="guide__options">
                         <h4>Dine valg:</h4>
                         <span v-for="(option, index) in userOptions" :key="index" v-text="option"></span>
                     </div>
                 </div>
             </Transition>
             <div v-if="quizCompleted">
+                <div v-if="userOptions" class="guide__options">
+                    <h4>Dine valg:</h4>
+                    <span v-for="(option, index) in userOptions" :key="index" v-text="option"></span>
+                </div>
                 <h4>Anbefalinger:</h4>
                 <div>
                     <ul class="grid product-grid grid--2-col-tablet-down grid--4-col-desktop">
@@ -58,8 +62,10 @@
                                 </div>
                         </li>
                     </ul>
-                    <button @click="startOver()">Start forfra</button>
                 </div>
+            </div>
+            <div v-if="quizCompleted" class="guide__reset">
+                <button @click="moveUp(); startOver();">Start forfra</button>
             </div>
         </div>
     </template>
@@ -139,6 +145,9 @@
                 this.userOptions = []
                 this.results = null
                 this.quizCompleted = false
+            },
+            moveUp() {
+                window.scrollTo(0,0);
             }
         },
         created() {

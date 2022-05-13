@@ -1,6 +1,22 @@
 #app {
     .guide {
 
+        &__options {
+            
+            span {
+                background-color: #b7b7a4;
+                color: white;
+                padding: 5px 10px;
+                font-size: 1rem;
+
+                &:hover {
+                    background-color: #7a7a6c;
+                }
+            }
+        }
+        &__reset {
+            margin: 30px auto;
+        }
     }
 
     .question {
@@ -27,11 +43,12 @@
             }
             label {
                 margin: 20px;
+                cursor: pointer;
+
                 span {
                     background-color: #b7b7a4;
                     color: white;
                     padding: 10px 20px;
-                    cursor: pointer;
 
                     &:hover {
                         background-color: #7a7a6c;
