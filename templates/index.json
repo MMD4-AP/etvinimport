@@ -13,7 +13,7 @@
         "47a10a7b-5c95-4bbf-8445-b7003fdc93b2": {
           "type": "question",
           "settings": {
-            "question_title": "Spørgsmål 2",
+            "question_title": "Hvilken smagstype foretrækker du?",
             "answers": "'Sødlig', 'Let', 'Tør'"
           }
         },
