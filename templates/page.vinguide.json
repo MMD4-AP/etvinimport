@@ -1,10 +1,30 @@
 {
   "sections": {
     "main": {
-      "type": "main-page",
+      "type": "main-guide",
+      "blocks": {
+        "14fcaedc-7f86-4ab3-b943-ca853d8d768d": {
+          "type": "question",
+          "settings": {
+            "question_title": "Hvilken vintype du foretrækker du?",
+            "answers": "'Hvid', 'Mousserende', 'Portvin', 'Rosé', 'Boblende'"
+          }
+        },
+        "47a10a7b-5c95-4bbf-8445-b7003fdc93b2": {
+          "type": "question",
+          "settings": {
+            "question_title": "Hvilken smagstype foretrækker du?",
+            "answers": "'Sødlig', 'Let', 'Tør'"
+          }
+        }
+      },
+      "block_order": [
+        "14fcaedc-7f86-4ab3-b943-ca853d8d768d",
+        "47a10a7b-5c95-4bbf-8445-b7003fdc93b2"
+      ],
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "guide_title": "Vinguide",
+        "guide_description": "Dette er en vinguide med data fra Shopify editoren"
       }
     }
   },
