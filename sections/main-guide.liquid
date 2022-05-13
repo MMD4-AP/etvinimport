@@ -29,7 +29,7 @@
                         <span v-for="(option, index) in userOptions" :key="index" v-text="option"></span>
                     </div>
                     <h4>Anbefalinger:</h4>
-                    <div>
+                    <div v-if="quizCompleted && results">
                         <ul class="grid product-grid grid--2-col-tablet-down grid--4-col-desktop">
                             <li v-for="(product, index) in results" :key="index" class="grid__item">
                                 <div class="card">
@@ -62,6 +62,9 @@
                                 </div>
                             </li>
                         </ul>
+                    </div>
+                    <div v-if="quizCompleted && !results">
+                        Vi fandt desværre ingen anbefalinger. Prøv guiden igen.
                     </div>
                 </div>
                 <div v-if="quizCompleted" class="page-width guide__reset">
@@ -107,7 +110,7 @@
                 quizCompleted: false,
                 currentQuestion: 0,
                 userOptions: [],
-                results: null,
+                results: [],
                 selectedQuantity: 1
             }
         },
@@ -165,6 +168,11 @@
                 let question = this.questions[this.currentQuestion]
                 question.index = this.currentQuestion
                 return question
+            },
+            noResults() {
+                if(this.results == null) {
+                    return false
+                }
             }
         }
     }
