@@ -218,7 +218,7 @@ fetch_url: "https://www.etvinimport.dk/collections/all?view=json",
 
 {% schema %}
 {
-    "name":"Guide",
+    "name":"Guidesektion",
     "settings": [
         {
             "type":"header",
@@ -273,18 +273,21 @@ fetch_url: "https://www.etvinimport.dk/collections/all?view=json",
             ]
         }
     ],
-    "default": {
-        "settings": {
-          "title": "Guide"
+    "presets": [
+     {
+       "name": "Guide",
+       "settings": {
+          "title": "Guidesektion"
         },
-        "blocks": [
-          {
-            "type": "question"
-          },
-          {
-            "type": "question"
-          }
-        ]
-      }
+       "blocks": [
+         {
+           "type": "question"
+         },
+         {
+           "type": "question"
+         }
+       ]
+     }
+   ]
  }
 {% endschema %}
