@@ -19,8 +19,7 @@
             </div>
 
             <p v-text="userOptions"></p>
-            <button @click="filteredProducts()">Få anbefalinger</button>
-            <div v-if="userOptions">
+            <div v-if="quizCompleted">
                 <h4>Anbefalinger:</h4>
                 <div>
                     <ul>
@@ -29,6 +28,7 @@
                         </li>
                     </ul>
                 </div>
+                <button @click="startOver()">Start forfra</button>
             </div>
         </div>
     </template>
