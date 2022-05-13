@@ -2,7 +2,7 @@
 
 <div id="app">
     <template v-if="allProducts">
-        <div class="guide">
+        <div class="guide page-width">
             <h2 v-text="guideTitle"></h2>
             <p v-text="guideDescription"></p>
 
@@ -24,12 +24,40 @@
                 </div>
             </Transition>
             <Transition name="fade">
-                <div v-else>
+                <span></span>
+                <div v-if="quizCompleted">
                     <h4>Anbefalinger:</h4>
                     <div>
-                        <ul>
-                            <li v-for="(result, index) in results" :key="index">
-                                <span v-text="result.title"></span>
+                        <ul class="grid product-grid grid--2-col-tablet-down grid--4-col-desktop">
+                            <li v-for="(product, index) in results" :key="index" class="grid__item">
+                                <div class="card">
+                                    <div class="card__media">
+                                        <img :src="product.featured_media">
+                                    </div>
+                                      <div class="card__content">
+                                        <div class="card__information">
+                                            <span class="visually-hidden" v-text="product.vendor"></span>
+                                            <span class="caption-with-letter-spacing light" v-text="product.vendor"></span>
+                                        <h3 class="card__heading h5">
+                                          <a :href="product.url" class="full-unstyled-link" v-text="product.title"></a>
+                                        </h3>
+                                        <div class="card-information">
+                                            <span class="price-item price-item--regular" v-text="product.price">
+                                              </span>
+                                          <div class="card__origin">
+                                            {% render 'country', product: card_product %}
+                                            {% render 'grape-sort', product: card_product %}
+                                          </div>
+                                        </div>
+                                        <form class="card__add" method="post" action="/cart/add" onclick="addToCart(event)">
+                                            <input type="hidden" name="id" :value="product.variants[0]" />
+                                            <input min="1" type="number" id="quantity" name="quantity" :value="selectedQuantity"/>
+                                            <input type="submit" value="Læg i kurv" class="btn" />
+                                        </form>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
                             </li>
                         </ul>
                     </div>
@@ -69,7 +97,8 @@
                 quizCompleted: false,
                 currentQuestion: 0,
                 userOptions: [],
-                results: null
+                results: null,
+                selectedQuantity: 1
             }
         },
         methods: {
@@ -104,6 +133,9 @@
                 );
                 const recommendations = this.results.slice(0,4);
                 this.results = recommendations;
+            },
+            addToCart(event) {
+                event.preventDefault()
             },
             startOver() {
                 this.currentQuestion = 0

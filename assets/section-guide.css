@@ -1,7 +1,3 @@
-#app .guide {
-  padding: 35px 45px;
-  margin: 0 auto;
-}
 #app .question {
   display: flex;
   flex-direction: column;
@@ -23,7 +19,7 @@
   z-index: -1;
 }
 #app .question .options label {
-  padding: 20px;
+  margin: 20px;
 }
 #app .question .options label span {
   background-color: #b7b7a4;

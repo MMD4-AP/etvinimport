@@ -32,6 +32,12 @@
                         {% unless forloop.last %},{% endunless %}
                         {% endfor %}
                     ],
+                    "variants": [
+                        {% for variant in product.variants %}
+                            {{ variant.id }}
+                        {% unless forloop.last %},{% endunless %}
+                        {% endfor %}
+                    ],
                     "smag": "{{ product.metafields.meta.taste_type.value | downcase }}",
                     "land": "{{ product.metafields.meta.country.value | downcase }}",
                     "flag": 
