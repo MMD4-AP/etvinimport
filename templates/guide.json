@@ -1,0 +1,44 @@
+{
+    "sections": {
+      "main": {
+        "type": "guide",
+        "settings": {
+          "title": "Alle kategorier",
+          "sort": "alphabetical",
+          "image_ratio": "square"
+        }
+      },
+      "guide_section": {
+        "type": "wine_wuide",
+        "blocks": {
+          "14fcaedc-7f86-4ab3-b943-ca85dawd68d": {
+            "type": "question",
+            "settings": {
+              "question_title": "Hvilken vintype du foretrækker du?",
+              "answers": "'Hvid', 'Mousserende', 'Portvin', 'Rosé', 'Boblende'"
+            }
+          },
+          "47a10a7b-5c95-4bbf-8445adwawdc93b2": {
+            "type": "question",
+            "settings": {
+              "question_title": "Hvilken smagstype foretrækker du?",
+              "answers": "'Sødlig', 'Let', 'Tør'"
+            }
+          }
+        },
+        "block_order": [
+          "14fcaedc-7f86-4ab3-b943-ca85dawd68d",
+          "47a10a7b-5c95-4bbf-8445adwawdc93b2"
+        ],
+        "settings": {
+          "guide_title": "Vinguide",
+          "guide_description": "Dette er en vinguide med data fra Shopify editoren"
+        }
+      },
+    },
+    "order": [
+      "main",
+      "guide_section"
+    ]
+  }
+  
