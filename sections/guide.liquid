@@ -59,7 +59,7 @@
                                     </div>
                                     </div>
                                 </div>
-                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -80,7 +80,7 @@
                 allProducts: null,
                 guideTitle: "{{ section.settings.guide_title }}",
                 guideDescription: "{{ section.settings.guide_description }}",
-                fetch_url: window.location.href + "/collections/all?view=json",
+                fetchURL: window.Shopify.routes.root + "collections/all?view=json",
                 tags: [],
                 filters: [],
                 type: "",
@@ -106,7 +106,7 @@
         },
         methods: {
             async getProducts() {
-                await fetch(this.fetch_url, {
+                await fetch(this.fetchURL, {
                     mode: 'no-cors'
                 })
                 .then(res => res.json())
