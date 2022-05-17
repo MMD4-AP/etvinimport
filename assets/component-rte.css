@@ -1,6 +1,6 @@
 .rte:after {
   clear: both;
-  content: '';
+  content: "";
   display: block;
 }
 
@@ -22,7 +22,6 @@
     padding-right: 1.2rem;
   }
 }
-
 .rte img {
   height: auto;
   max-width: 100%;

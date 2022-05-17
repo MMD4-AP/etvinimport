@@ -50,7 +50,6 @@ cart-items.is-empty .title-wrapper-with-link,
     margin: 0 0 3rem;
   }
 }
-
 cart-items {
   display: block;
 }
@@ -151,7 +150,6 @@ cart-items {
     margin-top: 0;
   }
 }
-
 .cart__ctas button {
   width: 100%;
 }
@@ -173,7 +171,7 @@ cart-items {
   margin-top: 1rem;
 }
 
-.cart__dynamic-checkout-buttons div[role='button'] {
+.cart__dynamic-checkout-buttons div[role=button] {
   border-radius: var(--buttons-radius-outset) !important;
 }
 

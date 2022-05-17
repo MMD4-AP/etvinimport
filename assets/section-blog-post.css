@@ -7,7 +7,6 @@
     margin-top: calc(5rem + var(--page-width-margin));
   }
 }
-
 .article-template__hero-container {
   max-width: 130rem;
   margin: 0 auto;
@@ -38,7 +37,6 @@
     height: 66rem;
   }
 }
-
 @media screen and (min-width: 990px) {
   .article-template__hero-small {
     height: 27.5rem;
@@ -52,7 +50,6 @@
     height: 82.5rem;
   }
 }
-
 .article-template header {
   margin-top: 4.4rem;
   margin-bottom: 2rem;
@@ -64,7 +61,6 @@
     margin-top: 5rem;
   }
 }
-
 .article-template__title {
   margin: 0;
 }
@@ -112,7 +108,6 @@
     padding: 3.6rem 0;
   }
 }
-
 .article-template__comment-wrapper h2 {
   margin-top: 0;
 }
@@ -126,7 +121,6 @@
     margin-bottom: 7rem;
   }
 }
-
 .article-template__comments-fields {
   margin-bottom: 4rem;
 }
@@ -143,7 +137,6 @@
     padding: 2rem 2.5rem;
   }
 }
-
 .article-template__comments-comment p {
   margin: 0 0 1rem;
 }
@@ -159,7 +152,6 @@
     grid-column-gap: 4rem;
   }
 }
-
 .article-template__comment-warning {
   margin: 2rem 0 2.5rem;
 }
@@ -169,7 +161,6 @@
     margin: 5rem 0 8rem;
   }
 }
-
 .article-template__back:last-child {
   margin-bottom: 3.2rem;
 }
