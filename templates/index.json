@@ -138,22 +138,12 @@
             "link_label": "",
             "link": ""
           }
-        },
-        "6a27f727-8b26-433c-946d-e1bb7b2684a7": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
         }
       },
       "block_order": [
         "1651680669e3c0dd78-0",
         "1651680669e3c0dd78-1",
-        "1651680669e3c0dd78-2",
-        "6a27f727-8b26-433c-946d-e1bb7b2684a7"
+        "1651680669e3c0dd78-2"
       ],
       "settings": {
         "title": "Multicolumn",
