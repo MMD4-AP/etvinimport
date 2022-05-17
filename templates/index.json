@@ -151,6 +151,7 @@
         "3420e3e8-581a-420a-941f-7f461ec02c4b": {
           "type": "column",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Vinas_bb2b0485-96f2-4593-b4be-dbb6a324cf30.jpg",
             "title": "Column",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
