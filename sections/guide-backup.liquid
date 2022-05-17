@@ -1,0 +1,81 @@
+{{ 'section-guide.css' | asset_url | stylesheet_tag }}
+<div id="app">
+    <template v-if="allProducts">
+        <div>
+            <input v-model="searchQuery" type="text" placeholder="Portvin">
+            <label v-for="(tag, index) in tags" :key="index">
+                <input type="radio" :value="tag" v-model="selectedTaste">
+                    <span v-text="tag"></span>
+                </input>
+            </label>
+            <ul class="grid product-grid">
+                <li class="grid__item" v-for="resultProduct in resultQuery" :key="resultProduct.id">
+                   <h4 v-html="resultProduct.title"></h4>
+                   <img :src="resultProduct.featured_image" alt="" />
+                   <a :href="resultProduct.url">Køb</a>
+                </li>
+            </ul>
+            <hr>
+        </div>
+    </template>
+</div>
+<script src="https://unpkg.com/vue@3"></script>
+{% comment %}
+fetch_url: window.location.href + "/collections/all?view=json",
+fetch_url: "https://www.etvinimport.dk/collections/all?view=json",
+{% endcomment %}
+<script>
+    const options = {
+        name: "CollectionsApp",
+        data() {
+            return {
+                allProducts: null,
+                fetch_url: window.location.href + "/collections/all?view=json",
+                tags: [],
+                type: "",
+                result: {},
+                selectedTaste: null,
+                searchQuery: null,
+            }
+        },
+        methods: {
+            async getProducts() {
+                await fetch(this.fetch_url, {
+                    mode: 'no-cors'
+                })
+                .then(res => res.json())
+                .then(data => {
+                    this.allProducts = data.products
+                    this.tags = data.tags
+                })
+            },
+            filteredArr(type) {
+                const filteredType = this.allProducts.filter(products => products.type === type)
+                this.newFilteredProducts = filteredType;
+                console.log(filteredType);
+                return filteredType
+            }
+        },
+        created() {
+            this.getProducts();
+            this.getProductsFromCollection();
+        },
+        computed: {
+            resultQuery() {
+                if (this.searchQuery) {
+                    return this.filteredArr(this.searchQuery)
+                } else {
+                  return null
+                }
+            },
+        }
+    }
+    const CollectionsApp = Vue.createApp(options).mount('#app');
+</script>
+
+{% schema %}
+{
+  "name": "Guide",
+  "tag": "section"
+}
+{% endschema %}

@@ -35,15 +35,12 @@
     width: calc(100% - 15rem);
   }
 }
-
 @media screen and (min-width: 990px) {
   .rich-text__blocks {
     max-width: 78rem;
   }
 }
-
 /* Blocks */
-
 .rich-text__blocks > * {
   margin-top: 0;
   margin-bottom: 0;

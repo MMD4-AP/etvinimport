@@ -1,7 +1,15 @@
 {% layout none %}
 <div id="app">
-    <template>
-        <pre>{{ allProducts }}</pre>
+    <template v-if="allProducts">
+        <div>
+            <input v-model="searchQuery" type="text" placeholder="Portvin">
+            <div v-for="product in resultQuery" :key="product.id">
+                <h3>{{ product.id }}</h3>
+                <img :src="product.featured_image" alt="" />
+                <a :href="product.url">Køb</a>
+            </div>
+            <hr>
+        </div>
     </template>
 </div>
 <script src="https://unpkg.com/vue@3"></script>
@@ -11,53 +19,46 @@
         name: "CollectionsApp",
         data() {
             return {
-                collection: null,
-                dataReady: false,
                 allProducts: null,
-                query: `
-                query {
-                    products(first: 250) {
-                        edges {
-                        node {
-                            id
-                            title
-                            tags
-                        }
-                        }
-                    }
-                `
+                fetch_url: "http://127.0.0.1:9292/collections/all?view=json",
+                filters: ['Fransk'],
+                vendor: 'Bodegas Carballal',
+                newFilteredProducts: [],
+                tags: [],
+                type: "",
+                result: {},
+                searchQuery: null,
             }
         },
         methods: {
-            async getCollection() {
-                await fetch('https://www.etvinimport.dk/collections/{{collection.handle}}?view=json')
-                .then(response => response.json())
-                .then(data => this.collection = data)
-                .then(data => this.dataReady = true)
-            },
-            async getAllProducts(query) {
-                await fetch("https://et-vinimport.myshopify.com/api/2022-04/graphql.json", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Accept": "application/json",
-                    },
-                    body: JSON.stringify({
-                        query
-                    })
-                })
-                .then(response => {
-                    return response.json()
-                })
+            async getProducts() {
+                await fetch(this.fetch_url)
+                .then(res => res.json())
                 .then(data => {
-                    data = this.allProducts
-                })
+                    this.allProducts = data.products
+                    this.tags = data.tags
 
+                })
+            },
+            filteredArr(type) {
+                const filteredType = this.allProducts.filter(products => products.type === type)
+                this.newFilteredProducts = filteredType;
+                console.log(filteredType);
+                return filteredType
             }
+
         },
-        mounted() {
-            this.getCollection();
-            this.getAllProducts();
+        created() {
+            this.getProducts();
+        },
+        computed: {
+            resultQuery() {
+                if (this.searchQuery) {
+                    return this.filteredArr(this.searchQuery)
+                } else {
+                  return null
+                }
+            },
         }
     }
     const CollectionsApp = Vue.createApp(options).mount('#app');

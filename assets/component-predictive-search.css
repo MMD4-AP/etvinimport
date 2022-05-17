@@ -14,7 +14,7 @@
 }
 
 .predictive-search--search-template {
-  z-index: 2
+  z-index: 2;
 }
 
 @media screen and (max-width: 749px) {
@@ -24,15 +24,12 @@
     top: 100%;
   }
 }
-
 @media screen and (max-width: 989px) {
   .predictive-search {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-
   }
 }
-
 @media screen and (min-width: 750px) {
   .predictive-search {
     border-top: none;
@@ -43,7 +40,6 @@
     position: relative;
   }
 }
-
 predictive-search[open] .predictive-search,
 predictive-search[loading] .predictive-search {
   display: block;
@@ -91,13 +87,13 @@ predictive-search[loading] .predictive-search__results-list:first-child {
   border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
 }
 
-.predictive-search__list-item[aria-selected="true"] > *,
+.predictive-search__list-item[aria-selected=true] > *,
 .predictive-search__list-item:hover > * {
   color: rgb(var(--color-foreground));
   background-color: rgba(var(--color-foreground), 0.04);
 }
 
-.predictive-search__list-item[aria-selected="true"] .predictive-search__item-heading,
+.predictive-search__list-item[aria-selected=true] .predictive-search__item-heading,
 .predictive-search__list-item:hover .predictive-search__item-heading {
   text-decoration: underline;
   text-underline-offset: 0.3rem;
@@ -115,7 +111,7 @@ predictive-search[loading] .predictive-search__results-list:first-child {
   display: grid;
   grid-template-columns: 5rem 1fr;
   grid-column-gap: 2rem;
-  grid-template-areas: 'product-image product-content';
+  grid-template-areas: "product-image product-content";
 }
 
 .predictive-search__item-content {
@@ -160,7 +156,6 @@ predictive-search[loading] .predictive-search__results-list:first-child {
     padding-bottom: 1rem;
   }
 }
-
 .predictive-search__item--term .icon-arrow {
   width: calc(var(--font-heading-scale) * 1.4rem);
   height: calc(var(--font-heading-scale) * 1.4rem);
@@ -172,5 +167,5 @@ predictive-search[loading] .predictive-search__results-list:first-child {
 .predictive-search__image {
   grid-area: product-image;
   object-fit: contain;
-  font-family: 'object-fit: contain';
+  font-family: "object-fit: contain";
 }
