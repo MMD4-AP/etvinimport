@@ -1,0 +1,285 @@
+{{ 'section-guide.css' | asset_url | stylesheet_tag }}
+
+<div id="app">
+    <template v-if="allProducts">
+        <div class="guide page-width">
+            <h2 v-text="guideTitle"></h2>
+            <p v-text="guideDescription"></p>
+
+            <Transition name="fade">
+                <div v-if="!quizCompleted" class="question">
+                    <h3 v-text="`${getCurrentQuestion.questionNumber}. ${getCurrentQuestion.question}`" class="question__heading"></h3>
+                    <div class="options">
+                        <label v-for="(option, index) in getCurrentQuestion.options" :key="index">
+                            <input type="radio" 
+                            :value="index"
+                            >
+                            <span v-text="option" @click="addToUserOptions(option); nextQuestion()"></span>
+                        </label>
+                    </div>
+                    <div v-if="userOptions" class="guide__options">
+                        <h4>Dine valg:</h4>
+                        <span v-for="(option, index) in userOptions" :key="index" v-text="option"></span>
+                    </div>
+                </div>
+            </Transition>
+                <div v-if="quizCompleted">
+                    <div v-if="userOptions" class="guide__options">
+                        <h4>Dine valg:</h4>
+                        <span v-for="(option, index) in userOptions" :key="index" v-text="option"></span>
+                    </div>
+                    <h4>Anbefalinger:</h4>
+                    <div v-if="quizCompleted && results">
+                        <ul class="grid product-grid grid--2-col-tablet-down grid--4-col-desktop">
+                            <li v-for="(product, index) in results" :key="index" class="grid__item">
+                                <div class="card">
+                                    <div class="card__media">
+                                        <img :src="product.featured_media">
+                                    </div>
+                                        <div class="card__content">
+                                            <div class="card__information">
+                                                <span class="visually-hidden" v-text="product.vendor"></span>
+                                                <span class="caption-with-letter-spacing light" v-text="product.vendor"></span>
+                                            <h3 class="card__heading h5">
+                                                <a :href="product.url" class="full-unstyled-link" v-text="product.title"></a>
+                                            </h3>
+                                            <div class="card-information">
+                                                <span class="price-item price-item--regular" v-text="product.price">
+                                                    </span>
+                                                <div class="card__origin">
+                                                {% render 'country', product: card_product %}
+                                                {% render 'grape-sort', product: card_product %}
+                                                </div>
+                                            </div>
+                                            <form class="card__add" method="post" action="/cart/add" onclick="addToCart(event)">
+                                                <input type="hidden" name="id" :value="product.variants[0]" />
+                                                <input min="1" type="number" id="quantity" name="quantity" :value="selectedQuantity"/>
+                                                <input type="submit" value="Læg i kurv" class="btn" />
+                                            </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div v-if="quizCompleted && !results">
+                        Vi fandt desværre ingen anbefalinger. Prøv guiden igen.
+                    </div>
+                </div>
+                <div v-if="quizCompleted" class="page-width guide__reset">
+                    <a role="link" class="link animate-arrow" @click="moveUp(); startOver();">
+                        Start forfra 
+                        <span class="icon-wrap">
+                            <svg viewBox="0 0 14 10" fill="none" aria-hidden="true" focusable="false" role="presentation" class="icon icon-arrow" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z" fill="currentColor"></path>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+    </template>
+</div>
+<script src="https://unpkg.com/vue@3"></script>
+
+<script>
+    const options = {
+        name: "CollectionsApp",
+        data() {
+            return {
+                allProducts: null,
+                guideTitle: "{{ section.settings.guide_title }}",
+                guideDescription: "{{ section.settings.guide_description }}",
+                fetchURL: window.Shopify.routes.root + "collections/all?view=json",
+                tags: [],
+                filters: [],
+                type: "",
+                selectedTaste: null,
+                searchQuery: null,
+                questions:[{% for block in section.blocks %}{% case block.type %}{% when 'question' %}
+                        {
+                            question: "{{ block.settings.question_title }}",
+                            answer: {{ forloop.index0 }},
+                            options: [
+                                {{ block.settings.answers }}
+                            ], 
+                            selected: null,
+                            questionNumber: {{ forloop.index }}
+                        }{% endcase %}{% unless forloop.last %},{% endunless %}{% endfor %}
+                ],
+                quizCompleted: false,
+                currentQuestion: 0,
+                userOptions: [],
+                results: [],
+                selectedQuantity: 1
+            }
+        },
+        methods: {
+            async getProducts() {
+                await fetch(this.fetchURL, {
+                    mode: 'no-cors'
+                })
+                .then(res => res.json())
+                .then(data => {
+                    this.allProducts = data.products
+                    this.tags = data.tags
+                    this.filters = data.filters
+                })
+            },
+            nextQuestion() {
+                if(this.currentQuestion < this.questions.length - 1) {
+                    this.currentQuestion++
+                } else {
+                    this.quizCompleted = true
+                    this.filteredProducts()
+                }
+            },
+            addToUserOptions(option) {
+                this.userOptions.push(option);
+            },
+            filteredProducts() {
+                const searchFilters = this.filters;
+                const searchParams = this.userOptions;
+                
+                this.results = this.allProducts.filter((item) =>
+                    searchFilters.some((a) => searchParams.includes(item[a]))
+                );
+                const recommendations = this.results.slice(0,4);
+                this.results = recommendations;
+            },
+            addToCart(event) {
+                event.preventDefault()
+            },
+            startOver() {
+                this.currentQuestion = 0
+                this.userOptions = []
+                this.results = null
+                this.quizCompleted = false
+            },
+            moveUp() {
+                window.scrollTo(0,0);
+            }
+        },
+        created() {
+            this.getProducts();
+        },
+        computed: {
+            getCurrentQuestion() {
+                let question = this.questions[this.currentQuestion]
+                question.index = this.currentQuestion
+                return question
+            },
+            noResults() {
+                if(this.results == null) {
+                    return false
+                }
+            }
+        }
+    }
+    const CollectionsApp = Vue.createApp(options).mount('#app');
+</script>
+
+
+
+{% comment %}
+fetch_url: window.location.href + "/collections/all?view=json",
+fetch_url: "https://www.etvinimport.dk/collections/all?view=json",
+
+{% for block in section.blocks %}  
+    {% case block.type %}
+    {% when 'question' %}  
+        <div class="link" {{ block.shopify_attributes }}>   
+            {{ block.settings.question_title }}
+        </div> 
+    {% endcase %} 
+{% endfor %}
+
+
+ [{% for block in section.blocks %}{% case block.type %}{% when 'question' %}
+    {
+        "{{ block.settings.question_title }}"
+    }{% endcase %}{% unless forloop.last %},{% endunless %}{% endfor %}
+    ]
+
+            <div>
+            <input v-model="searchQuery" type="text" placeholder="Portvin">
+            <label v-for="(tag, index) in tags" :key="index">
+                <input type="radio" :value="tag" v-model="selectedTaste">
+                    <span v-text="tag"></span>
+                </input>
+            </label>
+            <label v-for="(question, index) in questions" :key="index">
+                <input type="radio" :value="question">
+                    <span v-text="question"></span>
+                </input>
+            </label>
+            <ul class="grid product-grid">
+                <li class="grid__item" v-for="resultProduct in resultQuery" :key="resultProduct.id">
+                   <h4 v-html="resultProduct.title"></h4>
+                   <img :src="resultProduct.featured_image" alt="" />
+                   <a :href="resultProduct.url">Køb</a>
+                </li>
+            </ul>
+            <hr>
+        </div>
+{% endcomment %}
+
+{% schema %}
+{
+    "name":"Guidesektion",
+    "settings": [
+        {
+            "type":"header",
+            "content":"Titel på guide"
+        },
+        {
+            "type":"text",
+            "id":"guide_title",
+            "default":"Vinguide",
+            "label":"Vinguide"
+        },
+        {
+            "type":"header",
+            "content":"Titel på guide"
+        },
+        {
+            "type":"paragraph",
+            "content":"Lav en passende beskrivelse af guiden."
+        },
+        {
+            "type":"textarea",
+            "id":"guide_description",
+            "default":"Dette er en vinguide",
+            "label":"Dette er en vinfuide"
+        }
+    ],
+    "blocks":[
+        {
+            "type":"question",
+            "name":"spørgsmål",
+            "settings":[
+                {
+                    "type":"header",
+                    "content":"Spørgsmål"
+                },
+                {
+                    "type":"text",
+                    "id":"question_title",
+                    "default":"Skriv spørgsmålet",
+                    "label":"Spørgsmål"
+                },
+                {
+                    "type":"paragraph",
+                    "content":"Skriv svarene på spørgsmålet nedenfor. Svar skal skrives for stort forbogstav og i anførselsteng ('') efterfulgt af et komma. Eks: 'Hvid', 'Mousserende', 'Portvin'"
+                },
+                {
+                    "type":"textarea",
+                    "id":"answers",
+                    "default":"'Hvid', 'Mousserende', 'Portvin'",
+                    "label":"Svar"
+                }
+            ]
+        }
+    ]
+ }
+{% endschema %}

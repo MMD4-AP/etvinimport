@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/MMD4-AP/etvinimport#readme",
   "dependencies": {
-    "dotenv": "^16.0.1",
     "gulp": "^4.0.2",
     "gulp-sass": "^5.1.0",
     "node-sass": "^7.0.1",
