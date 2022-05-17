@@ -178,11 +178,10 @@
 /* Form Elements */
 .product-form__input {
   flex: 0 0 100%;
-  padding: 0;
-  margin: 0 0 1.2rem 0;
-  max-width: 37rem;
-  min-width: fit-content;
   border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 variant-radios,
@@ -217,7 +216,7 @@ fieldset.product-form__input .form__label {
   border-radius: var(--variant-pills-radius);
   color: rgb(var(--color-foreground));
   display: inline-block;
-  margin: 0.7rem 0.5rem 0.2rem 0;
+  margin: 0.5rem 0;
   padding: 1rem 2rem;
   font-size: 1.4rem;
   letter-spacing: 0.1rem;
