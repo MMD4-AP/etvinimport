@@ -29,22 +29,13 @@
         {%- endif -%}
       </div>
     {%- endunless -%}
-    <slider-component class="slider-mobile-gutter">
       <ul class="multicolumn-list contains-content-container grid grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.columns_desktop == 1 %} grid--full-width{% else %} grid--{{ section.settings.columns_desktop }}-col-desktop{% endif %}{% if show_mobile_slider %} slider slider--mobile grid--peek{% endif %}"
         id="Slider-{{ section.id }}"
         role="list"
       >
-        {%- liquid
-          assign highest_ratio = 0
-          for block in section.blocks
-            if block.settings.image.aspect_ratio > highest_ratio
-              assign highest_ratio = block.settings.image.aspect_ratio
-            endif
-          endfor
-        -%}
         {%- for block in section.blocks -%}
           <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}" {{ block.shopify_attributes }}>
-            <div class="multicolumn-card content-container">
+            <div class="multicolumn-card content-container" {% if block.settings.image == blank %} style="background-color: #6B705C;" {% endif %}>
               {%- if block.settings.image != blank -%}
                   <img
                   class="multicolumn-card__image"
@@ -62,9 +53,7 @@
                   width="{{ block.settings.image.width }}"
                   loading="lazy"
                 >
-                {% endif %}
-                  </div>
-                </div>
+                
               {%- endif -%}
               <div class="multicolumn-card__info">
                 {%- if block.settings.title != blank -%}
@@ -84,9 +73,6 @@
           </li>
         {%- endfor -%}
       </ul>
-
-    
-    </slider-component>
   </div>
 </div>
 
