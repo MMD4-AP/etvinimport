@@ -138,12 +138,32 @@
             "link_label": "",
             "link": ""
           }
+        },
+        "da08a18a-52a3-450b-b355-bc3fdcadbaa7": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "3420e3e8-581a-420a-941f-7f461ec02c4b": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "1651680669e3c0dd78-0",
         "1651680669e3c0dd78-1",
-        "1651680669e3c0dd78-2"
+        "1651680669e3c0dd78-2",
+        "da08a18a-52a3-450b-b355-bc3fdcadbaa7",
+        "3420e3e8-581a-420a-941f-7f461ec02c4b"
       ],
       "settings": {
         "title": "Multicolumn",
