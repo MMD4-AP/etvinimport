@@ -64,7 +64,7 @@
               </h1>
             {%- when 'price' -%}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
+                <span class="price-item price-item--regular" v-html="currentVariant.price"></span>
               </div>
               {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
               {%- endif -%}
@@ -384,7 +384,7 @@
         currentVariantID: "{{ product.selected_or_first_available_variant.id }}",
         variantSelection:  {
           option1: "{{ product.options_with_values[0].selected_value }}",
-          option2: "{{ product.options_with_values[1].selected_value }}"
+          option2: "{{ product.options_with_values[1].selected_value }}",
         },
         selectedQuantity: 1,
         variants: [
@@ -399,6 +399,7 @@
             },
           {% endfor %}
         ],
+        currentPrice: null,
         cartAddFetchURL: 'http://127.0.0.1:9292/' + 'cart/add.js',
       }
     },
@@ -439,12 +440,13 @@
           return match;
         })
         this.currentVariantID = variant.id
-
+        getCurrentPrice(variant.id)
       }
     },
-    mounted() {
-    },
-    computed() {
+    computed: {
+      currentVariant() {
+        return this.variants.find(variant => variant.id == this.currentVariantID)
+      }
     }
   }
   const ProductApp = Vue.createApp(ProductPage).mount('#product_page');
