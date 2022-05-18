@@ -22,5 +22,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.hero > div h1 {
+  color: #fff;
+}
+.hero > div p {
   color: #fff;
 }
