@@ -34,6 +34,7 @@
 {%- endif -%}
 
 <section class="page-width section-{{ section.id }}-padding test" id="product_page">
+
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.gallery_layout }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper">
       <div>
@@ -137,68 +138,22 @@
             </share-button>
             <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
           {%- when 'variant_picker' -%}
-          
-          {%- for variant in product.variants -%}
-            <span>
-              {{ variant.title }} - {{ variant.id }}
-            </span>
-          {%- endfor -%}
-            {%- unless product.has_only_default_variant -%}
-              {%- if block.settings.picker_type == 'button' -%}
-                <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
-                  {%- for option in product.options_with_values -%}
-                      <fieldset class="js product-form__input">
-                        <span id="{{ option.id }}">
-                          {{ option.name }}
-                        </span>
-                        {%- for value in option.values -%}
-                          <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-                                name="{{ option.name }}"
-                                value="{{ value | escape }}"
-                                form="{{ product_form_id }}"
-                                {% if option.selected_value == value %}checked{% endif %}>
-                          <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-                            {{ value }} - test
-                          </label>
-                        {%- endfor -%}
-                      </fieldset>
-                  {%- endfor -%}
-                  <script type="application/json">
-                    {{ product.variants | json }}
-                  </script>
-                </variant-radios>
-              {%- else -%}
-                <variant-selects class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
-                  {%- for option in product.options_with_values -%}
-                    <div class="product-form__input product-form__input--dropdown">
-                      <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-                        {{ option.name }}
-                      </label>
-                      <div class="select">
-                        <select id="Option-{{ section.id }}-{{ forloop.index0 }}"
-                          class="select__select"
-                          name="options[{{ option.name | escape }}]"
-                          form="{{ product_form_id }}"
-                          id="{{ option.id }}"
-                        >
-                          {%- for value in option.values -%}
-                            <option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected"{% endif %}>
-                              {{ value }}
-                            </option>
-                          {%- endfor -%}
-                        </select>
-                        {% render 'icon-caret' %}
-                      </div>
-                    </div>
-                  {%- endfor -%}
-
-                  <script type="application/json">
-                    {{ product.variants | json }}
-                  </script>
-                </variant-selects>
-              {%- endif -%}
-            {%- endunless -%}
-
+          {% if product.variants.size > 1 %}
+          <div class="variant-select">
+            {% for product_option in product.options_with_values %}
+              <label for="{{ product_option.name }}">
+                {{ product_option.name }} test
+              </label>
+              <select id="{{ product_option.name }}" v-model="variantSelection.option{{ product_option.position }}" @change="setProductVariant">
+                {% for value in product_option.values %}
+                  <option {% if product_option.selected_value == value %}selected{% endif %}>
+                    {{ value }}
+                  </option>
+                {% endfor %}
+              </select>
+            {% endfor %}
+          </div>
+        {% endif %}
             <noscript class="product-form__noscript-wrapper-{{ section.id }}">
               <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
                 <label class="form__label" for="Variants-{{ section.id }}">{{ 'products.product.product_variants' | t }}</label>
@@ -221,34 +176,12 @@
               </div>
             </noscript>
           {%- when 'buy_buttons' -%}
-          <form class="card__add" @click="addToCart(currentVariantID)">
+          <form class="card__add"  @click="addToCart(currentVariantID)">
             <input type="hidden" name="id" :value="currentVariantID" />
             <input min="1" type="number" id="quantity" name="quantity" :value="selectedQuantity"/>
             <input type="submit" value="Læg i kurv" class="btn" />
           </form>
-
-
-              {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
-
-              {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities | where: 'pick_up_enabled', true -%}
-
-              <pickup-availability class="product__pickup-availabilities no-js-hidden"
-                {% if product.selected_or_first_available_variant.available and pick_up_availabilities.size > 0 %} available{% endif %}
-                data-root-url="{{ routes.root_url }}"
-                data-variant-id="{{ product.selected_or_first_available_variant.id }}"
-                data-has-only-default-variant="{{ product.has_only_default_variant }}"
-              >
-                <template>
-                  <pickup-availability-preview class="pickup-availability-preview">
-                    {% render 'icon-unavailable' %}
-                    <div class="pickup-availability-info">
-                      <p class="caption-large">{{ 'products.product.pickup_availability.unavailable' | t }}</p>
-                      <button class="pickup-availability-button link link--text underlined-link">{{ 'products.product.pickup_availability.refresh' | t }}</button>
-                    </div>
-                  </pickup-availability-preview>
-                </template>
-              </pickup-availability>
-            </div>
+          </div>
 
             <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
           {%- when 'rating' -%}
@@ -325,6 +258,7 @@
       {{ product.description }}
     </div>
   {%- endif -%}
+
 </section>
 
 {% javascript %}
@@ -448,8 +382,24 @@
     data() {
       return {
         currentVariantID: "{{ product.selected_or_first_available_variant.id }}",
+        variantSelection:  {
+          option1: "{{ product.options_with_values[0].selected_value }}",
+          option2: "{{ product.options_with_values[1].selected_value }}"
+        },
         selectedQuantity: 1,
-        fetchURL: window.Shopify.routes.root + 'cart/add.js',
+        variants: [
+          {% for variant in product.variants %}
+            {
+              id: "{{ variant.id }}",
+              available: {{ variant.available }},
+              option1: "{{ variant.option1 }}",
+              option2: "{{ variant.option2 }}",
+              option3: "{{ variant.option3 }}",
+              price: "{{ variant.price | money }}"
+            },
+          {% endfor %}
+        ],
+        cartAddFetchURL: 'http://127.0.0.1:9292/' + 'cart/add.js',
       }
     },
     methods: {
@@ -460,7 +410,7 @@
            'quantity': this.selectedQuantity
            }]
         };
-        await fetch(window.Shopify.routes.root + 'cart/add.js', {
+        await fetch(this.cartAddFetchURL, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -473,10 +423,28 @@
         .catch((error) => {
           console.error('Error:', error);
         });
+      },
+      setProductVariant() {
+        const variant = this.variants.find((variant) => {
+          let match = true;
+          if(variant.option1 != '') {
+            match = variant.option1 == this.variantSelection.option1
+          }
+          if(match && variant.option2 != '') {
+            match = variant.option2 == this.variantSelection.option2
+          }
+          if(match && variant.option3 != '') {
+            match = variant.option3 == this.variantSelection.option3
+          }
+          return match;
+        })
+        this.currentVariantID = variant.id
 
       }
     },
     mounted() {
+    },
+    computed() {
     }
   }
   const ProductApp = Vue.createApp(ProductPage).mount('#product_page');
