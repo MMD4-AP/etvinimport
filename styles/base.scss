@@ -608,7 +608,7 @@ h6:empty {
 }
 
 .link--text:hover {
-  color: rgba(var(--color-foreground), 0.75);
+  // color: rgba(var(--color-foreground), 0.75);
 }
 
 .link-with-icon {
@@ -2176,6 +2176,7 @@ input[type='checkbox'] {
 .shopify-section-header-sticky {
   position: sticky;
   top: 0;
+  background-color: #6B705C;
 }
 
 .shopify-section-header-hidden {
@@ -2206,8 +2207,6 @@ input[type='checkbox'] {
   grid-template-areas: 'left-icon heading icons';
   grid-template-columns: 2fr 1fr 2fr;
   align-items: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 
 @media screen and (min-width: 990px) {
@@ -2217,7 +2216,7 @@ input[type='checkbox'] {
   }
 
   .header--has-menu:not(.header--middle-left) {
-    padding-bottom: 0;
+    // padding-bottom: 0;
   }
 
   .header--top-left,
@@ -2324,7 +2323,8 @@ input[type='checkbox'] {
 }
 
 .header__icon {
-  color: rgb(var(--color-foreground));
+  color: #fff;
+  // color: rgb(var(--color-foreground));
 }
 
 .header__icon span {
@@ -2575,11 +2575,12 @@ details[open] > .header__icon--menu .icon-hamburger {
 .header__menu-item {
   padding-right: 2.5rem;
   text-decoration: none;
-  color: rgba(var(--color-foreground), 0.75);
+  // color: rgba(var(--color-foreground), 0.75);
+  color: #fff;
 }
 
 .header__menu-item:hover {
-  color: rgb(var(--color-foreground));
+  // color: rgb(var(--color-foreground));
 }
 
 .header__menu-item span {

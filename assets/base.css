@@ -595,10 +595,6 @@ h6:empty {
   color: rgb(var(--color-foreground));
 }
 
-.link--text:hover {
-  color: rgba(var(--color-foreground), 0.75);
-}
-
 .link-with-icon {
   display: inline-flex;
   font-size: 1.4rem;
@@ -2128,6 +2124,7 @@ input[type=checkbox] {
 .shopify-section-header-sticky {
   position: sticky;
   top: 0;
+  background-color: #6B705C;
 }
 
 .shopify-section-header-hidden {
@@ -2157,15 +2154,9 @@ input[type=checkbox] {
   grid-template-areas: "left-icon heading icons";
   grid-template-columns: 2fr 1fr 2fr;
   align-items: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 
 @media screen and (min-width: 990px) {
-  .header--has-menu:not(.header--middle-left) {
-    padding-bottom: 0;
-  }
-
   .header--top-left,
 .header--middle-left:not(.header--has-menu) {
     grid-template-areas: "heading icons" "navigation navigation";
@@ -2264,7 +2255,7 @@ input[type=checkbox] {
 }
 
 .header__icon {
-  color: rgb(var(--color-foreground));
+  color: #fff;
 }
 
 .header__icon span {
@@ -2508,11 +2499,7 @@ details[open] > .header__icon--menu .icon-hamburger {
 .header__menu-item {
   padding-right: 2.5rem;
   text-decoration: none;
-  color: rgba(var(--color-foreground), 0.75);
-}
-
-.header__menu-item:hover {
-  color: rgb(var(--color-foreground));
+  color: #fff;
 }
 
 .header__menu-item span {
