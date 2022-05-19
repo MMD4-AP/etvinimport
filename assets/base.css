@@ -2159,9 +2159,6 @@ input[type=checkbox] {
   grid-template-areas: "left-icon heading icons";
   grid-template-columns: 2fr 1fr 2fr;
   align-items: center;
-  background-color: #6B705C;
-}
-.header.page-index {
   background-color: transparent;
 }
 
