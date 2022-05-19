@@ -1580,7 +1580,7 @@ details[open] > .share-button__fallback {
 .share-button__fallback .field__input:-webkit-autofill {
   outline: 0.2rem solid rgba(var(--color-foreground),.5);
   outline-offset: 0.1rem;
-  box-shadow: 0 0 0 0.1rem rgb(var(--color-background)),0 0 0.5rem 0.4rem rgba(var(--color-foreground),.3);
+  box-shadow: 0 0 0 0.1rem #fff,0 0 0.5rem 0.4rem rgb(255, 255, 255);
 }
 
 .share-button__fallback .field__input {
@@ -1668,7 +1668,7 @@ details[open] > .share-button__fallback {
   left: var(--inputs-border-width);
   border: 0.1rem solid transparent;
   border-radius: var(--inputs-radius);
-  box-shadow: 0 0 0 var(--inputs-border-width) rgba(var(--color-foreground), var(--inputs-border-opacity));
+  box-shadow: 0 0 0 var(--inputs-border-width) #fff;
   transition: box-shadow var(--duration-short) ease;
   z-index: 1;
 }
@@ -1707,7 +1707,7 @@ details[open] > .share-button__fallback {
 .customer .field input:focus,
 .customer select:focus,
 .localization-form__select:focus.localization-form__select:after {
-  box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) rgba(var(--color-foreground));
+  box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) #444936;
   outline: 0;
   border-radius: var(--inputs-radius);
 }
@@ -2091,7 +2091,7 @@ input[type='checkbox'] {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgb(var(--color-background));
+  background: #6b705c;
   z-index: 4;
   display: flex;
   justify-content: center;
@@ -2523,6 +2523,9 @@ details[open] > .header__icon--menu .icon-hamburger {
   visibility: hidden;
   opacity: 0;
   transform: scale(0.8);
+}
+.icon-close {
+  color: #fff;
 }
 
 .js details[open]:not(.menu-opening) > .header__icon--menu .icon-close {
