@@ -1,5 +1,49 @@
 {
   "sections": {
+    "1652977054b3bb3381": {
+      "type": "main-hero",
+      "blocks": {
+        "16529770541ccbd8b3-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ collection.title }}",
+            "heading_size": "h1"
+          }
+        },
+        "16529770541ccbd8b3-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ collection.metafields.meta.collection_description | metafield_tag }}<\/p>",
+            "text_style": "body"
+          }
+        },
+        "16529770541ccbd8b3-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "16529770541ccbd8b3-0",
+        "16529770541ccbd8b3-1",
+        "16529770541ccbd8b3-2"
+      ],
+      "settings": {
+        "image": "{{ collection.image }}",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
       "settings": {
@@ -28,6 +72,7 @@
     }
   },
   "order": [
+    "1652977054b3bb3381",
     "banner",
     "product-grid"
   ]
