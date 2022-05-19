@@ -1,5 +1,5 @@
 {{ 'component-main-hero.css' | asset_url | stylesheet_tag }}
-<section class="hero">
+<section class="hero page-{{ template.name }}">
   {%- if section.settings.image != blank -%}
   <img
     srcset="{%- if section.settings.image.width >= 165 -%}{{ section.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
@@ -376,7 +376,7 @@
   ],
   "presets": [
     {
-      "name": "t:sections.image-with-text.presets.name",
+      "name": "Herosektion",
       "blocks": [
         {
           "type": "heading"
