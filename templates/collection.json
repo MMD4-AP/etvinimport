@@ -31,7 +31,7 @@
         "16529770541ccbd8b3-2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/sven-wilhelm-2cRXSWyMHA8-unsplash.jpg",
+        "image": "{{ collection.image }}",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
