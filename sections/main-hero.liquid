@@ -17,7 +17,7 @@
     height="{{ section.settings.image.height }}"
   >
   {%- else -%}
-  <img src="{{ 'grape_sort.png' | asset_img_url }}" />
+  <img src="{{ 'placeholder.jpg' | asset_img_url: '900x' }}" />
   {%- endif -%}
   <div class="page-{{ template.name }}">
     {%- for block in section.blocks -%}
