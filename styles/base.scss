@@ -2207,6 +2207,11 @@ input[type='checkbox'] {
   grid-template-areas: 'left-icon heading icons';
   grid-template-columns: 2fr 1fr 2fr;
   align-items: center;
+  background-color: #6B705C;
+
+  &.page-index {
+    background-color: transparent;
+  }
 }
 
 @media screen and (min-width: 990px) {
@@ -2606,7 +2611,7 @@ details[open] > .header__menu-item .icon-caret {
 
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
-  color: rgb(var(--color-foreground));
+  // color: rgb(var(--color-foreground));
   text-decoration: underline;
   text-underline-offset: 0.3rem;
 }
