@@ -2145,6 +2145,9 @@ input[type=checkbox] {
   position: relative;
   padding: 1rem 0;
 }
+.header-wrapper.page-product {
+  background-color: #6B705C;
+}
 
 .header-wrapper--border-bottom {
   border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);

@@ -2196,6 +2196,9 @@ input[type='checkbox'] {
   display: block;
   position: relative;
   padding: 1rem 0;
+  &.page-product {
+    background-color: #6B705C;
+  }
   // background-color: rgb(var(--color-background));
 }
 
@@ -2213,9 +2216,7 @@ input[type='checkbox'] {
   // background-color: #6B705C;
   background-color: transparent;
 
-  // &.page-index {
-  //   background-color: transparent;
-  // }
+
 }
 
 @media screen and (min-width: 990px) {
