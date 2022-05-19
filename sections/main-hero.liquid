@@ -17,7 +17,7 @@
     height="{{ section.settings.image.height }}"
   >
   {%- else -%}
-  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+  <img src="{{ 'grape_sort.png' | asset_img_url }}" />
   {%- endif -%}
   <div class="page-{{ template.name }}">
     {%- for block in section.blocks -%}
@@ -362,8 +362,8 @@
         {
           "type": "text",
           "id": "button_label",
-          "default": "Button label",
-          "label": "t:sections.image-with-text.blocks.button.settings.button_label.label",
+          "default": "",
+          "label": "",
           "info": "t:sections.image-with-text.blocks.button.settings.button_label.info"
         },
         {

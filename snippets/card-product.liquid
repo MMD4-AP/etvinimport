@@ -60,7 +60,11 @@
         <div class="card__information">
           {%- if show_vendor -%}
             <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
-            <span class="caption-with-letter-spacing light">{{ card_product.vendor }}</span>
+            <span class="caption-with-letter-spacing light">
+              <a href="" class="caption-with-letter-spacing light full-unstyled-link">
+                {{ card_product.vendor }}
+              </a>
+            </span>
           {%- endif -%}
         <h3 class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}">
           <a href="{{ card_product.url }}" class="full-unstyled-link">
