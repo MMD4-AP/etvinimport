@@ -1,6 +1,28 @@
 .product {
   margin: 0;
 }
+.product__options {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.product__media-wrapper {
+  padding-left: 0;
+}
+.product__media-wrapper > div {
+  height: 245px;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to bottom, #B7B7A4 88%, transparent 0%);
+}
+@media screen and (min-width: 750px) {
+  .product__media-wrapper > div {
+    height: 100%;
+  }
+}
+.product__media-wrapper > div img {
+  margin: 25px 0 10px 0;
+}
 
 .product.grid {
   gap: 0;
@@ -11,13 +33,12 @@
   margin: 0 auto;
 }
 
-.product__media-wrapper {
-  padding-left: 0;
-}
-
 .product__info-wrapper {
   padding-left: 0;
   padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media screen and (min-width: 750px) {
@@ -146,11 +167,10 @@
 /* Form Elements */
 .product-form__input {
   flex: 0 0 100%;
-  padding: 0;
-  margin: 0 0 1.2rem 0;
-  max-width: 37rem;
-  min-width: fit-content;
   border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 variant-radios,
@@ -185,7 +205,7 @@ fieldset.product-form__input .form__label {
   border-radius: var(--variant-pills-radius);
   color: rgb(var(--color-foreground));
   display: inline-block;
-  margin: 0.7rem 0.5rem 0.2rem 0;
+  margin: 0.5rem 0;
   padding: 1rem 2rem;
   font-size: 1.4rem;
   letter-spacing: 0.1rem;
@@ -282,10 +302,6 @@ fieldset.product-form__input .form__label {
 }
 
 /* Product info */
-.product__info-container > * + * {
-  margin: 1.5rem 0;
-}
-
 .product__info-container .product-form,
 .product__info-container .product__description {
   margin: 2.5rem 0;

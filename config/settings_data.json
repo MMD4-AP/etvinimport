@@ -97,6 +97,13 @@
     "predictive_search_show_price": true,
     "currency_code_enabled": true,
     "checkout_logo_image": "shopify:\/\/shop_images\/ET-Kvalitetsvine-igennem-25-aar-high.png",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "transparent",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "Playfair Display",
+    "checkout_body_font": "Lato",
+    "checkout_accent_color": "#6b705c",
+    "checkout_button_color": "#6b705c",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -131,7 +138,7 @@
         "type": "header",
         "settings": {
           "color_scheme": "background-1",
-          "logo": "shopify:\/\/shop_images\/ET-Kvalitetsvine-igennem-25-aar-high.png",
+          "logo": "shopify:\/\/shop_images\/logo-white.png",
           "logo_width": 170,
           "logo_position": "top-center",
           "menu": "header",
@@ -146,8 +153,8 @@
           "image": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/ET_Logo_Rewa_2.png",
-              "image_width": 200,
+              "image": "shopify:\/\/shop_images\/logo-white.png",
+              "image_width": 300,
               "alignment": ""
             }
           },
@@ -172,10 +179,12 @@
           "text"
         ],
         "settings": {
-          "message_image_1": "shopify:\/\/shop_images\/fr.png",
-          "message_1": "Hello! 1",
-          "message_2": "Hello! 2",
-          "message_3": "Hello 3",
+          "message_image_1": "shopify:\/\/shop_images\/checkmark.png",
+          "message_1": "Sikker fragt",
+          "message_image_2": "shopify:\/\/shop_images\/truck.png",
+          "message_2": "Fri fragt ved køb af 24 flasker",
+          "message_image_3": "shopify:\/\/shop_images\/newsletter.png",
+          "message_3": "Tilmeld dig vores nyhedsbrev for de bedste tilbud",
           "color_scheme": "accent-1",
           "newsletter_enable": true,
           "newsletter_heading": "Tilmeld dig vores nyhedsbrev",

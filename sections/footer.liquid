@@ -15,6 +15,46 @@
 <noscript>{{ 'disclosure.css' | asset_url | stylesheet_tag }}</noscript>
 
 
+<section class="footer__messages">
+  <div class="page-width">
+    {% if section.settings.message_image_1 %}
+      <div>
+        {% if section.settings.message_image_1 %}
+          <img src="{{ section.settings.message_image_1 | image_url: width: 48 }}" alt="{{ section.settings.message_image_1.alt }}" /> 
+        {% endif %}
+        {% if section.settings.message_image_1 %}
+          <span>
+            {{ section.settings.message_1 }}
+          </span>  
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if section.settings.message_image_2 %}
+    <div>
+      {% if section.settings.message_image_2 %}
+        <img src="{{ section.settings.message_image_2 | image_url: width: 48 }}" alt="{{ section.settings.message_image_2.alt }}" /> 
+      {% endif %}
+      {% if section.settings.message_image_2 %}
+        <span>
+          {{ section.settings.message_2 }}
+        </span>
+      {% endif %}
+    </div>
+  {% endif %}
+  {% if section.settings.message_image_3 %}
+  <div>
+    {% if section.settings.message_image_3 %}
+      <img src="{{ section.settings.message_image_3 | image_url: width: 48 }}" alt="{{ section.settings.message_image_3.alt }}" /> 
+    {% endif %}
+    {% if section.settings.message_image_3 %}
+      <span>
+        {{ section.settings.message_3 }}
+      </span>
+    {% endif %}
+  </div>
+  {% endif %}
+  </div>
+</section>
 <footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   {%- if section.blocks.size > 0 or section.settings.newsletter_enable or section.settings.show_social -%}
     <div class="footer__content-top page-width">
@@ -37,12 +77,12 @@
 
               {%- case block.type -%}
                 {%- when 'text' -%}
-                  <div class="footer-block__details-content rte">
+                  <div class="rte">
                     {{ block.settings.subtext }}
                   </div>
                 {%- when 'link_list' -%}
                   {%- if block.settings.menu != blank and block.settings.heading != blank -%}
-                    <ul class="footer-block__details-content list-unstyled">
+                    <ul class="list-unstyled">
                       {%- for link in block.settings.menu.links -%}
                         <li>
                           <a href="{{ link.url }}" class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}">
