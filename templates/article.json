@@ -1,14 +1,44 @@
 {
   "sections": {
+    "165307248230323180": {
+      "type": "main-hero",
+      "blocks": {
+        "1653072482252f0267-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "ET Vinklub",
+            "heading_size": "h1"
+          }
+        },
+        "1653072482252f0267-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Tekst<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "1653072482252f0267-0",
+        "1653072482252f0267-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/bi.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "main": {
       "type": "main-article",
       "blocks": {
-        "featured_image": {
-          "type": "featured_image",
-          "settings": {
-            "image_height": "medium"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
@@ -20,25 +50,18 @@
           "type": "content",
           "settings": {
           }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
         }
       },
       "block_order": [
-        "featured_image",
         "title",
-        "content",
-        "share"
+        "content"
       ],
       "settings": {
       }
     }
   },
   "order": [
+    "165307248230323180",
     "main"
   ]
 }
