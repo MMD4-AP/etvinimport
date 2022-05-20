@@ -2,6 +2,22 @@
   border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
   background-color: #6B705C;
 }
+.footer__messages {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 60px 0;
+  background-color: #B7B7A4;
+}
+.footer__messages div {
+  display: flex;
+}
+.footer__messages div img {
+  margin-right: 20px;
+}
+.footer__messages div span {
+  font-size: 2rem;
+}
 
 .footer:not(.color-background-1) {
   border-top: none;
