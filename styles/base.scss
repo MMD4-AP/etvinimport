@@ -2196,11 +2196,13 @@ input[type='checkbox'] {
   display: block;
   position: relative;
   padding: 1rem 0;
-  &.page-product, 
+  &.page-product,
+  &.page-cart, 
   &.page-collection, 
   &.page-article,
   &.page-page,
-  &.page-search {
+  &.page-search,
+  &.page-404 {
     background-color: #6B705C;
   }
   // background-color: rgb(var(--color-background));

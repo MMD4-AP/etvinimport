@@ -5,6 +5,7 @@
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -73,14 +74,20 @@
                         </div>
                     {% endif %}
                   </td>
-
                   <td class="cart-item__details">
                     {%- if section.settings.show_vendor -%}
                       <p class="caption-with-letter-spacing light">{{ item.product.vendor }}</p>
                     {%- endif -%}
 
                     <a href="{{ item.url }}" class="cart-item__name h4 break">{{ item.product.title | escape }}</a>
-
+                    <div class="cart__origin">
+                      {% if item.product.metafields.meta.country_flag %}
+                        <img src="{{ item.product.metafields.meta.country_flag | image_url }}" height="20px" width="auto "/>
+                      {% endif %}
+                      {% if item.product.metafields.meta.country %}
+                      <span>{{ item.product.metafields.meta.country | capitalize }}</span>
+                      {% endif %}
+                    </div>
                     {%- if item.original_price != item.final_price -%}
                       <div class="cart-item__discounted-prices">
                         <span class="visually-hidden">
