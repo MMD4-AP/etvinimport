@@ -172,8 +172,8 @@
           "text"
         ],
         "settings": {
-          "message_image_1": "shopify:\/\/shop_images\/fr.png",
-          "message_1": "Hello! 1",
+          "message_image_1": "shopify:\/\/shop_images\/de.png",
+          "message_1": "Besked 1",
           "message_2": "Hello! 2",
           "message_3": "Hello 3",
           "color_scheme": "accent-1",
