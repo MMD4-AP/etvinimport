@@ -2199,7 +2199,8 @@ input[type='checkbox'] {
   &.page-product, 
   &.page-collection, 
   &.page-article,
-  &.page-page {
+  &.page-page,
+  &.page-search {
     background-color: #6B705C;
   }
   // background-color: rgb(var(--color-background));
