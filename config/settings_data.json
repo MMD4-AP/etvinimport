@@ -146,8 +146,8 @@
           "image": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/ET_Logo_Rewa_2.png",
-              "image_width": 200,
+              "image": "shopify:\/\/shop_images\/logo-white.png",
+              "image_width": 300,
               "alignment": ""
             }
           },
