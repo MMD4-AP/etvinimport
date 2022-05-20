@@ -174,7 +174,9 @@
         "settings": {
           "message_image_1": "shopify:\/\/shop_images\/de.png",
           "message_1": "Besked 1",
+          "message_image_2": "shopify:\/\/shop_images\/pt.png",
           "message_2": "Hello! 2",
+          "message_image_3": "shopify:\/\/shop_images\/fr.png",
           "message_3": "Hello 3",
           "color_scheme": "accent-1",
           "newsletter_enable": true,
