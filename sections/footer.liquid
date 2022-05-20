@@ -15,44 +15,46 @@
 <noscript>{{ 'disclosure.css' | asset_url | stylesheet_tag }}</noscript>
 
 
-<div class="footer__messages">
-  {% if section.settings.message_image_1 %}
+<section class="footer__messages">
+  <div class="page-width">
+    {% if section.settings.message_image_1 %}
+      <div>
+        {% if section.settings.message_image_1 %}
+          <img src="{{ section.settings.message_image_1 | image_url: width: 48 }}" alt="{{ section.settings.message_image_1.alt }}" /> 
+        {% endif %}
+        {% if section.settings.message_image_1 %}
+          <span>
+            {{ section.settings.message_1 }}
+          </span>  
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if section.settings.message_image_2 %}
     <div>
-      {% if section.settings.message_image_1 %}
-        <img src="{{ section.settings.message_image_1 | image_url: width: 48 }}" alt="{{ section.settings.message_image_1.alt }}" /> 
+      {% if section.settings.message_image_2 %}
+        <img src="{{ section.settings.message_image_2 | image_url: width: 48 }}" alt="{{ section.settings.message_image_2.alt }}" /> 
       {% endif %}
-      {% if section.settings.message_image_1 %}
+      {% if section.settings.message_image_2 %}
         <span>
-          {{ section.settings.message_1 }}
-        </span>  
+          {{ section.settings.message_2 }}
+        </span>
       {% endif %}
     </div>
   {% endif %}
-  {% if section.settings.message_image_2 %}
+  {% if section.settings.message_image_3 %}
   <div>
-    {% if section.settings.message_image_2 %}
-      <img src="{{ section.settings.message_image_2 | image_url: width: 48 }}" alt="{{ section.settings.message_image_2.alt }}" /> 
+    {% if section.settings.message_image_3 %}
+      <img src="{{ section.settings.message_image_3 | image_url: width: 48 }}" alt="{{ section.settings.message_image_3.alt }}" /> 
     {% endif %}
-    {% if section.settings.message_image_2 %}
+    {% if section.settings.message_image_3 %}
       <span>
-        {{ section.settings.message_2 }}
+        {{ section.settings.message_3 }}
       </span>
     {% endif %}
   </div>
-{% endif %}
-{% if section.settings.message_image_3 %}
-<div>
-  {% if section.settings.message_image_3 %}
-    <img src="{{ section.settings.message_image_3 | image_url: width: 48 }}" alt="{{ section.settings.message_image_3.alt }}" /> 
   {% endif %}
-  {% if section.settings.message_image_3 %}
-    <span>
-      {{ section.settings.message_3 }}
-    </span>
-  {% endif %}
-</div>
-{% endif %}
-</div>
+  </div>
+</section>
 <footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   {%- if section.blocks.size > 0 or section.settings.newsletter_enable or section.settings.show_social -%}
     <div class="footer__content-top page-width">
