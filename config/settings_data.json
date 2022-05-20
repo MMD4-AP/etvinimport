@@ -172,12 +172,12 @@
           "text"
         ],
         "settings": {
-          "message_image_1": "shopify:\/\/shop_images\/de.png",
-          "message_1": "Besked 1",
-          "message_image_2": "shopify:\/\/shop_images\/pt.png",
-          "message_2": "Hello! 2",
-          "message_image_3": "shopify:\/\/shop_images\/fr.png",
-          "message_3": "Hello 3",
+          "message_image_1": "shopify:\/\/shop_images\/checkmark.png",
+          "message_1": "Sikker fragt",
+          "message_image_2": "shopify:\/\/shop_images\/truck.png",
+          "message_2": "Fri fragt ved køb af 24 flasker",
+          "message_image_3": "shopify:\/\/shop_images\/newsletter.png",
+          "message_3": "Tilmeld dig vores nyhedsbrev for de bedste tilbud",
           "color_scheme": "accent-1",
           "newsletter_enable": true,
           "newsletter_heading": "Tilmeld dig vores nyhedsbrev",
