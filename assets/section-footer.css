@@ -5,7 +5,7 @@
 .footer__messages {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   padding: 60px 0;
   background-color: #B7B7A4;
 }
