@@ -2145,7 +2145,7 @@ input[type=checkbox] {
   position: relative;
   padding: 1rem 0;
 }
-.header-wrapper.page-product {
+.header-wrapper.page-product, .header-wrapper.page-collection, .header-wrapper.page-article, .header-wrapper.page-page {
   background-color: #6B705C;
 }
 
