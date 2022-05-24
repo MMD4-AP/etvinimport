@@ -16,19 +16,11 @@
             "text": "<p>ET VinImport arbejder med en niche i vinbranchen, hvor vi handler med mindre vinbønder rundt om på kloden, hvor kvalitet er altafgørende. <\/p>",
             "text_style": "body"
           }
-        },
-        "button": {
-          "type": "button",
-          "settings": {
-            "button_label": "Se alle vine",
-            "button_link": "shopify:\/\/collections"
-          }
         }
       },
       "block_order": [
         "heading",
-        "text",
-        "button"
+        "text"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/Skaermbillede_2022-05-18_kl._21.48.36.png",
