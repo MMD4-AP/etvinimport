@@ -6,14 +6,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "This is the hero section",
+            "heading": "Vin direkte fra vinbonden",
             "heading_size": "h0"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product or collection.<\/p>",
+            "text": "<p>ET VinImport arbejder med en niche i vinbranchen, hvor vi handler med mindre vinbønder rundt om på kloden, hvor kvalitet er altafgørende. <\/p>",
             "text_style": "body"
           }
         },
