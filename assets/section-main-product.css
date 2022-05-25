@@ -26,6 +26,12 @@
 .product .variant-select {
   display: flex;
   flex-direction: column;
+  margin-bottom: 34px;
+}
+@media screen and (min-width: 750px) {
+  .product .variant-select {
+    margin-bottom: 0;
+  }
 }
 .product .variant-select select {
   appearance: none;
@@ -47,6 +53,9 @@
 }
 .product .card__add input {
   width: 100%;
+}
+.product__description {
+  margin-top: 64px;
 }
 
 .product.grid {
