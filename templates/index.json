@@ -1,5 +1,24 @@
 {
   "sections": {
+    "1653501508acaff683": {
+      "type": "announcement-swiper",
+      "blocks": {
+        "16535015080975ece7-0": {
+          "type": "announcement",
+          "settings": {
+            "announcement_title": "Annonceringstitel",
+            "announcement_text": "Annonceringstekst"
+          }
+        }
+      },
+      "block_order": [
+        "16535015080975ece7-0"
+      ],
+      "settings": {
+        "announcement_title": "Annonceringstitel",
+        "announcement_text": "Annonceringstekst"
+      }
+    },
     "hero": {
       "type": "main-hero",
       "blocks": {
@@ -257,6 +276,7 @@
     }
   },
   "order": [
+    "1653501508acaff683",
     "hero",
     "16522049432acd6223",
     "guide_section",
