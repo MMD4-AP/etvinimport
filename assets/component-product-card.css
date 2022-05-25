@@ -4,7 +4,9 @@
   align-content: center;
   align-items: center;
   text-align: center;
-  max-width: 220px;
+  justify-content: space-between;
+  height: 100%;
+  width: 90%;
   background: linear-gradient(to bottom, #B7B7A4 46%, transparent 0%);
 }
 @media only screen and (min-width: 750px) {
@@ -31,16 +33,6 @@
   text-align: center;
   margin: 0;
 }
-.card__add input[type=submit] {
-  width: 100%;
-  background-color: rgb(var(--color-button));
-  color: rgb(var(--color-button-text));
-  width: 100%;
-  cursor: pointer;
-}
-.card__add input[type=submit]:hover {
-  background-color: #7a7a6c;
-}
 .card__add input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -48,6 +40,8 @@
 }
 .card__content {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .card__media img {
   height: 245px;

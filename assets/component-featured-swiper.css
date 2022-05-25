@@ -4,7 +4,8 @@
 }
 .featured-products .featured-swiper .swiper-slide {
   text-align: center;
-  font-size: 18px;
+  font-size: 1.8rem;
+  height: auto;
   /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;

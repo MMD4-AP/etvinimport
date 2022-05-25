@@ -5,7 +5,10 @@
     align-content: center;
     align-items: center;
     text-align: center;
-    max-width: 220px;
+    justify-content: space-between;
+    height: 100%;
+    width: 90%;
+    // max-width: 220px;
     background: linear-gradient(to bottom, #B7B7A4 46%, transparent 0%);
 
     @media #{$screen-tablet} {
@@ -34,16 +37,16 @@
             text-align: center;
             margin: 0;
         }
-        input[type=submit] {
-            width: 100%;
-            background-color: rgb(var(--color-button));
-            color: rgb(var(--color-button-text));
-            width: 100%;
-            cursor: pointer;
-            &:hover {
-                background-color: #7a7a6c;
-            }
-        }
+        // input[type=submit] {
+        //     width: 100%;
+        //     background-color: rgb(var(--color-button));
+        //     color: rgb(var(--color-button-text));
+        //     width: 100%;
+        //     cursor: pointer;
+        //     &:hover {
+        //         background-color: #7a7a6c;
+        //     }
+        // }
         input[type=number]::-webkit-inner-spin-button {
             -webkit-appearance: none;
             -moz-appearance: none;
@@ -52,6 +55,8 @@
     }
     &__content {
         width: 100%;
+        display: flex;
+        flex-direction: column;
     }
     &__media {
         img {
