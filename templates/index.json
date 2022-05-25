@@ -18,11 +18,20 @@
             "announcement_icon": "shopify:\/\/shop_images\/checkmark.png",
             "announcement_text": "Sikker fragt"
           }
+        },
+        "e8da2a00-a214-4693-9266-42c1c5d1d5b3": {
+          "type": "announcement",
+          "settings": {
+            "announcement_title": "Annonceringstitel",
+            "announcement_icon": "shopify:\/\/shop_images\/newsletter.png",
+            "announcement_text": "Kundeklub med fordele"
+          }
         }
       },
       "block_order": [
         "16535015080975ece7-0",
-        "31e961e2-3c68-433f-8599-929d75b8b586"
+        "31e961e2-3c68-433f-8599-929d75b8b586",
+        "e8da2a00-a214-4693-9266-42c1c5d1d5b3"
       ],
       "settings": {
         "announcement_title": "Annonceringstitel",
