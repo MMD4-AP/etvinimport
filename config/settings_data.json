@@ -107,30 +107,6 @@
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
-        "blocks": {
-          "announcement-bar-0": {
-            "type": "announcement",
-            "disabled": true,
-            "settings": {
-              "text": "Welcome to our store",
-              "color_scheme": "accent-1",
-              "link": ""
-            }
-          },
-          "12bf2cb9-875f-47da-890d-0610c11b0284": {
-            "type": "announcement",
-            "disabled": true,
-            "settings": {
-              "text": "Welcome to our store",
-              "color_scheme": "accent-1",
-              "link": ""
-            }
-          }
-        },
-        "block_order": [
-          "announcement-bar-0",
-          "12bf2cb9-875f-47da-890d-0610c11b0284"
-        ],
         "settings": {
         }
       },
