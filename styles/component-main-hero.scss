@@ -15,7 +15,8 @@
         object-fit: cover;
     }
     &.page-index {
-        height: 100vh;
+        // height: 100vh;
+        height: calc(100vh - 72px);
 
         img {
             height: 100%;
