@@ -7,7 +7,8 @@
           "type": "announcement",
           "settings": {
             "announcement_title": "Annonceringstitel",
-            "announcement_text": "Annonceringstekst"
+            "announcement_icon": "shopify:\/\/shop_images\/truck.png",
+            "announcement_text": "Fri levering ved køb af 24 flasker"
           }
         },
         "31e961e2-3c68-433f-8599-929d75b8b586": {
