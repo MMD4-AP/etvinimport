@@ -1,0 +1,80 @@
+{{ 'component-announcement-swiper.css' | asset_url | stylesheet_tag }}
+
+<div>
+ 
+</div>
+
+
+{% schema %}
+{
+    "name":"Annonceringsswiper",
+    "max_blocks": 3,
+    "settings": [
+        {
+            "type":"header",
+            "content":"Titel på annoncering"
+        },
+        {
+            "type":"text",
+            "id":"announcement_title",
+            "default":"Annonceringstitel",
+            "label":"Annonceringstitel"
+        },
+        {
+            "type":"header",
+            "content":"Annonceringsikon"
+        },
+        {
+            "type": "image_picker",
+            "id": "announcement_icon",
+            "label": "Annonceringsikon"
+        },
+        {
+            "type":"header",
+            "content":"Annonceringstekst"
+        },
+        {
+            "type":"paragraph",
+            "content":"Skriv en passende annonceringstekst."
+        }
+    ],
+    "blocks":[
+        {
+            "type":"question",
+            "name":"spørgsmål",
+            "settings":[
+                {
+                    "type":"header",
+                    "content":"Spørgsmål"
+                },
+                {
+                    "type":"text",
+                    "id":"question_title",
+                    "default":"Skriv spørgsmålet",
+                    "label":"Spørgsmål"
+                },
+                {
+                    "type":"paragraph",
+                    "content":"Skriv svarene på spørgsmålet nedenfor. Svar skal skrives for stort forbogstav og i anførselsteng ('') efterfulgt af et komma. Eks: 'Hvid', 'Mousserende', 'Portvin'"
+                },
+                {
+                    "type":"textarea",
+                    "id":"answers",
+                    "default":"'Hvid', 'Mousserende', 'Portvin'",
+                    "label":"Svar"
+                }
+            ]
+        }
+    ],
+    "presets": [
+    {
+        "name": "Annonceringsswiper",
+        "blocks": [
+        {
+            "type": "question"
+        }
+        ]
+    }
+    ]
+ }
+{% endschema %}
