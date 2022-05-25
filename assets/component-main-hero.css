@@ -35,7 +35,10 @@
 }
 .hero > div h1 {
   color: #fff;
+  text-align: center;
 }
 .hero > div p {
   color: #fff;
+  max-width: 60ch;
+  text-align: center;
 }
