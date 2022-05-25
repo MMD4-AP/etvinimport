@@ -9,13 +9,23 @@
             "announcement_title": "Annonceringstitel",
             "announcement_text": "Annonceringstekst"
           }
+        },
+        "31e961e2-3c68-433f-8599-929d75b8b586": {
+          "type": "announcement",
+          "settings": {
+            "announcement_title": "Sikker fragt",
+            "announcement_icon": "shopify:\/\/shop_images\/checkmark.png",
+            "announcement_text": "Sikker fragt"
+          }
         }
       },
       "block_order": [
-        "16535015080975ece7-0"
+        "16535015080975ece7-0",
+        "31e961e2-3c68-433f-8599-929d75b8b586"
       ],
       "settings": {
         "announcement_title": "Annonceringstitel",
+        "announcement_icon": "shopify:\/\/shop_images\/truck.png",
         "announcement_text": "Annonceringstekst"
       }
     },
