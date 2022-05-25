@@ -26,9 +26,7 @@
     {% if product.metafields.meta.region %}
     {% for region in product.metafields.meta.region %}
     <li>
-        <a href="/collections/{{ region | downcase }}">
-        {{ region }}
-        </a>
+        <a href="/collections/{{ region | downcase }}">{{ region }}</a>
     </li>
     {% endfor %}
 {% endif %}
