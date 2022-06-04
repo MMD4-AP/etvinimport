@@ -7,7 +7,7 @@
     text-align: center;
     justify-content: space-between;
     height: 100%;
-    width: 90%;
+    // width: 90%;
     // max-width: 220px;
     background: linear-gradient(to bottom, #B7B7A4 46%, transparent 0%);
 
@@ -52,7 +52,7 @@
             -moz-appearance: none;
             appearance: none; 
         }
-        input[type=submit]::-webkit-inner-spin-button {
+        button {
             width: 100%;
         }
     }
