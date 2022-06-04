@@ -38,6 +38,9 @@
   -moz-appearance: none;
   appearance: none;
 }
+.card__add input[type=submit]::-webkit-inner-spin-button {
+  width: 100%;
+}
 .card__content {
   width: 100%;
   display: flex;

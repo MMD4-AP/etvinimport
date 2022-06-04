@@ -52,6 +52,9 @@
             -moz-appearance: none;
             appearance: none; 
         }
+        input[type=submit]::-webkit-inner-spin-button {
+            width: 100%;
+        }
     }
     &__content {
         width: 100%;
