@@ -1,0 +1,34 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "165433831139077657": {
+      "type": "main-guide",
+      "blocks": {
+        "1654338311b830ed68-0": {
+          "type": "question",
+          "settings": {
+            "question_title": "Skriv spørgsmålet",
+            "answers": "'Hvid', 'Mousserende', 'Portvin'"
+          }
+        }
+      },
+      "block_order": [
+        "1654338311b830ed68-0"
+      ],
+      "settings": {
+        "guide_title": "Vinguide",
+        "guide_description": "Dette er en vinguide"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "165433831139077657"
+  ]
+}
