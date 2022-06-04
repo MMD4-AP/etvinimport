@@ -1,4 +1,11 @@
 @import 'variables';
+a {
+    text-decoration: none;
+    color: inherit;
+    &.card {
+
+    }
+}
 .card {
     display: flex;
     flex-direction: column;
@@ -36,6 +43,8 @@
             width: 30px;
             text-align: center;
             margin: 0;
+            height: 100%;
+            box-sizing: border-box;
         }
         // input[type=submit] {
         //     width: 100%;
@@ -73,7 +82,7 @@
             }
             @media #{$screen-tablet} {
                 height: 415px;
-                margin: 30px auto;
+                margin: 30px auto 0 auto;
             }
         }
     }
