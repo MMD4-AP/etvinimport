@@ -132,6 +132,9 @@
                     this.tags = data.tags
                     this.filters = data.filters
                 })
+            },            
+            addToUserOptions(option) {
+                this.userOptions.push(option);
             },
             nextQuestion() {
                 if(this.currentQuestion < this.questions.length - 1) {
@@ -140,9 +143,6 @@
                     this.quizCompleted = true
                     this.filteredProducts()
                 }
-            },
-            addToUserOptions(option) {
-                this.userOptions.push(option);
             },
             filteredProducts() {
                 const searchFilters = this.filters;
