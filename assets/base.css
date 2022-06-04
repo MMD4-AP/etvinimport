@@ -2145,7 +2145,7 @@ input[type=checkbox] {
   position: relative;
   padding: 1rem 0;
 }
-.header-wrapper.page-product, .header-wrapper.page-cart, .header-wrapper.page-list-collections, .header-wrapper.page-article, .header-wrapper.page-page, .header-wrapper.page-search, .header-wrapper.page-404 {
+.header-wrapper.page-product, .header-wrapper.page-cart, .header-wrapper.page-list-collections, .header-wrapper.page-article, .header-wrapper.page-page, .header-wrapper.page-search, .header-wrapper.page-blog, .header-wrapper.page-404, .header-wrapper.page- {
   background-color: #6B705C;
 }
 
