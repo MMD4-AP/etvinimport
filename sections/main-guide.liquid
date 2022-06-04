@@ -110,8 +110,7 @@
                             question: "{{ block.settings.question_title }}",
                             options: [
                                 {{ block.settings.answers }}
-                            ], 
-                            selected: null,
+                            ],
                             questionNumber: {{ forloop.index }}
                         }{% endcase %}{% unless forloop.last %},{% endunless %}{% endfor %}
                 ],
