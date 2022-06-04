@@ -44,8 +44,7 @@
                                                 <a :href="product.url" class="full-unstyled-link" v-text="product.title"></a>
                                             </h3>
                                             <div class="card-information">
-                                                <span class="price-item price-item--regular" v-text="product.price">
-                                                    </span>
+                                                <span class="price-item price-item--regular" v-text="product.price"></span>
                                                 <div class="card__origin">
                                                 {% render 'country', product: card_product %}
                                                 {% render 'grape-sort', product: card_product %}
@@ -54,7 +53,7 @@
                                             <form class="card__add" method="post" action="/cart/add" onclick="addToCart(event)">
                                                 <input type="hidden" name="id" :value="product.variants[0]" />
                                                 <input min="1" type="number" id="quantity" name="quantity" :value="selectedQuantity"/>
-                                                <input type="submit" value="Læg i kurv" class="btn" />
+                                                <button type="submit" value="Læg i kurv" class="button">Læg i kurv</button>
                                             </form>
                                             </div>
                                         </div>
