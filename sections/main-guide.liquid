@@ -9,7 +9,7 @@
                 Spørgsmål <span v-text="getCurrentQuestion.questionNumber"></span> / <span v-text="questions.length"></span>
             </p>
             <Transition name="fade">
-                <div v-if="!quizCompleted" class="question">
+                <div v-if="!guideCompleted" class="question">
                     <h3 v-text="`${getCurrentQuestion.questionNumber}. ${getCurrentQuestion.question}`" class="question__heading"></h3>
                     <div class="options">
                         <label v-for="(option, index) in getCurrentQuestion.options" :key="index">
@@ -25,13 +25,13 @@
                     </div>
                 </div>
             </Transition>
-                <div v-if="quizCompleted">
+                <div v-if="guideCompleted">
                     <div v-if="userOptions" class="guide__options">
                         <h4>Dine valg:</h4>
                         <span v-for="(option, index) in userOptions" :key="index" v-text="option"></span>
                     </div>
                     <h4>Anbefalinger:</h4>
-                    <div v-if="quizCompleted && results">
+                    <div v-if="guideCompleted && results">
                         <ul class="grid product-grid grid--2-col-tablet-down grid--4-col-desktop">
                             <li v-for="(product, index) in results" :key="index" class="grid__item">
                                 <a :href="product.url">
@@ -72,11 +72,11 @@
                             </li>
                         </ul>
                     </div>
-                    <div v-if="quizCompleted && !results">
+                    <div v-if="guideCompleted && !results">
                         Vi fandt desværre ingen anbefalinger. Prøv guiden igen.
                     </div>
                 </div>
-                <div v-if="quizCompleted" class="page-width guide__reset">
+                <div v-if="guideCompleted" class="page-width guide__reset">
                     <a role="link" class="link animate-arrow" @click="startOver();">
                         Start forfra 
                         <span class="icon-wrap">
@@ -87,6 +87,12 @@
                     </a>
                 </div>
             </div>
+    </template>
+    <template v-else-if="!allProducts">
+        Indlæser guide...
+    </template>
+    <template v-else>
+        Kunne ikke hente produkter til guide. Prøv at genindlæse siden igen.
     </template>
 </div>
 <script src="https://unpkg.com/vue@3"></script>
@@ -114,7 +120,7 @@
                             questionNumber: {{ forloop.index }}
                         }{% endcase %}{% unless forloop.last %},{% endunless %}{% endfor %}
                 ],
-                quizCompleted: false,
+                guideCompleted: false,
                 currentQuestion: 0,
                 userOptions: [],
                 results: [],
@@ -140,7 +146,7 @@
                 if(this.currentQuestion < this.questions.length - 1) {
                     this.currentQuestion++
                 } else {
-                    this.quizCompleted = true
+                    this.guideCompleted = true
                     this.filteredProducts()
                 }
             },
@@ -161,7 +167,7 @@
                 this.currentQuestion = 0
                 this.userOptions = []
                 this.results = null
-                this.quizCompleted = false
+                this.guideCompleted = false
             },
             moveUp() {
                 window.scrollTo(0,0);
