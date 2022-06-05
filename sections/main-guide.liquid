@@ -147,12 +147,12 @@
             filteredProducts() {
                 const searchFilters = this.filters;
                 const searchParams = this.userOptions;
-                
+
                 filterdResults = this.allProducts.filter((item) =>
                     searchFilters.some((a) => searchParams.includes(item[a]))
                 );
-                const recommendations = filterdResults.slice(0,4);
-                this.results = recommendations;
+                this.results = filterdResults.slice(0,4);
+                return this.results
             },
             addToCart(event) {
                 event.preventDefault()
