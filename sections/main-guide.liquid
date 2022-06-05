@@ -148,10 +148,10 @@
                 const searchFilters = this.filters;
                 const searchParams = this.userOptions;
                 
-                this.results = this.allProducts.filter((item) =>
+                filterdResults = this.allProducts.filter((item) =>
                     searchFilters.some((a) => searchParams.includes(item[a]))
                 );
-                const recommendations = this.results.slice(0,4);
+                const recommendations = filterdResults.slice(0,4);
                 this.results = recommendations;
             },
             addToCart(event) {
