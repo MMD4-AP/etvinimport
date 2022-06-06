@@ -300,22 +300,22 @@
         "1654538378a059f6a5-0": {
           "type": "heading",
           "settings": {
-            "cta_heading": "Image with text",
+            "cta_heading": "Få de bedste vine til årstiden",
             "cta_heading_size": "h1"
           }
         },
         "1654538378a059f6a5-1": {
           "type": "text",
           "settings": {
-            "cta_text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "cta_text": "<p>- Medlemmerne i vores vinklub får de bedste vine leveret hvert kvartal<\/p>",
             "cta_text_style": "body"
           }
         },
         "1654538378a059f6a5-2": {
           "type": "button",
           "settings": {
-            "cta_button_label": "Klik her",
-            "cta_button_link": "shopify:\/\/collections"
+            "cta_button_label": "Bliv en del af vinklubben",
+            "cta_button_link": "shopify:\/\/blogs\/news\/et-vinklub"
           }
         }
       },
@@ -325,7 +325,7 @@
         "1654538378a059f6a5-2"
       ],
       "settings": {
-        "cta_image": "shopify:\/\/shop_images\/sven-wilhelm-2cRXSWyMHA8-unsplash.jpg"
+        "cta_image": "shopify:\/\/shop_images\/Vinas_bb2b0485-96f2-4593-b4be-dbb6a324cf30.jpg"
       }
     }
   },
