@@ -2,6 +2,22 @@
   border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
   background-color: #6B705C;
 }
+.footer__blocks-wrapper div.newsletter {
+  max-width: 100%;
+}
+@media screen and (min-width: 750px) {
+  .footer__blocks-wrapper div:nth-of-type(4) {
+    max-width: 15%;
+  }
+  .footer__blocks-wrapper div:nth-of-type(5) {
+    max-width: 15%;
+  }
+}
+.footer__newsletter.newsletter-form {
+  display: block;
+  max-width: 100%;
+  padding: 0.5rem;
+}
 .footer__messages {
   display: flex;
   flex-direction: column;
