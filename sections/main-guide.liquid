@@ -91,11 +91,22 @@
                 </div>
             </div>
     </template>
-    <template v-else-if="!allProducts">
-        Indlæser guide...
+    <template v-else-if="notFound">
+        <div class="guide page-width">
+            <p class="text-center">
+                For at finde god vin skal der findes nogle gode produkter. Vi kunne desværre ikke hente nogle produkter til vinguide.
+            </p>
+            <p class="text-center">
+                Prøv at indlæse siden igen.
+            </p>
+        </div>
     </template>
     <template v-else>
-        Kunne ikke hente produkter til guide. Prøv at genindlæse siden igen.
+        <div class="guide page-width">
+            <p class="text-center">
+                Gode vin tager tid, det samme gør denne vinguide. Vent venligst mens vinguiden indlæses 🍷 
+            </p>
+        </div>
     </template>
 </div>
 <script src="https://unpkg.com/vue@3"></script>
@@ -111,9 +122,6 @@
                 fetchURL: window.Shopify.routes.root + "collections/all?view=json",
                 tags: [],
                 filters: [],
-                type: "",
-                selectedTaste: null,
-                searchQuery: null,
                 questions:[{% for block in section.blocks %}{% case block.type %}{% when 'question' %}
                         {
                             question: "{{ block.settings.question_title }}",
@@ -127,20 +135,25 @@
                 currentQuestion: 0,
                 userOptions: [],
                 results: [],
-                selectedQuantity: 1
+                selectedQuantity: 1,
+                notFound: false
             }
         },
         methods: {
             async getProducts() {
-                await fetch(this.fetchURL, {
-                    mode: 'no-cors'
-                })
-                .then(res => res.json())
-                .then(data => {
-                    this.allProducts = data.products
-                    this.tags = data.tags
-                    this.filters = data.filters
-                })
+                try {
+                    await fetch(this.fetchURL, {
+                        mode: 'no-cors'
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        this.allProducts = data.products
+                        this.tags = data.tags
+                        this.filters = data.filters
+                    })
+                } catch (e) {
+                    return this.notFound = true
+                }
             },            
             addToUserOptions(option) {
                 this.userOptions.push(option);
