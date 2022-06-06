@@ -2646,16 +2646,22 @@ details[open] > .header__menu-item .icon-caret {
 
 .header__submenu {
   transition: opacity var(--duration-default) ease,
-    transform var(--duration-default) ease;
+  transform var(--duration-default) ease;
 }
 
-.header__submenu.list-menu--disclosure {
-  border-radius: var(--popup-corner-radius);
-  border-color: #6B705C, var(--popup-border-opacity);
-}
+// .header__submenu.list-menu--disclosure {
+//   border-radius: var(--popup-corner-radius);
+//   border-color: #fff;
+// }
 
 .header__submenu.list-menu {
-  padding: 2.4rem 0;
+  display: flex;
+  width: max-content;
+  padding: 15px 0;
+
+  ul {
+    flex-direction: column;
+  }
 }
 
 .header__submenu .header__submenu {
