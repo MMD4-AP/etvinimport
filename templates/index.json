@@ -314,8 +314,8 @@
         "1654538378a059f6a5-2": {
           "type": "button",
           "settings": {
-            "cta_button_label": "",
-            "cta_button_link": ""
+            "cta_button_label": "Klik her",
+            "cta_button_link": "shopify:\/\/collections"
           }
         }
       },
