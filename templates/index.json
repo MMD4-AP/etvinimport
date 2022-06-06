@@ -293,6 +293,40 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "1654538378b158ed5e": {
+      "type": "cta-section",
+      "blocks": {
+        "1654538378a059f6a5-0": {
+          "type": "heading",
+          "settings": {
+            "cta_heading": "Image with text",
+            "cta_heading_size": "h1"
+          }
+        },
+        "1654538378a059f6a5-1": {
+          "type": "text",
+          "settings": {
+            "cta_text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "cta_text_style": "body"
+          }
+        },
+        "1654538378a059f6a5-2": {
+          "type": "button",
+          "settings": {
+            "cta_button_label": "",
+            "cta_button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1654538378a059f6a5-0",
+        "1654538378a059f6a5-1",
+        "1654538378a059f6a5-2"
+      ],
+      "settings": {
+        "cta_image": "shopify:\/\/shop_images\/sven-wilhelm-2cRXSWyMHA8-unsplash.jpg"
+      }
     }
   },
   "order": [
@@ -303,6 +337,7 @@
     "image-with-text",
     "featured_collection",
     "featured-collection-1",
-    "16516806691317e73b"
+    "16516806691317e73b",
+    "1654538378b158ed5e"
   ]
 }
