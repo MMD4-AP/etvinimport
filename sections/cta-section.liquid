@@ -1,5 +1,5 @@
 {{ 'component-main-hero.css' | asset_url | stylesheet_tag }}
-<section class="hero page-{{ template.name }}">
+<section class="{{ template.name }}">
   {%- if section.settings.cta_image != blank -%}
   <img
     srcset="{%- if section.settings.cta_image.width >= 165 -%}{{ section.settings.cta_image | image_url: width: 165 }} 165w,{%- endif -%}
