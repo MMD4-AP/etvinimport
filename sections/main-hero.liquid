@@ -41,6 +41,14 @@
       {%- endcase -%}
   {%- endfor -%}
   </div>
+  <div class="scroll-to" style="display: {{ section.settings.display_scroll_to }};">
+    <p>Gå på opdagelse i vinrankerne</p>
+    <span>
+      <svg width="27" height="15" viewBox="0 0 27 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M25.0583 0.316935L13.5005 11.5834L1.94259 0.316935C1.73609 0.115233 1.45888 0.00231233 1.17022 0.00231233C0.881553 0.00231233 0.604342 0.115233 0.397841 0.316935C0.297854 0.414902 0.218419 0.531835 0.164191 0.660887C0.109963 0.789939 0.0820312 0.928515 0.0820312 1.0685C0.0820312 1.20848 0.109963 1.34705 0.164191 1.47611C0.218419 1.60516 0.297854 1.72209 0.397841 1.82006L12.6934 13.8081C12.9093 14.0185 13.1989 14.1363 13.5005 14.1363C13.802 14.1363 14.0916 14.0185 14.3075 13.8081L26.6031 1.82237C26.7038 1.72433 26.7838 1.60711 26.8385 1.47763C26.8931 1.34815 26.9213 1.20904 26.9213 1.0685C26.9213 0.927958 26.8931 0.788842 26.8385 0.659362C26.7838 0.529882 26.7038 0.412663 26.6031 0.314622C26.3966 0.11292 26.1194 0 25.8307 0C25.5421 0 25.2648 0.11292 25.0583 0.314622V0.316935Z" fill="white"/>
+      </svg>        
+    </span>
+  </div>
 </section>
 
 {% schema %}
@@ -55,193 +63,19 @@
     },
     {
       "type": "select",
-      "id": "height",
+      "id": "display_scroll_to",
       "options": [
         {
-          "value": "adapt",
-          "label": "t:sections.image-with-text.settings.height.options__1.label"
+          "value": "none",
+          "label": "Skjul"
         },
         {
-          "value": "small",
-          "label": "t:sections.image-with-text.settings.height.options__2.label"
-        },
-        {
-          "value": "large",
-          "label": "t:sections.image-with-text.settings.height.options__3.label"
+          "value": "block",
+          "label": "Vis"
         }
       ],
-      "default": "adapt",
-      "label": "t:sections.image-with-text.settings.height.label"
-    },
-    {
-      "type": "select",
-      "id": "desktop_image_width",
-      "options": [
-        {
-          "value": "small",
-          "label": "t:sections.image-with-text.settings.desktop_image_width.options__1.label"
-        },
-        {
-          "value": "medium",
-          "label": "t:sections.image-with-text.settings.desktop_image_width.options__2.label"
-        },
-        {
-          "value": "large",
-          "label": "t:sections.image-with-text.settings.desktop_image_width.options__3.label"
-        }
-      ],
-      "default": "medium",
-      "label": "t:sections.image-with-text.settings.desktop_image_width.label",
-      "info": "t:sections.image-with-text.settings.desktop_image_width.info"
-    },
-    {
-      "type": "select",
-      "id": "layout",
-      "options": [
-        {
-          "value": "image_first",
-          "label": "t:sections.image-with-text.settings.layout.options__1.label"
-        },
-        {
-          "value": "text_first",
-          "label": "t:sections.image-with-text.settings.layout.options__2.label"
-        }
-      ],
-      "default": "image_first",
-      "label": "t:sections.image-with-text.settings.layout.label",
-      "info": "t:sections.image-with-text.settings.layout.info"
-    },
-    {
-      "type": "select",
-      "id": "desktop_content_position",
-      "options": [
-        {
-          "value": "top",
-          "label": "t:sections.image-with-text.settings.desktop_content_position.options__1.label"
-        },
-        {
-          "value": "middle",
-          "label": "t:sections.image-with-text.settings.desktop_content_position.options__2.label"
-        },
-        {
-          "value": "bottom",
-          "label": "t:sections.image-with-text.settings.desktop_content_position.options__3.label"
-        }
-      ],
-      "default": "top",
-      "label": "t:sections.image-with-text.settings.desktop_content_position.label"
-    },
-    {
-      "type": "select",
-      "id": "desktop_content_alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "t:sections.image-with-text.settings.desktop_content_alignment.options__1.label"
-        },
-        {
-          "value": "center",
-          "label": "t:sections.image-with-text.settings.desktop_content_alignment.options__2.label"
-        },
-        {
-          "value": "right",
-          "label": "t:sections.image-with-text.settings.desktop_content_alignment.options__3.label"
-        }
-      ],
-      "default": "left",
-      "label": "t:sections.image-with-text.settings.desktop_content_alignment.label"
-    },
-    {
-      "type": "select",
-      "id": "content_layout",
-      "options": [
-        {
-          "value": "no-overlap",
-          "label": "t:sections.image-with-text.settings.content_layout.options__1.label"
-        },
-        {
-          "value": "overlap",
-          "label": "t:sections.image-with-text.settings.content_layout.options__2.label"
-        }
-      ],
-      "default": "no-overlap",
-      "label": "t:sections.image-with-text.settings.content_layout.label"
-    },
-    {
-      "type": "select",
-      "id": "color_scheme",
-      "options": [
-        {
-          "value": "accent-1",
-          "label": "t:sections.image-with-text.settings.color_scheme.options__4.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.image-with-text.settings.color_scheme.options__5.label"
-        },
-        {
-          "value": "background-1",
-          "label": "t:sections.image-with-text.settings.color_scheme.options__1.label"
-        },
-        {
-          "value": "background-2",
-          "label": "t:sections.image-with-text.settings.color_scheme.options__2.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.image-with-text.settings.color_scheme.options__3.label"
-        }
-      ],
-      "default": "background-1",
-      "label": "t:sections.image-with-text.settings.color_scheme.label"
-    },
-    {
-      "type": "header",
-      "content": "Mobile layout"
-    },
-    {
-      "type": "select",
-      "id": "mobile_content_alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "t:sections.image-with-text.settings.mobile_content_alignment.options__1.label"
-        },
-        {
-          "value": "center",
-          "label": "t:sections.image-with-text.settings.mobile_content_alignment.options__2.label"
-        },
-        {
-          "value": "right",
-          "label": "t:sections.image-with-text.settings.mobile_content_alignment.options__3.label"
-        }
-      ],
-      "default": "left",
-      "label": "t:sections.image-with-text.settings.mobile_content_alignment.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
+      "default": "none",
+      "label": "Vis eller skjul scroll til-knap"
     }
   ],
   "blocks": [

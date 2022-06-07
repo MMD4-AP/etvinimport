@@ -43,3 +43,8 @@
   max-width: 60ch;
   text-align: center;
 }
+.hero .scroll-to {
+  height: fit-content;
+  position: relative;
+  bottom: 18rem;
+}
