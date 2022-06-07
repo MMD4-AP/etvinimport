@@ -1,13 +1,20 @@
 .product {
   margin: 0;
 
+  .price-item {
+    font-family: var(--font-heading-family);
+    font-size: 2.4rem;
+
+  }
   &__options {
     display: flex;
     flex-direction: column;
     text-align: center;
 
   }
-  
+  &__title {
+    color: #000000;
+  }
   
   &__media-wrapper {
     padding-left: 0;
@@ -60,8 +67,22 @@
   &__description {
     margin-top: 64px;
   }
-}
 
+}
+section {
+  .product__info {
+    h3 {
+      color: #fff;
+      background-color: #6B705C;
+      padding: 22px 0;
+      text-align: center;
+    }
+    .product__specs {
+
+    }
+
+  }
+}
 .product.grid {
   gap: 0;
 }
@@ -79,7 +100,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+  padding-bottom: 50px;
+
 }
 
 @media screen and (min-width: 750px) {
