@@ -1,5 +1,18 @@
-.contact_text {
-  
+.contact {
+
+  &-location {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    h2 {
+      margin-top: 0;
+    }
+  }
+  &-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 }
 #ContactForm {
   input, textarea {
