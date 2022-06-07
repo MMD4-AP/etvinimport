@@ -63,16 +63,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/Skaermbillede_2022-05-18_kl._21.48.36.png",
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "center",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-1",
-        "mobile_content_alignment": "center",
-        "padding_top": 0,
-        "padding_bottom": 0
+        "display_scroll_to": "block"
       }
     },
     "16522049432acd6223": {
