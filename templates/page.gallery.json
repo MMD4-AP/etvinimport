@@ -31,6 +31,7 @@
         "1654587648f56d81b2-2"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/madguide.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
