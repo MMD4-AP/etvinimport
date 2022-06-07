@@ -56,32 +56,43 @@
     "16546035500ca0218d": {
       "type": "rich-text",
       "blocks": {
-        "16546035507d8820bb-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
         "16546035507d8820bb-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "text": "<p>De bedste vinhilsner fra ET – Vinimport<\/p>"
           }
         },
-        "16546035507d8820bb-2": {
-          "type": "button",
+        "16546035507d8820bb-0": {
+          "type": "heading",
           "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false
+            "heading": "Torben & Eli",
+            "heading_size": "h1"
           }
         }
       },
       "block_order": [
-        "16546035507d8820bb-0",
         "16546035507d8820bb-1",
-        "16546035507d8820bb-2"
+        "16546035507d8820bb-0"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": false,
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    },
+    "16546043322db804da": {
+      "type": "rich-text",
+      "blocks": {
+        "1654604332562b9bfc-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Tilmelding:<\/strong><\/p><p>Eli Sandlykke:<\/p><p>eli@etvinimport.dk eller på 3120 5460<\/p><p>Torben Friis Nielsen:<\/p><p>torben@etvinimport.dk eller på 2193 2244<\/p><p><\/p><p><em><strong>OBS:<\/strong><\/em><em> Opsigelse er 1 uge før leverings måned.<\/em><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1654604332562b9bfc-1"
       ],
       "settings": {
         "color_scheme": "background-1",
@@ -94,6 +105,7 @@
   "order": [
     "165458764869338383",
     "165460350729abf9f3",
-    "16546035500ca0218d"
+    "16546035500ca0218d",
+    "16546043322db804da"
   ]
 }
