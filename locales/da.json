@@ -420,6 +420,9 @@
     "filters": {
       "vendor": {
         "label": "Vingård"
+      },
+      "product_type": {
+        "label": "Vintype"
       }
     }
   }
