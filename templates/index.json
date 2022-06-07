@@ -303,7 +303,7 @@
           "type": "button",
           "settings": {
             "cta_button_label": "Bliv en del af vinklubben",
-            "cta_button_link": "shopify:\/\/blogs\/news\/et-vinklub"
+            "cta_button_link": "shopify:\/\/pages\/vinklub"
           }
         }
       },
