@@ -94,7 +94,9 @@
         "1654538378a059f6a5-2"
       ],
       "settings": {
-        "cta_image": "shopify:\/\/shop_images\/Vinas_bb2b0485-96f2-4593-b4be-dbb6a324cf30.jpg"
+        "cta_image": "shopify:\/\/shop_images\/Vinas_bb2b0485-96f2-4593-b4be-dbb6a324cf30.jpg",
+        "cta_padding_top": 0,
+        "cta_padding_bottom": 0
       }
     },
     "guide_section": {
@@ -193,7 +195,9 @@
         "1654622100aa22be64-2"
       ],
       "settings": {
-        "cta_image": "shopify:\/\/shop_images\/vinguide-cta.jpg"
+        "cta_image": "shopify:\/\/shop_images\/vinguide-cta.jpg",
+        "cta_padding_top": 64,
+        "cta_padding_bottom": 0
       }
     }
   },
