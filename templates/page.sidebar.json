@@ -32,7 +32,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/vinklubhero.jpg",
-        "display_scroll_to": "flex"
+        "display_scroll_to": "none"
       }
     },
     "165460350729abf9f3": {
