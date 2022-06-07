@@ -23,9 +23,9 @@
     {%- for block in section.blocks -%}
       {% case block.type %}
         {%- when 'heading' -%}
-          <h3 class="image-with-text__heading {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
+          <h2>
             {{ block.settings.cta_heading | escape }}
-          </h3>
+          </h2>
         {%- when 'caption' -%}
           <p class="">{{ block.settings.cta_caption | escape }}</p>
         {%- when 'text' -%}
