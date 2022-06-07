@@ -33,9 +33,9 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/vinaften_502f539f-2521-4a3b-8c4e-c98aa6e62337.jpg",
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
+            "title": "Vinaften",
+            "text": "",
+            "link_label": "Deltag i vinaften",
             "link": ""
           }
         },
@@ -43,9 +43,9 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/dameaften_d3d97151-a9f1-4b0e-b2d2-cec26fcee6d8.jpg",
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
+            "title": "Dameaften",
+            "text": "",
+            "link_label": "Kom til dameaften",
             "link": ""
           }
         },
@@ -53,9 +53,9 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/vinogost.jpg",
-            "title": "Column",
+            "title": "Vin & ost",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
+            "link_label": "Kom til vin og ost",
             "link": ""
           }
         }
