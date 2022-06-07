@@ -63,7 +63,7 @@
     "skip_to_text": "Gå til indhold",
     "close": "Luk",
     "unit_price_separator": "pr.",
-    "vendor": "Forhandler:",
+    "vendor": "Vingård:",
     "error": "Fejl",
     "refresh_page": "Hele siden bliver genindlæst, når du vælger et afsnit.",
     "link_messages": {
@@ -121,7 +121,7 @@
       "share": "Del dette produkt",
       "sold_out": "Udsolgt",
       "unavailable": "Ikke tilgængelig",
-      "vendor": "Forhandler",
+      "vendor": "Vingård",
       "video_exit_message": "{{ title }} åbner video i fuld skærm i samme vindue.",
       "xr_button": "Se den i dit område",
       "xr_button_label": "Se den i dine omgivelser – indlæser vare i et augmented reality-vindue",

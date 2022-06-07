@@ -1,7 +1,7 @@
 @charset "UTF-8";
 .breadcrumbs {
   font-size: 0.85em;
-  margin: 0 0 2em;
+  margin: 3rem 0 2em 0;
 }
 
 .breadcrumbs ol {
