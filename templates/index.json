@@ -63,6 +63,21 @@
         "display_scroll_to": "flex"
       }
     },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "ET Vinimport anbefaler",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "button_label": "",
+        "button_link": "",
+        "collection": "alsace",
+        "products_to_show": 12,
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": false
+      }
+    },
     "1654538378b158ed5e": {
       "type": "cta-section",
       "blocks": {
@@ -95,58 +110,8 @@
       ],
       "settings": {
         "cta_image": "shopify:\/\/shop_images\/Vinas_bb2b0485-96f2-4593-b4be-dbb6a324cf30.jpg",
-        "cta_padding_top": 0,
+        "cta_padding_top": 64,
         "cta_padding_bottom": 0
-      }
-    },
-    "guide_section": {
-      "type": "main-guide",
-      "blocks": {
-        "14fcaedc-7f86-4ab3-b943-ca853d8d768d": {
-          "type": "question",
-          "settings": {
-            "question_title": "Hvilken vintype du foretrækker du?",
-            "answers": "'Hvid', 'Mousserende', 'Portvin', 'Rosé', 'Boblende'"
-          }
-        },
-        "47a10a7b-5c95-4bbf-8445-b7003fdc93b2": {
-          "type": "question",
-          "settings": {
-            "question_title": "Hvilken smagstype foretrækker du?",
-            "answers": "'Sødlig', 'Let', 'Tør'"
-          }
-        },
-        "1bacab52-a39f-41d4-9d79-4706de313557": {
-          "type": "question",
-          "settings": {
-            "question_title": "Hvilket land skal vinen være fra?",
-            "answers": "'Fransk'"
-          }
-        }
-      },
-      "block_order": [
-        "14fcaedc-7f86-4ab3-b943-ca853d8d768d",
-        "47a10a7b-5c95-4bbf-8445-b7003fdc93b2",
-        "1bacab52-a39f-41d4-9d79-4706de313557"
-      ],
-      "settings": {
-        "guide_title": "Smagsguide",
-        "guide_description": ""
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "ET Vinimport anbefaler",
-        "heading_size": "h1",
-        "heading_alignment": "center",
-        "button_label": "",
-        "button_link": "",
-        "collection": "alsace",
-        "products_to_show": 12,
-        "show_secondary_image": true,
-        "show_vendor": true,
-        "show_rating": false
       }
     },
     "featured-collection-1": {
@@ -199,15 +164,50 @@
         "cta_padding_top": 64,
         "cta_padding_bottom": 0
       }
+    },
+    "guide_section": {
+      "type": "main-guide",
+      "blocks": {
+        "14fcaedc-7f86-4ab3-b943-ca853d8d768d": {
+          "type": "question",
+          "settings": {
+            "question_title": "Hvilken vintype du foretrækker du?",
+            "answers": "'Hvid', 'Mousserende', 'Portvin', 'Rosé', 'Boblende'"
+          }
+        },
+        "47a10a7b-5c95-4bbf-8445-b7003fdc93b2": {
+          "type": "question",
+          "settings": {
+            "question_title": "Hvilken smagstype foretrækker du?",
+            "answers": "'Sødlig', 'Let', 'Tør'"
+          }
+        },
+        "1bacab52-a39f-41d4-9d79-4706de313557": {
+          "type": "question",
+          "settings": {
+            "question_title": "Hvilket land skal vinen være fra?",
+            "answers": "'Fransk'"
+          }
+        }
+      },
+      "block_order": [
+        "14fcaedc-7f86-4ab3-b943-ca853d8d768d",
+        "47a10a7b-5c95-4bbf-8445-b7003fdc93b2",
+        "1bacab52-a39f-41d4-9d79-4706de313557"
+      ],
+      "settings": {
+        "guide_title": "Smagsguide",
+        "guide_description": ""
+      }
     }
   },
   "order": [
     "1653501508acaff683",
     "hero",
-    "1654538378b158ed5e",
-    "guide_section",
     "featured_collection",
+    "1654538378b158ed5e",
     "featured-collection-1",
-    "16546221009a774651"
+    "16546221009a774651",
+    "guide_section"
   ]
 }
