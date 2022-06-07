@@ -2686,6 +2686,11 @@ details[open] > .header__menu-item .icon-caret {
 
   ul {
     flex-direction: column;
+    li {
+      &:hover {
+        background-color: #444936;
+      }
+    }
   }
 }
 

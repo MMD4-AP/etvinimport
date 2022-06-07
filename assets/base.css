@@ -2439,6 +2439,9 @@ details[open] > .header__menu-item .icon-caret {
 .header__submenu.list-menu ul {
   flex-direction: column;
 }
+.header__submenu.list-menu ul li:hover {
+  background-color: #444936;
+}
 
 .header__submenu .header__submenu {
   background-color: #6B705C;
