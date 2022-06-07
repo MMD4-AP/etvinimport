@@ -45,6 +45,23 @@
 }
 .hero .scroll-to {
   height: fit-content;
+  width: fit-content;
+  margin: 0 auto;
   position: relative;
   bottom: 18rem;
+  cursor: pointer;
+}
+.hero .scroll-arrow {
+  animation: scrollArrow 2s infinite;
+}
+@keyframes scrollArrow {
+  0% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: 20px;
+  }
+  100% {
+    margin-top: 0;
+  }
 }

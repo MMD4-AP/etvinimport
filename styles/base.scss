@@ -193,7 +193,9 @@
   --gradient-background: var(--gradient-base-background-1);
 }
 /* base */
-
+html {
+  scroll-behavior: smooth;
+}
 .no-js:not(html) {
   display: none !important;
 }
