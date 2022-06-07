@@ -7,21 +7,22 @@
         <div class="guide page-width">
             <h2 v-text="guideTitle"></h2>
             <p v-text="guideDescription"></p>
-            <p>
-                Spørgsmål <span v-text="getCurrentQuestion.questionNumber"></span> / <span v-text="questions.length"></span>
+            <p v-if="!guideCompleted" class="question-number text-center">
+                Spørgsmål <span v-text="getCurrentQuestion.questionNumber"></span> af <span v-text="questions.length"></span>
             </p>
             <Transition name="fade">
                 <div v-if="!guideCompleted" class="question">
-                    <h3 v-text="`${getCurrentQuestion.questionNumber}. ${getCurrentQuestion.question}`" class="question__heading"></h3>
+                    <h2 v-text="`${getCurrentQuestion.questionNumber}. ${getCurrentQuestion.question}`" class="question__heading"></h2>
                     <div class="options">
                         <label v-for="(option, index) in getCurrentQuestion.options" :key="index">
                             <input type="radio" 
                             :value="index"
+                            class="link animate-arrow"
                             >
-                            <span v-text="option" @click="addToUserOptions(option); nextQuestion()"></span>
+                            <span v-text="option" @click="addToUserOptions(option); nextQuestion()" class="icon-wrap"></span>
                         </label>
                     </div>
-                    <div v-if="userOptions" class="guide__options">
+                    <div v-if="userOptions.length" class="guide__options">
                         <h4>Dine valg:</h4>
                         <span v-for="(option, index) in userOptions" :key="index" v-text="option"></span>
                     </div>
@@ -209,51 +210,6 @@
     }
     const GuideApp = Vue.createApp(options).mount('#app');
 </script>
-
-
-
-{% comment %}
-fetch_url: window.location.href + "/collections/all?view=json",
-fetch_url: "https://www.etvinimport.dk/collections/all?view=json",
-
-{% for block in section.blocks %}  
-    {% case block.type %}
-    {% when 'question' %}  
-        <div class="link" {{ block.shopify_attributes }}>   
-            {{ block.settings.question_title }}
-        </div> 
-    {% endcase %} 
-{% endfor %}
-
-
- [{% for block in section.blocks %}{% case block.type %}{% when 'question' %}
-    {
-        "{{ block.settings.question_title }}"
-    }{% endcase %}{% unless forloop.last %},{% endunless %}{% endfor %}
-    ]
-
-            <div>
-            <input v-model="searchQuery" type="text" placeholder="Portvin">
-            <label v-for="(tag, index) in tags" :key="index">
-                <input type="radio" :value="tag" v-model="selectedTaste">
-                    <span v-text="tag"></span>
-                </input>
-            </label>
-            <label v-for="(question, index) in questions" :key="index">
-                <input type="radio" :value="question">
-                    <span v-text="question"></span>
-                </input>
-            </label>
-            <ul class="grid product-grid">
-                <li class="grid__item" v-for="resultProduct in resultQuery" :key="resultProduct.id">
-                   <h4 v-html="resultProduct.title"></h4>
-                   <img :src="resultProduct.featured_image" alt="" />
-                   <a :href="resultProduct.url">Køb</a>
-                </li>
-            </ul>
-            <hr>
-        </div>
-{% endcomment %}
 
 {% schema %}
 {
