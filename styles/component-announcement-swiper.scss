@@ -29,7 +29,7 @@
     }
 
     .swiper-slide img {
-
+        margin-right: 12px;
     }
     .swiper-button {
         &-prev {
@@ -48,7 +48,10 @@
 
         }
     }
-    a {
-        margin: 0 auto;
+    // a {
+    //     margin: 0 auto;
+    // }
+    p {
+        margin: 0;
     }
 }

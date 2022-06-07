@@ -27,6 +27,9 @@
   -webkit-align-items: center;
   align-items: center;
 }
+.announcement-swiper .swiper-slide img {
+  margin-right: 12px;
+}
 .announcement-swiper .swiper-button-prev {
   transform: scale(-1);
   left: 20px;
@@ -40,6 +43,6 @@
 .announcement-swiper .swiper-button-prev:after, .announcement-swiper .swiper-button-next:after {
   content: "";
 }
-.announcement-swiper a {
-  margin: 0 auto;
+.announcement-swiper p {
+  margin: 0;
 }
