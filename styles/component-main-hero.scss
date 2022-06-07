@@ -47,13 +47,17 @@
             text-align: center;
         }
     }
+
     .scroll-to {
         height: fit-content;
         width: fit-content;
         margin: 0 auto;
         position: relative;
-        bottom: 18rem;
+        bottom: 14rem;
         cursor: pointer;
+    }
+    .scroll-index {
+        bottom: 18rem;
     }
     .scroll-arrow {
         animation: scrollArrow 2s infinite;
