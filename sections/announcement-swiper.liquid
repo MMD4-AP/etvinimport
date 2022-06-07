@@ -38,46 +38,12 @@
     "name":"Annonceringsswiper",
     "max_blocks": 3,
     "settings": [
-        {
-            "type":"header",
-            "content":"Annonceringsikon"
-        },
-        {
-            "type": "image_picker",
-            "id": "announcement_icon",
-            "label": "Annonceringsikon"
-        },
-        {
-            "type":"header",
-            "content":"Annonceringstekst"
-        },
-        {
-            "type":"text",
-            "id":"announcement_text",
-            "default":"Annonceringstekst",
-            "label":"Annonceringstekst"
-        },
-        {
-            "type": "url",
-            "id": "button_link",
-            "label": "Button link"
-          }
     ],
     "blocks":[
         {
             "type":"announcement",
             "name":"Annoncering",
             "settings":[
-                {
-                    "type":"header",
-                    "content":"Titel på annoncering"
-                },
-                {
-                    "type":"text",
-                    "id":"announcement_title",
-                    "default":"Annonceringstitel",
-                    "label":"Annonceringstitel"
-                },
                 {
                     "type":"header",
                     "content":"Annonceringsikon"
@@ -96,6 +62,11 @@
                     "id":"announcement_text",
                     "default":"Annonceringstekst",
                     "label":"Annonceringstekst"
+                },
+                {
+                    "type": "url",
+                    "id": "button_link",
+                    "label": "Button link"
                 }
             ]
         }
