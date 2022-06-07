@@ -63,39 +63,38 @@
         "display_scroll_to": "flex"
       }
     },
-    "16522049432acd6223": {
-      "type": "newsletter",
+    "1654538378b158ed5e": {
+      "type": "cta-section",
       "blocks": {
-        "16522049435aecb50a-0": {
+        "1654538378a059f6a5-0": {
           "type": "heading",
           "settings": {
-            "heading": "Tilmeld dig vores vinklub",
-            "heading_size": "h1"
+            "cta_heading": "Få de bedste vine til årstiden",
+            "cta_heading_size": "h1"
           }
         },
-        "16522049435aecb50a-1": {
-          "type": "paragraph",
+        "1654538378a059f6a5-1": {
+          "type": "text",
           "settings": {
-            "text": "<p>- så får du spændende kvalitetsvine leveret lige til døren 4 gange om året<\/p>"
+            "cta_text": "<p>- Medlemmerne i vores vinklub får de bedste vine leveret hvert kvartal<\/p>",
+            "cta_text_style": "body"
           }
         },
-        "16522049435aecb50a-2": {
-          "type": "email_form",
+        "1654538378a059f6a5-2": {
+          "type": "button",
           "settings": {
+            "cta_button_label": "Bliv en del af vinklubben",
+            "cta_button_link": "shopify:\/\/pages\/vinklub"
           }
         }
       },
       "block_order": [
-        "16522049435aecb50a-0",
-        "16522049435aecb50a-1",
-        "16522049435aecb50a-2"
+        "1654538378a059f6a5-0",
+        "1654538378a059f6a5-1",
+        "1654538378a059f6a5-2"
       ],
       "settings": {
-        "color_scheme": "background-1",
-        "newsletter_bg": "shopify:\/\/shop_images\/Vinas_bb2b0485-96f2-4593-b4be-dbb6a324cf30.jpg",
-        "full_width": false,
-        "padding_top": 120,
-        "padding_bottom": 120
+        "cta_image": "shopify:\/\/shop_images\/Vinas_bb2b0485-96f2-4593-b4be-dbb6a324cf30.jpg"
       }
     },
     "guide_section": {
@@ -133,50 +132,6 @@
         "guide_description": ""
       }
     },
-    "image-with-text": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Billede med text test fra VSCode",
-            "heading_size": "h0"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product or collection.<\/p>",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "button",
-          "settings": {
-            "button_label": "Se alle vine",
-            "button_link": "shopify:\/\/collections"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Vinas.jpg",
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "center",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-1",
-        "mobile_content_alignment": "center",
-        "padding_top": 12,
-        "padding_bottom": 32
-      }
-    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -207,125 +162,48 @@
         "show_rating": false
       }
     },
-    "16516806691317e73b": {
-      "type": "multicolumn",
-      "blocks": {
-        "1651680669e3c0dd78-0": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/MG_5324.jpg",
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "Test",
-            "link": "shopify:\/\/products\/7-cepos-100-albarino"
-          }
-        },
-        "1651680669e3c0dd78-1": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "1651680669e3c0dd78-2": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "da08a18a-52a3-450b-b355-bc3fdcadbaa7": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "3420e3e8-581a-420a-941f-7f461ec02c4b": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Vinas_bb2b0485-96f2-4593-b4be-dbb6a324cf30.jpg",
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "1651680669e3c0dd78-0",
-        "1651680669e3c0dd78-1",
-        "1651680669e3c0dd78-2",
-        "da08a18a-52a3-450b-b355-bc3fdcadbaa7",
-        "3420e3e8-581a-420a-941f-7f461ec02c4b"
-      ],
-      "settings": {
-        "title": "Multicolumn",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 4,
-        "column_alignment": "left",
-        "background_style": "primary",
-        "button_label": "Button label",
-        "button_link": "",
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "1654538378b158ed5e": {
+    "16546221009a774651": {
       "type": "cta-section",
       "blocks": {
-        "1654538378a059f6a5-0": {
+        "1654622100aa22be64-0": {
           "type": "heading",
           "settings": {
-            "cta_heading": "Få de bedste vine til årstiden",
-            "cta_heading_size": "h1"
+            "cta_heading": "Du skal ikke være i tvivl",
+            "cta_heading_size": "h2"
           }
         },
-        "1654538378a059f6a5-1": {
+        "1654622100aa22be64-1": {
           "type": "text",
           "settings": {
-            "cta_text": "<p>- Medlemmerne i vores vinklub får de bedste vine leveret hvert kvartal<\/p>",
+            "cta_text": "<p>Lad os hjælpe dig med at finde den rette vin til dig<\/p>",
             "cta_text_style": "body"
           }
         },
-        "1654538378a059f6a5-2": {
+        "1654622100aa22be64-2": {
           "type": "button",
           "settings": {
-            "cta_button_label": "Bliv en del af vinklubben",
-            "cta_button_link": "shopify:\/\/blogs\/news\/et-vinklub"
+            "cta_button_label": "Bliv inspireret",
+            "cta_button_link": "shopify:\/\/pages\/vinguides"
           }
         }
       },
       "block_order": [
-        "1654538378a059f6a5-0",
-        "1654538378a059f6a5-1",
-        "1654538378a059f6a5-2"
+        "1654622100aa22be64-0",
+        "1654622100aa22be64-1",
+        "1654622100aa22be64-2"
       ],
       "settings": {
-        "cta_image": "shopify:\/\/shop_images\/Vinas_bb2b0485-96f2-4593-b4be-dbb6a324cf30.jpg"
+        "cta_image": "shopify:\/\/shop_images\/vinguide-cta.jpg"
       }
     }
   },
   "order": [
     "1653501508acaff683",
     "hero",
-    "16522049432acd6223",
+    "1654538378b158ed5e",
     "guide_section",
-    "image-with-text",
     "featured_collection",
     "featured-collection-1",
-    "16516806691317e73b",
-    "1654538378b158ed5e"
+    "16546221009a774651"
   ]
 }
