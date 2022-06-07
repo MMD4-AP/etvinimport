@@ -6,66 +6,9 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
-    },
-    "1654588197d1c4814e": {
-      "type": "multicolumn",
-      "blocks": {
-        "1654588197f84d175b-0": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/vinaften_502f539f-2521-4a3b-8c4e-c98aa6e62337.jpg",
-            "title": "Vinaften",
-            "text": "",
-            "link_label": "Deltag i vinaften",
-            "link": ""
-          }
-        },
-        "1654588197f84d175b-1": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/dameaften_d3d97151-a9f1-4b0e-b2d2-cec26fcee6d8.jpg",
-            "title": "Dameaften",
-            "text": "",
-            "link_label": "Kom til dameaften",
-            "link": ""
-          }
-        },
-        "1654588197f84d175b-2": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/vinogost.jpg",
-            "title": "Vin & ost",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "Kom til vin og ost",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "1654588197f84d175b-0",
-        "1654588197f84d175b-1",
-        "1654588197f84d175b-2"
-      ],
-      "settings": {
-        "title": "Multicolumn",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "primary",
-        "button_label": "Button label",
-        "button_link": "",
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
-    "main",
-    "1654588197d1c4814e"
+    "main"
   ]
 }
