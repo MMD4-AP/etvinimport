@@ -6,14 +6,14 @@
         "1654587648f56d81b2-0": {
           "type": "heading",
           "settings": {
-            "heading": "Smagsguide",
+            "heading": "ET Vinklub",
             "heading_size": "h1"
           }
         },
         "1654587648f56d81b2-1": {
           "type": "text",
           "settings": {
-            "text": "",
+            "text": "<p>Det er ligegyldigt, om glasset er halvt tomt eller halvt fyldt. Der er helt klart plads til mere vin<\/p>",
             "text_style": "body"
           }
         },
@@ -31,6 +31,7 @@
         "1654587648f56d81b2-2"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/vinklubhero.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
