@@ -1,5 +1,48 @@
 {
   "sections": {
+    "165458764869338383": {
+      "type": "main-hero",
+      "blocks": {
+        "1654587648f56d81b2-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Smagsguide",
+            "heading_size": "h1"
+          }
+        },
+        "1654587648f56d81b2-1": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "1654587648f56d81b2-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1654587648f56d81b2-0",
+        "1654587648f56d81b2-1",
+        "1654587648f56d81b2-2"
+      ],
+      "settings": {
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "main": {
       "type": "main-guide",
       "blocks": {
@@ -90,6 +133,7 @@
     }
   },
   "order": [
+    "165458764869338383",
     "main",
     "1652471718040f9c5f"
   ]
