@@ -3,6 +3,7 @@ a {
   color: inherit;
 }
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -12,10 +13,10 @@ a {
   height: 100%;
   background: linear-gradient(to bottom, #B7B7A4 46%, transparent 0%);
 }
-.card.organic {
-  position: relative;
-  top: 0;
-  right: 0;
+.card .organic {
+  position: absolute;
+  top: 5px;
+  right: 10px;
 }
 @media only screen and (min-width: 750px) {
   .card {
