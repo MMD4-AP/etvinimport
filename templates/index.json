@@ -73,7 +73,7 @@
         "button_link": "",
         "collection": "alsace",
         "products_to_show": 12,
-        "show_secondary_image": true,
+        "show_secondary_image": false,
         "show_vendor": true,
         "show_rating": false
       }
