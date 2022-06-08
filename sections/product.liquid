@@ -265,15 +265,54 @@
       </div>
     {%- endif -%}
     {%- if product.metafields.meta.country != blank -%}
+    <div>
+      <h3>Specifikationer</h3>
       <div class="product__specs rte">
-        <div>
-          <h3>Specifikationer</h3>
-          {{ product.metafields.meta.country }}
+        {% if product.metafields.meta.grape_sort %}
+        <div class="product__specs-item">
+          <p>
+            <span>Drue</span> 
+            {{ product.metafields.meta.grape_sort }}
+          </p>
         </div>
+      {% endif %}
+      {% if product.type %}
+        <div class="product__specs-item">
+          <p>
+            <span>Vintype</span> 
+            {{ product.type }}
+          </p>
+        </div>
+      {% endif %}
+      {% if product.metafields.meta.country %}
+        <div class="product__specs-item">
+          <p>
+            <span>Land</span> 
+            {{ product.metafields.meta.country }}
+          </p>
+        </div>
+      {% endif %}
+      {% if product.metafields.meta.region %}
+        <div class="product__specs-item">
+          <p>
+            <span>Område</span> 
+            {{ product.metafields.meta.region }}
+          </p>
+        </div>
+      {% endif %}
+      {% if product.vendor %}
+      <div class="product__specs-item">
+        <p>
+          <span>Vingård</span> 
+          {{ product.vendor }}
+        </p>
       </div>
+      {% endif %}
+      </div>
+    </div>
     {%- endif -%}
     </section>
-  {% endif %}
+{% endif %}
   
 </section>
 
