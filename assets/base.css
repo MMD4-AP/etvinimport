@@ -402,27 +402,31 @@ p {
 
 h1 {
   margin-top: 0;
-  font-size: 3.5rem;
+  font-size: 3.052rem;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.441rem;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.953rem;
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.563rem;
 }
 
 h5 {
   font-size: 1.25rem;
 }
 
+h6 {
+  font-size: 1rem;
+}
+
 p {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
 }
 
 small, .text_small {
@@ -439,23 +443,31 @@ h1, h2, h3, h4, h5 {
 @media only screen and (min-width: 750px) {
   h1 {
     margin-top: 0;
-    font-size: 4.5rem;
+    font-size: 4.209rem;
   }
 
   h2 {
-    font-size: 3.5rem;
+    font-size: 3.157rem;
   }
 
   h3 {
-    font-size: 3rem;
+    font-size: 2.369rem;
   }
 
   h4 {
-    font-size: 2rem;
+    font-size: 1.777rem;
   }
 
   h5 {
-    font-size: 1.5rem;
+    font-size: 1.333rem;
+  }
+
+  h6 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 1.6rem;
   }
 }
 blockquote {
@@ -2047,7 +2059,14 @@ input[type=checkbox] {
   border-radius: 0;
   background-color: #B7B7A4;
   color: white;
-  border: none;
+  border: 1px solid #6B705C;
+}
+.to-top-btn svg {
+  -webkit-transform: rotateZ(-90deg);
+  -moz-transform: rotateZ(-90deg);
+  -ms-transform: rotateZ(-90deg);
+  -o-transform: rotateZ(-90deg);
+  transform: rotateZ(-90deg);
 }
 
 /* section-header */

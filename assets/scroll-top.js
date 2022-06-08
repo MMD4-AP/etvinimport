@@ -3,7 +3,10 @@ const toTopBtn = document.querySelector('.to-top-btn');
 const displayBtn = () => {
   window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
-      toTopBtn.style.display = "block";
+      toTopBtn.style.display = "flex";
+      toTopBtn.style.flexDirection = "column";
+      toTopBtn.style.justifyContent = "center";
+      toTopBtn.style.alignItems = "center";
     } else {
       toTopBtn.style.display = "none";
     }
