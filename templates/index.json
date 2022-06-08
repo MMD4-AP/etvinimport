@@ -15,15 +15,15 @@
           "type": "announcement",
           "settings": {
             "announcement_icon": "shopify:\/\/shop_images\/checkmark.png",
-            "announcement_text": "Sikker fragt",
+            "announcement_text": "Sikker levering af kvalitetsvin",
             "button_link": ""
           }
         },
         "e8da2a00-a214-4693-9266-42c1c5d1d5b3": {
           "type": "announcement",
           "settings": {
-            "announcement_icon": "shopify:\/\/shop_images\/newsletter.png",
-            "announcement_text": "Kundeklub med fordele",
+            "announcement_icon": "shopify:\/\/shop_images\/kundeklub.png",
+            "announcement_text": "Bliv en del af vores vinklub hvor du forkæles med god vin",
             "button_link": "shopify:\/\/pages\/vinklub"
           }
         }
