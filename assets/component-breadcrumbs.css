@@ -1,0 +1,40 @@
+@charset "UTF-8";
+.breadcrumbs {
+  font-size: 0.85em;
+  margin: 3rem 0 2em 0;
+}
+
+.breadcrumbs ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumbs li {
+  display: inline-block;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: #000;
+}
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs li:not(:last-child):after {
+  content: "› ";
+  display: inline-block;
+  padding-left: 0.75ch;
+}
+
+.breadcrumbs [aria-current=page] {
+  color: inherit;
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+.breadcrumbs [aria-current=page]:hover,
+.breadcrumbs [aria-current=page]:focus {
+  text-decoration: underline;
+}

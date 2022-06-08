@@ -16,140 +16,145 @@
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 {%- if card_product and card_product != empty -%}
 
-<div class="card__wrapper">
-    <div class="card">
+  <div class="card">
+    {% if card_product.metafields.meta.organic %}
+    <svg class="organic" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_1181_1539)">
+      <path d="M16.0623 33.8112C15.9048 33.5785 15.7143 33.3648 15.5015 33.1752C15.6095 33.0392 15.7031 32.8984 15.7848 32.7512C16.0728 32.264 16.2183 31.7056 16.2183 31.0968C16.2183 30.1784 15.9231 29.3808 15.3392 28.7248C14.6896 28.0008 13.8224 27.6328 12.768 27.6328H9.64636C8.98796 27.6328 8.42958 27.8744 8.03114 28.3336C7.69111 28.732 7.51758 29.2216 7.51758 29.7888V37.4248C7.51758 37.9825 7.6912 38.4681 8.03517 38.8712C8.42874 39.3256 8.98636 39.5672 9.64561 39.5672H12.9784C14.1288 39.5672 15.064 39.1712 15.7624 38.3904C16.3808 37.6991 16.6953 36.848 16.6953 35.864C16.6952 35.088 16.4792 34.3945 16.0623 33.8112ZM9.97515 30.004H12.6847C13.1583 30.004 13.3671 30.18 13.4935 30.3248C13.6783 30.5241 13.7631 30.7657 13.7631 31.0817C13.7631 31.3841 13.6767 31.6233 13.4815 31.8385C13.2871 32.0609 13.0407 32.1594 12.6847 32.1594H9.97515V30.004ZM13.9143 36.8057C13.6823 37.0705 13.3823 37.1945 12.9647 37.1945H9.9743V34.5185H12.8943C13.3279 34.5185 13.6463 34.6473 13.8976 34.9193C14.1319 35.1769 14.2399 35.4769 14.2399 35.8641C14.2407 36.2553 14.1376 36.5529 13.9143 36.8057Z" fill="#6B705C"/>
+      <path d="M19.4796 27.7045C19.0108 27.2902 18.3108 27.2709 17.79 27.7373C17.6261 27.9013 17.4316 28.1918 17.4316 28.6493V38.5638C17.4316 38.915 17.5557 39.227 17.8252 39.4942C18.0548 39.6982 18.3428 39.8062 18.6596 39.8062C18.9668 39.8062 19.25 39.6982 19.4844 39.4894C19.7444 39.255 19.8876 38.927 19.8876 38.5638V28.6493C19.8876 28.2766 19.7444 27.9438 19.4796 27.7045Z" fill="#6B705C"/>
+      <path d="M30.3292 29.365C29.3308 28.0578 27.9172 27.3945 26.1268 27.3945C24.3268 27.3945 22.9092 28.0577 21.906 29.3729C21.0739 30.493 20.6523 31.9161 20.6523 33.601C20.6523 35.2882 21.0739 36.7065 21.9083 37.8194C22.9068 39.1385 24.3267 39.8066 26.1267 39.8066C27.9171 39.8066 29.3331 39.1386 30.3267 37.8234C31.1819 36.7122 31.6155 35.2898 31.6155 33.6002C31.6155 31.9107 31.182 30.4849 30.3292 29.365ZM28.4116 36.3825C27.8892 37.0994 27.1412 37.449 26.1268 37.449C25.1052 37.449 24.3572 37.1018 23.846 36.3873C23.3565 35.7033 23.1077 34.7657 23.1077 33.6009C23.1077 32.4265 23.354 31.4913 23.846 30.8144C24.3573 30.0992 25.1044 29.7528 26.1268 29.7528C27.142 29.7528 27.8892 30.1024 28.4116 30.8192C28.9084 31.5016 29.1596 32.4384 29.1596 33.6016C29.1596 34.7562 28.9068 35.6938 28.4116 36.3825Z" fill="#6B705C"/>
+      <path d="M46.7073 24.5872C45.9569 24.6456 44.7521 23.6632 43.5873 22.7136C42.9241 22.172 42.1921 21.5793 41.4041 21.0601C43.2057 20.4857 44.7121 19.4537 45.8289 17.8585C48.9202 13.4473 48.1506 6.51688 46.9386 3.18406C46.7921 2.78563 46.4425 2.49284 46.0162 2.41522L45.8137 2.39844C45.4601 2.39844 45.1273 2.55041 44.8993 2.81525C44.1225 3.72247 41.9721 4.10169 39.8857 4.46966C36.6209 5.04726 32.4466 5.82566 30.4177 9.1417C29.1521 6.84492 26.9385 5.01285 24.9825 4.10085C24.596 3.92 24.1433 3.95928 23.792 4.20088C23.4472 4.44247 23.2456 4.85291 23.2792 5.28088C23.3376 6.03126 22.3552 7.23529 21.4056 8.40089C19.3976 10.8593 16.6496 14.2281 19.7808 18.1433C20.7936 19.4081 22.0248 20.1681 23.3648 20.4345C23.4696 20.8081 23.6312 21.1977 23.8288 21.5976H12C5.37282 21.5984 0 26.9712 0 33.5984C0 40.2256 5.37282 45.5984 12 45.5984H26.4001C33.0273 45.5984 38.4001 40.2256 38.4001 33.5984C38.4001 33.288 38.3321 32.9968 38.3089 32.6928C39.044 32.78 39.7233 32.756 40.2945 32.6552C43.7577 32.0448 46.6577 28.9288 47.8873 26.2904C48.0682 25.904 48.0289 25.4512 47.7873 25.1C47.5449 24.7552 47.1353 24.5537 46.7073 24.5872ZM31.6465 12.8496C32.1529 8.27442 36.1097 7.57598 40.3025 6.83517C42.093 6.51838 43.8018 6.21838 45.1377 5.55997C45.9449 9.00079 45.8793 13.604 43.8641 16.4816C42.6033 18.2816 40.6753 19.196 38.1321 19.196C36.3201 19.196 34.7137 18.6432 33.5257 17.6232C34.4314 16.9392 35.4625 16.3784 36.5986 15.9592L36.8514 15.8608C38.9195 15.1392 40.8531 15.1576 41.0043 15.1928L41.2619 15.2208C41.8267 15.2208 42.3083 14.8368 42.4339 14.2832C42.5523 13.7489 42.2931 13.2168 41.833 12.9664C42.9594 11.9496 43.8499 10.768 44.493 9.43683C44.6314 9.14883 44.6498 8.82239 44.5442 8.52004C44.4386 8.21761 44.221 7.97367 43.9322 7.83604C43.3594 7.56407 42.6081 7.82161 42.3306 8.39367C41.3746 10.3745 39.7786 11.8905 37.4746 12.9992C37.6161 11.9985 37.4601 11.0048 37.0082 10.1C36.7226 9.52317 35.9594 9.28645 35.4018 9.56086C35.1138 9.70401 34.8993 9.94964 34.797 10.2544C34.6938 10.5616 34.7186 10.8872 34.8618 11.1712C35.5834 12.6176 34.6722 13.9368 34.3193 14.3656C33.5298 14.7592 32.7858 15.2185 32.0977 15.7368C31.6889 14.8464 31.5329 13.864 31.6465 12.8496ZM31.7856 19.2864C32.4968 19.9336 33.3336 20.4264 34.2361 20.8072C34.1057 20.8992 33.9761 20.9816 33.8448 21.0873C33.0897 21.6936 32.5384 22.3849 32.1433 23.1232C31.5033 22.7712 30.8344 22.4809 30.1297 22.2488C30.1329 22.2393 30.1433 22.2352 30.1465 22.2257C30.5145 21.152 31.0649 20.1656 31.7856 19.2864ZM30.26 17.4056C29.1904 18.5936 28.3896 19.9512 27.8752 21.4489C27.8416 21.5464 27.8448 21.6449 27.8376 21.7441C27.4552 21.6969 27.0768 21.6369 26.684 21.6273C26.3256 21.1561 26.0448 20.7177 25.8696 20.3145C26.9408 20.0025 27.9832 19.3945 28.94 18.4377C29.4056 17.9721 29.7689 17.5073 30.0864 17.0465C30.1481 17.1648 30.1921 17.2904 30.26 17.4056ZM23.6376 15.9696C23.4696 16.5968 23.3104 17.2337 23.2185 17.8944C22.6617 17.6464 22.1305 17.2384 21.6553 16.644C19.8641 14.4047 21.0689 12.6104 23.2649 9.91673C24.0593 8.94314 24.828 8.00235 25.2777 7.02876C27.0152 8.22079 28.6321 10.1112 28.9849 12.112C29.2713 13.7408 28.6858 15.2984 27.2441 16.74C26.7233 17.2607 26.1856 17.6343 25.6481 17.872C25.7249 17.4712 25.8337 17.052 25.9576 16.5887C26.3217 15.2239 26.7336 13.6775 26.4904 11.6144C26.4128 10.9568 25.816 10.4855 25.1576 10.564C24.5008 10.6448 24.0296 11.2408 24.1072 11.8968C24.2969 13.5032 23.9616 14.7568 23.6376 15.9696ZM26.4001 43.1984H12C6.70642 43.1984 2.4 38.892 2.4 33.5984C2.4 28.3048 6.70642 23.9984 12 23.9984H26.4001C31.6937 23.9984 36.0001 28.3048 36.0001 33.5984C36.0001 38.892 31.6937 43.1984 26.4001 43.1984ZM39.8769 30.292C39.1825 30.4145 38.5033 30.36 37.8394 30.1584C37.5658 29.2496 37.1986 28.3896 36.729 27.5856C37.7738 27.812 38.945 27.9656 40.3745 27.7969C41.033 27.7192 41.5034 27.1224 41.4249 26.464C41.3441 25.8072 40.7481 25.336 40.0921 25.4136C38.4857 25.6032 37.2313 25.268 36.0193 24.944C35.4265 24.7856 34.8217 24.6425 34.2009 24.5496C34.1745 24.5272 34.1473 24.5057 34.1201 24.4833C34.3697 23.9433 34.7649 23.4257 35.3441 22.9633C37.5833 21.1721 39.3777 22.3769 42.0713 24.5721C43.0449 25.3666 43.9857 26.1353 44.9593 26.585C43.7673 28.3224 41.8776 29.9392 39.8769 30.292Z" fill="#6B705C"/>
+      </g>
+      <defs>
+      <clipPath id="clip0_1181_1539">
+      <rect width="48" height="48" fill="white"/>
+      </clipPath>
+      </defs>
+    </svg>
+    {% endif %}
     <div class="card__media">
-          {% if card_product.featured_media %}
-              <img srcset="{%- if card_product.featured_media.width >= 165 -%}{{ card_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
-              {%- if card_product.featured_media.width >= 360 -%}{{ card_product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
-              {%- if card_product.featured_media.width >= 533 -%}{{ card_product.featured_media | image_url: width: 533 }} 533w,{%- endif -%}
-              {%- if card_product.featured_media.width >= 720 -%}{{ card_product.featured_media | image_url: width: 720 }} 720w,{%- endif -%}
-              {%- if card_product.featured_media.width >= 940 -%}{{ card_product.featured_media | image_url: width: 940 }} 940w,{%- endif -%}
-              {%- if card_product.featured_media.width >= 1066 -%}{{ card_product.featured_media | image_url: width: 1066 }} 1066w,{%- endif -%}
-              {{ card_product.featured_media | image_url }} {{ card_product.featured_media.width }}w"
-              src="{{ card_product.featured_media | image_url: width: 533 }}"
-              sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-              alt="{{ card_product.featured_media.alt | escape }}"
-              class="motion-reduce"
-              {% unless lazy_load == false %}loading="lazy"{% endunless %}
-              width="{{ card_product.featured_media.width }}"
-              height="{{ card_product.featured_media.height }}"
-            >
-            {%- if card_product.media[1] != nil and show_secondary_image -%}
-            <img
-              srcset="{%- if card_product.media[1].width >= 165 -%}{{ card_product.media[1] | image_url: width: 165 }} 165w,{%- endif -%}
-                {%- if card_product.media[1].width >= 360 -%}{{ card_product.media[1] | image_url: width: 360 }} 360w,{%- endif -%}
-                {%- if card_product.media[1].width >= 533 -%}{{ card_product.media[1] | image_url: width: 533 }} 533w,{%- endif -%}
-                {%- if card_product.media[1].width >= 720 -%}{{ card_product.media[1] | image_url: width: 720 }} 720w,{%- endif -%}
-                {%- if card_product.media[1].width >= 940 -%}{{ card_product.media[1] | image_url: width: 940 }} 940w,{%- endif -%}
-                {%- if card_product.media[1].width >= 1066 -%}{{ card_product.media[1] | image_url: width: 1066 }} 1066w,{%- endif -%}
-                {{ card_product.media[1] | image_url }} {{ card_product.media[1].width }}w"
-              src="{{ card_product.media[1] | image_url: width: 533 }}"
-              sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-              alt="{{ card_product.media[1].alt | escape }}"
-              class="motion-reduce"
-              loading="lazy"
-              width="{{ card_product.media[1].width }}"
-              height="{{ card_product.media[1].height }}"
-            >
-            {%- endif -%}
-          {%-endif %}
-
+      {% if card_product.featured_media %}
+        <a href="{{ card_product.url }}">
+          <img srcset="{%- if card_product.featured_media.width >= 165 -%}{{ card_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
+          {%- if card_product.featured_media.width >= 360 -%}{{ card_product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
+          {%- if card_product.featured_media.width >= 533 -%}{{ card_product.featured_media | image_url: width: 533 }} 533w,{%- endif -%}
+          {%- if card_product.featured_media.width >= 720 -%}{{ card_product.featured_media | image_url: width: 720 }} 720w,{%- endif -%}
+          {%- if card_product.featured_media.width >= 940 -%}{{ card_product.featured_media | image_url: width: 940 }} 940w,{%- endif -%}
+          {%- if card_product.featured_media.width >= 1066 -%}{{ card_product.featured_media | image_url: width: 1066 }} 1066w,{%- endif -%}
+          {{ card_product.featured_media | image_url }} {{ card_product.featured_media.width }}w"
+          src="{{ card_product.featured_media | image_url: width: 533 }}"
+          sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+          alt="{{ card_product.featured_media.alt | escape }}"
+          class="motion-reduce"
+          {% unless lazy_load == false %}loading="lazy"{% endunless %}
+          width="{{ card_product.featured_media.width }}"
+          height="{{ card_product.featured_media.height }}"
+        >
+        {%- if card_product.media[1] != nil and show_secondary_image -%}
+        <img
+          srcset="{%- if card_product.media[1].width >= 165 -%}{{ card_product.media[1] | image_url: width: 165 }} 165w,{%- endif -%}
+            {%- if card_product.media[1].width >= 360 -%}{{ card_product.media[1] | image_url: width: 360 }} 360w,{%- endif -%}
+            {%- if card_product.media[1].width >= 533 -%}{{ card_product.media[1] | image_url: width: 533 }} 533w,{%- endif -%}
+            {%- if card_product.media[1].width >= 720 -%}{{ card_product.media[1] | image_url: width: 720 }} 720w,{%- endif -%}
+            {%- if card_product.media[1].width >= 940 -%}{{ card_product.media[1] | image_url: width: 940 }} 940w,{%- endif -%}
+            {%- if card_product.media[1].width >= 1066 -%}{{ card_product.media[1] | image_url: width: 1066 }} 1066w,{%- endif -%}
+            {{ card_product.media[1] | image_url }} {{ card_product.media[1].width }}w"
+          src="{{ card_product.media[1] | image_url: width: 533 }}"
+          sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+          alt="{{ card_product.media[1].alt | escape }}"
+          class="motion-reduce"
+          loading="lazy"
+          width="{{ card_product.media[1].width }}"
+          height="{{ card_product.media[1].height }}"
+        >
+        {%- endif -%}
+      </a>
+    {%-endif %}
     </div>
       <div class="card__content">
-        <div class="card__information">
-          {%- if show_vendor -%}
-            <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
-            <span class="caption-with-letter-spacing light">{{ card_product.vendor }}</span>
-          {%- endif -%}
+        {%- if show_vendor -%}
+          <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
+          <span class="caption-with-letter-spacing light">
+            <a href="/collections/all?filter.p.vendor={{ card_product.vendor | url_encode }}&sort_by=title-ascending" class="caption-with-letter-spacing light full-unstyled-link">
+              {{ card_product.vendor }}
+            </a>
+          </span>
+        {%- endif -%}
         <h3 class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}">
           <a href="{{ card_product.url }}" class="full-unstyled-link">
             {{ card_product.title }}
           </a>
         </h3>
-        <div class="card-information">
-          <span class="caption-large light">{{ block.settings.description | escape }}</span>
-
-          {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
-            {% liquid
-              assign rating_decimal = 0
-              assign decimal = card_product.metafields.reviews.rating.value.rating | modulo: 1
-              if decimal >= 0.3 and decimal <= 0.7
-                assign rating_decimal = 0.5
-              elsif decimal > 0.7
-                assign rating_decimal = 1
-              endif
-            %}
-            <div class="rating" role="img" aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: card_product.metafields.reviews.rating.value, rating_max: card_product.metafields.reviews.rating.value.scale_max }}">
-              <span aria-hidden="true" class="rating-star color-icon-{{ settings.accent_icons }}" style="--rating: {{ card_product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ card_product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"></span>
-            </div>
-            <p class="rating-text caption">
-              <span aria-hidden="true">{{ card_product.metafields.reviews.rating.value }} / {{ card_product.metafields.reviews.rating.value.scale_max }}</span>
-            </p>
-            <p class="rating-count caption">
-              <span aria-hidden="true">({{ card_product.metafields.reviews.rating_count }})</span>
-              <span class="visually-hidden">{{ card_product.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
-            </p>
-          {%- endif -%}
-          {% render 'price', product: card_product, price_class: '' %}
-          <div class="card__origin">
-            {% render 'country', product: card_product %}
-            {% render 'grape-sort', product: card_product %}
+        <span class="caption-large light">{{ block.settings.description | escape }}</span>
+        {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
+          {% liquid
+            assign rating_decimal = 0
+            assign decimal = card_product.metafields.reviews.rating.value.rating | modulo: 1
+            if decimal >= 0.3 and decimal <= 0.7
+              assign rating_decimal = 0.5
+            elsif decimal > 0.7
+              assign rating_decimal = 1
+            endif
+          %}
+          <div class="rating" role="img" aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: card_product.metafields.reviews.rating.value, rating_max: card_product.metafields.reviews.rating.value.scale_max }}">
+            <span aria-hidden="true" class="rating-star color-icon-{{ settings.accent_icons }}" style="--rating: {{ card_product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ card_product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"></span>
           </div>
+          <p class="rating-text caption">
+            <span aria-hidden="true">{{ card_product.metafields.reviews.rating.value }} / {{ card_product.metafields.reviews.rating.value.scale_max }}</span>
+          </p>
+          <p class="rating-count caption">
+            <span aria-hidden="true">({{ card_product.metafields.reviews.rating_count }})</span>
+            <span class="visually-hidden">{{ card_product.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
+          </p>
+        {%- endif -%}
+        {% render 'price', product: card_product, price_class: '' %}
+        <div class="card__origin">
+          {% render 'country', product: card_product %}
+          {% render 'grape-sort', product: card_product %}
         </div>
         {% render 'buy-button', product: card_product %}
+      </div>
+  </div>
+
+{%- else -%}
+<div class="card-wrapper underline-links-hover">
+  <div class="card
+    card--{{ settings.card_style }}
+    card--text
+    {% if extend_height %} card--extend-height{% endif %}
+    {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }}{% endif %}
+    {% if card_product.featured_media == nil and settings.card_style == 'card' %} ratio{% endif %}"
+    style="--ratio-percent: 100%;"
+  >
+    <div class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }}{% endif %}{% if settings.card_style == 'standard' %} ratio{% endif %}" style="--ratio-percent: 100%;">
+      <div class="card__content">
+        <div class="card__information">
+          <h3 class="card__heading">
+            <a role="link" aria-disabled="true" class="full-unstyled-link">
+              {{ 'onboarding.product_title' | t }}
+            </a>
+          </h3>
         </div>
-        <div class="card__badge {{ settings.badge_position }}">
-          {%- if card_product.available == false -%}
-            <span class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}">{{ 'products.product.sold_out' | t }}</span>
-          {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
-            <span class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}">{{ 'products.product.on_sale' | t }}</span>
+      </div>
+    </div>
+    <div class="card__content">
+      <div class="card__information">
+        <h3 class="card__heading{% if settings.card_style == 'standard' %} h5{% endif %}">
+          <a role="link" aria-disabled="true" class="full-unstyled-link">
+            {{ 'onboarding.product_title' | t }}
+          </a>
+        </h3>
+        <div class="card-information">
+          {%- if show_vendor -%}
+            <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
+            <div class="caption-with-letter-spacing light">{{ 'products.product.vendor' | t }}</div>
           {%- endif -%}
+          {% render 'price' %}
         </div>
       </div>
     </div>
   </div>
-  {%- else -%}
-  <a href="{{ card_product.url }}">
-    <div class="card-wrapper underline-links-hover">
-      <div class="card
-        card--{{ settings.card_style }}
-        card--text
-        {% if extend_height %} card--extend-height{% endif %}
-        {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }}{% endif %}
-        {% if card_product.featured_media == nil and settings.card_style == 'card' %} ratio{% endif %}"
-        style="--ratio-percent: 100%;"
-      >
-        <div class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }}{% endif %}{% if settings.card_style == 'standard' %} ratio{% endif %}" style="--ratio-percent: 100%;">
-          <div class="card__content">
-            <div class="card__information">
-              <h3 class="card__heading">
-                <a role="link" aria-disabled="true" class="full-unstyled-link">
-                  {{ 'onboarding.product_title' | t }}
-                </a>
-              </h3>
-            </div>
-          </div>
-        </div>
-        <div class="card__content">
-          <div class="card__information">
-            <h3 class="card__heading{% if settings.card_style == 'standard' %} h5{% endif %}">
-              <a role="link" aria-disabled="true" class="full-unstyled-link">
-                {{ 'onboarding.product_title' | t }}
-              </a>
-            </h3>
-            <div class="card-information">
-              {%- if show_vendor -%}
-                <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
-                <div class="caption-with-letter-spacing light">{{ 'products.product.vendor' | t }}</div>
-              {%- endif -%}
-              {% render 'price' %}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </a>
+</div>
 {%- endif -%}
 
 

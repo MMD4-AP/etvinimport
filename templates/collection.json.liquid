@@ -25,7 +25,7 @@
                 {
                     "id": {{ product.id }},
                     "title": {{ product.title | json }},
-                    "brand": {{ product.vendor | json }},
+                    "vingård": {{ product.vendor | json }},
                     "tags": [
                         {% for tag in product.tags %}
                             "{{ tag }}"
@@ -38,18 +38,24 @@
                         {% unless forloop.last %},{% endunless %}
                         {% endfor %}
                     ],
-                    "smag": "{{ product.metafields.meta.taste_type.value | downcase }}",
-                    "land": "{{ product.metafields.meta.country.value | downcase }}",
+                    "smag": "{{ product.metafields.meta.taste_type.value }}",
+                    "land": "{{ product.metafields.meta.country.value }}",
                     "flag": 
                         {% if product.metafields.meta.country_flag %}
                             "{{ product.metafields.meta.country_flag | image_url }}",
                         {% else %}
                             "",
                         {% endif %}
+                    "grapes": [
+                        {% for grape in product.metafields.meta.grape_sort %}
+                           "{{ grape }}"
+                        {% unless forloop.last %},{% endunless %}
+                        {% endfor %}
+                    ],
                     "featured_media": "{{ product.featured_image | image_url }}",
                     "url": "{{ product.url }}",
                     "price": "{{ product.price_min | money_without_trailing_zeros }}",
-                    "produkttype": {{ product.type | json }}
+                    "vintype": {{ product.type | json }}
                 }
                 {% unless forloop.last %},{% endunless %}
             {% endfor %}

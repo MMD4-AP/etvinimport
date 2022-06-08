@@ -1,82 +1,66 @@
 {
   "sections": {
-    "guide_section": {
-      "type": "main-guide",
+    "1653501508acaff683": {
+      "type": "announcement-swiper",
       "blocks": {
-        "14fcaedc-7f86-4ab3-b943-ca853d8d768d": {
-          "type": "question",
+        "16535015080975ece7-0": {
+          "type": "announcement",
           "settings": {
-            "question_title": "Hvilken vintype du foretrækker du?",
-            "answers": "'Hvid', 'Mousserende', 'Portvin', 'Rosé', 'Boblende'"
+            "announcement_icon": "shopify:\/\/shop_images\/truck.png",
+            "announcement_text": "Fri levering ved køb af 24 flasker",
+            "button_link": ""
           }
         },
-        "47a10a7b-5c95-4bbf-8445-b7003fdc93b2": {
-          "type": "question",
+        "31e961e2-3c68-433f-8599-929d75b8b586": {
+          "type": "announcement",
           "settings": {
-            "question_title": "Hvilken smagstype foretrækker du?",
-            "answers": "'Sødlig', 'Let', 'Tør'"
+            "announcement_icon": "shopify:\/\/shop_images\/checkmark.png",
+            "announcement_text": "Sikker levering af kvalitetsvin",
+            "button_link": ""
           }
         },
-        "1bacab52-a39f-41d4-9d79-4706de313557": {
-          "type": "question",
+        "e8da2a00-a214-4693-9266-42c1c5d1d5b3": {
+          "type": "announcement",
           "settings": {
-            "question_title": "Hvilket land skal vinen være fra?",
-            "answers": "'Fransk'"
+            "announcement_icon": "shopify:\/\/shop_images\/kundeklub.png",
+            "announcement_text": "Bliv en del af vores vinklub hvor du forkæles med god vin",
+            "button_link": "shopify:\/\/pages\/vinklub"
           }
         }
       },
       "block_order": [
-        "14fcaedc-7f86-4ab3-b943-ca853d8d768d",
-        "47a10a7b-5c95-4bbf-8445-b7003fdc93b2",
-        "1bacab52-a39f-41d4-9d79-4706de313557"
+        "16535015080975ece7-0",
+        "31e961e2-3c68-433f-8599-929d75b8b586",
+        "e8da2a00-a214-4693-9266-42c1c5d1d5b3"
       ],
       "settings": {
-        "guide_title": "Vinguide",
-        "guide_description": "Dette er en vinguide med data fra Shopify editoren"
       }
     },
-    "image-with-text": {
-      "type": "image-with-text",
+    "hero": {
+      "type": "main-hero",
       "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Billede med text test fra VSCode",
+            "heading": "Vin direkte fra vinbonden",
             "heading_size": "h0"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product or collection.<\/p>",
+            "text": "<p>ET VinImport arbejder med en niche i vinbranchen, hvor vi handler med mindre vinbønder rundt om på kloden, hvor kvalitet er altafgørende<\/p>",
             "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "button",
-          "settings": {
-            "button_label": "Se alle vine",
-            "button_link": "shopify:\/\/collections"
           }
         }
       },
       "block_order": [
         "heading",
-        "text",
-        "button"
+        "text"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Vinas.jpg",
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "center",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-1",
-        "mobile_content_alignment": "center",
-        "padding_top": 12,
-        "padding_bottom": 32
+        "image": "shopify:\/\/shop_images\/Skaermbillede_2022-05-18_kl._21.48.36.png",
+        "display_scroll_to": "flex"
       }
     },
     "featured_collection": {
@@ -89,131 +73,105 @@
         "button_link": "",
         "collection": "alsace",
         "products_to_show": 12,
-        "show_secondary_image": true,
+        "show_secondary_image": false,
         "show_vendor": true,
         "show_rating": false
+      }
+    },
+    "1654538378b158ed5e": {
+      "type": "cta-section",
+      "blocks": {
+        "1654538378a059f6a5-0": {
+          "type": "heading",
+          "settings": {
+            "cta_heading": "Få de bedste vine til årstiden",
+            "cta_heading_size": "h1"
+          }
+        },
+        "1654538378a059f6a5-1": {
+          "type": "text",
+          "settings": {
+            "cta_text": "<p>- Medlemmerne i vores vinklub får de bedste vine leveret hvert kvartal<\/p>",
+            "cta_text_style": "body"
+          }
+        },
+        "1654538378a059f6a5-2": {
+          "type": "button",
+          "settings": {
+            "cta_button_label": "Bliv en del af vinklubben",
+            "cta_button_link": "shopify:\/\/pages\/vinklub"
+          }
+        }
+      },
+      "block_order": [
+        "1654538378a059f6a5-0",
+        "1654538378a059f6a5-1",
+        "1654538378a059f6a5-2"
+      ],
+      "settings": {
+        "cta_image": "shopify:\/\/shop_images\/Vinas_bb2b0485-96f2-4593-b4be-dbb6a324cf30.jpg",
+        "cta_padding_top": 64,
+        "cta_padding_bottom": 0
       }
     },
     "featured-collection-1": {
       "type": "featured-collection",
       "settings": {
-        "title": "Månedens vine",
+        "title": "Sommerens bedste vine",
         "heading_size": "h1",
         "heading_alignment": "center",
         "button_label": "",
         "button_link": "",
         "collection": "all",
-        "products_to_show": 4,
+        "products_to_show": 8,
         "show_secondary_image": false,
-        "show_vendor": false,
+        "show_vendor": true,
         "show_rating": false
       }
     },
-    "16516806691317e73b": {
-      "type": "multicolumn",
+    "16546221009a774651": {
+      "type": "cta-section",
       "blocks": {
-        "1651680669e3c0dd78-0": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "Test",
-            "link": "shopify:\/\/products\/7-cepos-100-albarino"
-          }
-        },
-        "1651680669e3c0dd78-1": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "1651680669e3c0dd78-2": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "6a27f727-8b26-433c-946d-e1bb7b2684a7": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "1651680669e3c0dd78-0",
-        "1651680669e3c0dd78-1",
-        "1651680669e3c0dd78-2",
-        "6a27f727-8b26-433c-946d-e1bb7b2684a7"
-      ],
-      "settings": {
-        "title": "Multicolumn",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 4,
-        "column_alignment": "left",
-        "background_style": "primary",
-        "button_label": "Button label",
-        "button_link": "",
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "16522049432acd6223": {
-      "type": "newsletter",
-      "blocks": {
-        "16522049435aecb50a-0": {
+        "1654622100aa22be64-0": {
           "type": "heading",
           "settings": {
-            "heading": "Tilmeld dig vores vinklub",
-            "heading_size": "h1"
+            "cta_heading": "Du skal ikke være i tvivl",
+            "cta_heading_size": "h2"
           }
         },
-        "16522049435aecb50a-1": {
-          "type": "paragraph",
+        "1654622100aa22be64-1": {
+          "type": "text",
           "settings": {
-            "text": "<p>- så får du spændende kvalitetsvine leveret lige til døren 4 gange om året<\/p>"
+            "cta_text": "<p>Lad os hjælpe dig med at finde den rette vin til dig<\/p>",
+            "cta_text_style": "body"
           }
         },
-        "16522049435aecb50a-2": {
-          "type": "email_form",
+        "1654622100aa22be64-2": {
+          "type": "button",
           "settings": {
+            "cta_button_label": "Bliv inspireret",
+            "cta_button_link": "shopify:\/\/pages\/vinguides"
           }
         }
       },
       "block_order": [
-        "16522049435aecb50a-0",
-        "16522049435aecb50a-1",
-        "16522049435aecb50a-2"
+        "1654622100aa22be64-0",
+        "1654622100aa22be64-1",
+        "1654622100aa22be64-2"
       ],
       "settings": {
-        "color_scheme": "background-1",
-        "newsletter_bg": "shopify:\/\/shop_images\/Vinas_bb2b0485-96f2-4593-b4be-dbb6a324cf30.jpg",
-        "full_width": true,
-        "padding_top": 120,
-        "padding_bottom": 120
+        "cta_image": "shopify:\/\/shop_images\/vinguide-cta.jpg",
+        "cta_padding_top": 64,
+        "cta_padding_bottom": 0
       }
     }
   },
   "order": [
-    "guide_section",
-    "image-with-text",
+    "1653501508acaff683",
+    "hero",
     "featured_collection",
+    "1654538378b158ed5e",
     "featured-collection-1",
-    "16516806691317e73b",
-    "16522049432acd6223"
+    "16546221009a774651"
   ]
 }

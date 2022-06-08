@@ -1,14 +1,18 @@
 {{ 'section-guide.css' | asset_url | stylesheet_tag }}
+{{ 'component-product-card.css' | asset_url | stylesheet_tag }}
+
 
 <div id="app">
     <template v-if="allProducts">
         <div class="guide page-width">
             <h2 v-text="guideTitle"></h2>
             <p v-text="guideDescription"></p>
-
+            <p v-if="!guideCompleted" class="question-number text-center">
+                Spørgsmål <span v-text="getCurrentQuestion.questionNumber"></span> af <span v-text="questions.length"></span>
+            </p>
             <Transition name="fade">
-                <div v-if="!quizCompleted" class="question">
-                    <h3 v-text="`${getCurrentQuestion.questionNumber}. ${getCurrentQuestion.question}`" class="question__heading"></h3>
+                <div v-if="!guideCompleted" class="question">
+                    <h2 v-text="`${getCurrentQuestion.questionNumber}. ${getCurrentQuestion.question}`" class="question__heading"></h2>
                     <div class="options">
                         <label v-for="(option, index) in getCurrentQuestion.options" :key="index">
                             <input type="radio" 
@@ -17,74 +21,104 @@
                             <span v-text="option" @click="addToUserOptions(option); nextQuestion()"></span>
                         </label>
                     </div>
-                    <div v-if="userOptions" class="guide__options">
+                    <div v-if="userOptions.length" class="guide__options">
                         <h4>Dine valg:</h4>
                         <span v-for="(option, index) in userOptions" :key="index" v-text="option"></span>
                     </div>
                 </div>
             </Transition>
-                <div v-if="quizCompleted">
-                    <div v-if="userOptions" class="guide__options">
-                        <h4>Dine valg:</h4>
-                        <span v-for="(option, index) in userOptions" :key="index" v-text="option"></span>
-                    </div>
-                    <h4>Anbefalinger:</h4>
-                    <div v-if="quizCompleted && results">
+                <div v-if="guideCompleted">
+                    <h4 class="guide-recommendations">Vi anbefaler disse vine ud fra dine valg:</h4>
+                    <div v-if="guideCompleted && results">
                         <ul class="grid product-grid grid--2-col-tablet-down grid--4-col-desktop">
                             <li v-for="(product, index) in results" :key="index" class="grid__item">
-                                <div class="card">
-                                    <div class="card__media">
-                                        <img :src="product.featured_media">
-                                    </div>
-                                        <div class="card__content">
-                                            <div class="card__information">
-                                                <span class="visually-hidden" v-text="product.vendor"></span>
-                                                <span class="caption-with-letter-spacing light" v-text="product.vendor"></span>
-                                            <h3 class="card__heading h5">
-                                                <a :href="product.url" class="full-unstyled-link" v-text="product.title"></a>
-                                            </h3>
-                                            <div class="card-information">
-                                                <span class="price-item price-item--regular" v-text="product.price">
-                                                    </span>
-                                                <div class="card__origin">
-                                                {% render 'country', product: card_product %}
-                                                {% render 'grape-sort', product: card_product %}
+                                <a :href="product.url">
+                                    <div class="card">
+                                        <div class="card__media">
+                                            <img :src="product.featured_media">
+                                        </div>
+                                            <div class="card__content">
+                                                <div class="card__information">
+                                                    <span class="visually-hidden" v-text="product.brand"></span>
+                                                    <span class="caption-with-letter-spacing light" v-text="product.brand"></span>
+                                                <h3 class="card__heading h5">
+                                                    <a :href="product.url" class="full-unstyled-link" v-text="product.title"></a>
+                                                </h3>
+                                                <div class="card-information">
+                                                    <span class="price-item price-item--regular" v-text="product.price"></span>
+                                                    <div class="card__origin">
+                                                        <div>
+                                                            <img :src="product.flag" :alt="product.land">
+                                                            <span v-text="product.land"></span>
+                                                        </div>
+                                                        <div v-if="product.grapes">
+                                                            <img src="{{ 'grape_sort.png' | asset_img_url }}" :alt="product.drue">
+                                                            <span v-for="(grape, index) in product.grapes" :key="index" v-text="grape"></span>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <form class="card__add" method="post" action="/cart/add" onclick="addToCart(event)">
-                                                <input type="hidden" name="id" :value="product.variants[0]" />
-                                                <input min="1" type="number" id="quantity" name="quantity" :value="selectedQuantity"/>
-                                                <input type="submit" value="Læg i kurv" class="btn" />
-                                            </form>
+                                                <form class="card__add" method="post" action="/cart/add" onclick="addToCart(event)">
+                                                    <input type="hidden" name="id" :value="product.variants[0]" />
+                                                    <input min="1" type="number" id="quantity" name="quantity" :value="selectedQuantity"/>
+                                                    <button type="submit" value="Læg i kurv" class="button">Læg i kurv</button>
+                                                </form>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
                             </li>
                         </ul>
+                        <div v-if="userOptions" class="guide__options">
+                            <h4>Dine valg:</h4>
+                            <span v-for="(option, index) in userOptions" :key="index" v-text="option"></span>
+                        </div>
                     </div>
-                    <div v-if="quizCompleted && !results">
+                    <div v-if="guideCompleted && !results">
                         Vi fandt desværre ingen anbefalinger. Prøv guiden igen.
                     </div>
                 </div>
-                <div v-if="quizCompleted" class="page-width guide__reset">
-                    <a role="link" class="link animate-arrow" @click="moveUp(); startOver();">
+                <div v-if="guideCompleted" class="page-width guide__reset">
+                    <a role="link" class="link animate-arrow" @click="startOver();">
                         Start forfra 
                         <span class="icon-wrap">
                             <svg viewBox="0 0 14 10" fill="none" aria-hidden="true" focusable="false" role="presentation" class="icon icon-arrow" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z" fill="currentColor"></path>
+                                <path fill-rule="evenodd" 
+                                clip-rule="evenodd" d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z" 
+                                fill="currentColor">
+                            </path>
                             </svg>
                         </span>
                     </a>
                 </div>
             </div>
     </template>
+    <template v-else-if="notFound">
+        <div class="guide page-width">
+            <p class="text-center">
+                For at finde god vin skal der findes nogle gode produkter. Vi kunne desværre ikke hente nogle produkter til vinguide.
+            </p>
+            <p class="text-center">
+                Prøv at indlæse siden igen.
+            </p>
+        </div>
+    </template>
+    <template v-else>
+        <div class="guide page-width guide-loading">
+            <p class="text-center">
+                God vin bliver bedre med alderen.
+            </p>
+            <p class="text-center">
+                Vent venligst mens vinguiden indlæses.. 🍷 
+            </p>
+        </div>
+    </template>
 </div>
 <script src="https://unpkg.com/vue@3"></script>
 
 <script>
     const options = {
-        name: "CollectionsApp",
+        name: "GuideApp",
         data() {
             return {
                 allProducts: null,
@@ -93,59 +127,61 @@
                 fetchURL: window.Shopify.routes.root + "collections/all?view=json",
                 tags: [],
                 filters: [],
-                type: "",
-                selectedTaste: null,
-                searchQuery: null,
                 questions:[{% for block in section.blocks %}{% case block.type %}{% when 'question' %}
                         {
                             question: "{{ block.settings.question_title }}",
-                            answer: {{ forloop.index0 }},
                             options: [
                                 {{ block.settings.answers }}
-                            ], 
-                            selected: null,
+                            ],
                             questionNumber: {{ forloop.index }}
                         }{% endcase %}{% unless forloop.last %},{% endunless %}{% endfor %}
                 ],
-                quizCompleted: false,
+                guideCompleted: false,
                 currentQuestion: 0,
                 userOptions: [],
                 results: [],
-                selectedQuantity: 1
+                selectedQuantity: 1,
+                notFound: false,
+                hejHej: 'test'
             }
         },
         methods: {
             async getProducts() {
-                await fetch(this.fetchURL, {
-                    mode: 'no-cors'
-                })
-                .then(res => res.json())
-                .then(data => {
-                    this.allProducts = data.products
-                    this.tags = data.tags
-                    this.filters = data.filters
-                })
+                try {
+                    await fetch(this.fetchURL, {
+                        mode: 'no-cors'
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        this.allProducts = data.products
+                        this.tags = data.tags
+                        this.filters = data.filters
+                    })
+                } catch (e) {
+                    return this.notFound = true
+                }
+            },            
+            addToUserOptions(option) {
+                this.userOptions.push(option);
             },
             nextQuestion() {
                 if(this.currentQuestion < this.questions.length - 1) {
                     this.currentQuestion++
                 } else {
-                    this.quizCompleted = true
+                    this.guideCompleted = true
                     this.filteredProducts()
+                    console.log(this.filteredProducts())
                 }
-            },
-            addToUserOptions(option) {
-                this.userOptions.push(option);
             },
             filteredProducts() {
                 const searchFilters = this.filters;
                 const searchParams = this.userOptions;
-                
-                this.results = this.allProducts.filter((item) =>
+
+                filterdResults = this.allProducts.filter((item) =>
                     searchFilters.some((a) => searchParams.includes(item[a]))
-                );
-                const recommendations = this.results.slice(0,4);
-                this.results = recommendations;
+                )
+                this.results = filterdResults.slice(0,4);
+                return this.results
             },
             addToCart(event) {
                 event.preventDefault()
@@ -154,7 +190,7 @@
                 this.currentQuestion = 0
                 this.userOptions = []
                 this.results = null
-                this.quizCompleted = false
+                this.guideCompleted = false
             },
             moveUp() {
                 window.scrollTo(0,0);
@@ -176,53 +212,8 @@
             }
         }
     }
-    const CollectionsApp = Vue.createApp(options).mount('#app');
+    const GuideApp = Vue.createApp(options).mount('#app');
 </script>
-
-
-
-{% comment %}
-fetch_url: window.location.href + "/collections/all?view=json",
-fetch_url: "https://www.etvinimport.dk/collections/all?view=json",
-
-{% for block in section.blocks %}  
-    {% case block.type %}
-    {% when 'question' %}  
-        <div class="link" {{ block.shopify_attributes }}>   
-            {{ block.settings.question_title }}
-        </div> 
-    {% endcase %} 
-{% endfor %}
-
-
- [{% for block in section.blocks %}{% case block.type %}{% when 'question' %}
-    {
-        "{{ block.settings.question_title }}"
-    }{% endcase %}{% unless forloop.last %},{% endunless %}{% endfor %}
-    ]
-
-            <div>
-            <input v-model="searchQuery" type="text" placeholder="Portvin">
-            <label v-for="(tag, index) in tags" :key="index">
-                <input type="radio" :value="tag" v-model="selectedTaste">
-                    <span v-text="tag"></span>
-                </input>
-            </label>
-            <label v-for="(question, index) in questions" :key="index">
-                <input type="radio" :value="question">
-                    <span v-text="question"></span>
-                </input>
-            </label>
-            <ul class="grid product-grid">
-                <li class="grid__item" v-for="resultProduct in resultQuery" :key="resultProduct.id">
-                   <h4 v-html="resultProduct.title"></h4>
-                   <img :src="resultProduct.featured_image" alt="" />
-                   <a :href="resultProduct.url">Køb</a>
-                </li>
-            </ul>
-            <hr>
-        </div>
-{% endcomment %}
 
 {% schema %}
 {
@@ -280,6 +271,16 @@ fetch_url: "https://www.etvinimport.dk/collections/all?view=json",
                 }
             ]
         }
+    ],
+    "presets": [
+    {
+        "name": "Guide",
+        "blocks": [
+        {
+            "type": "question"
+        }
+        ]
+    }
     ]
  }
 {% endschema %}

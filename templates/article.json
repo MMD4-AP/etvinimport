@@ -1,44 +1,59 @@
 {
   "sections": {
-    "main": {
-      "type": "main-article",
+    "165307248230323180": {
+      "type": "main-hero",
       "blocks": {
-        "featured_image": {
-          "type": "featured_image",
+        "1653072482252f0267-0": {
+          "type": "heading",
           "settings": {
-            "image_height": "medium"
+            "heading": "ET Vinklub",
+            "heading_size": "h1"
           }
         },
-        "title": {
-          "type": "title",
+        "1653072482252f0267-1": {
+          "type": "text",
           "settings": {
-            "blog_show_date": false,
-            "blog_show_author": false
-          }
-        },
-        "content": {
-          "type": "content",
-          "settings": {
-          }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
+            "text": "<p>Det er ligegyldigt, om glasset er halvt tomt eller halvt fyldt. Der er helt klart plads til mere vin<\/p>",
+            "text_style": "body"
           }
         }
       },
       "block_order": [
-        "featured_image",
-        "title",
-        "content",
-        "share"
+        "1653072482252f0267-0",
+        "1653072482252f0267-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/vinklubhero.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "content": {
+          "type": "content",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "content"
       ],
       "settings": {
       }
     }
   },
   "order": [
+    "165307248230323180",
     "main"
   ]
 }

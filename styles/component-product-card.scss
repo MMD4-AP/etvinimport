@@ -1,11 +1,27 @@
 @import 'variables';
+a {
+    text-decoration: none;
+    color: inherit;
+    &.card {
+
+    }
+}
 .card {
+    position: relative;
+    .organic {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+    }
     display: flex;
     flex-direction: column;
     align-content: center;
     align-items: center;
     text-align: center;
-    max-width: 220px;
+    justify-content: space-between;
+    height: 100%;
+    // width: 90%;
+    // max-width: 220px;
     background: linear-gradient(to bottom, #B7B7A4 46%, transparent 0%);
 
     @media #{$screen-tablet} {
@@ -33,35 +49,46 @@
             width: 30px;
             text-align: center;
             margin: 0;
+            height: 100%;
+            box-sizing: border-box;
         }
-        input[type=submit] {
-            width: 100%;
-            background-color: rgb(var(--color-button));
-            color: rgb(var(--color-button-text));
-            width: 100%;
-            cursor: pointer;
-            &:hover {
-                background-color: #7a7a6c;
-            }
-        }
+        // input[type=submit] {
+        //     width: 100%;
+        //     background-color: rgb(var(--color-button));
+        //     color: rgb(var(--color-button-text));
+        //     width: 100%;
+        //     cursor: pointer;
+        //     &:hover {
+        //         background-color: #7a7a6c;
+        //     }
+        // }
         input[type=number]::-webkit-inner-spin-button {
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none; 
         }
+        button {
+            width: 100%;
+        }
     }
     &__content {
         width: 100%;
+        display: flex;
+        flex-direction: column;
     }
     &__media {
         img {
             height: 245px;
             width: auto;
             margin: 10px auto;
-
+            transform: scale(1);
+            transition: transform .3s ease-in-out;
+            &:hover {
+                transform: scale(1.025);
+            }
             @media #{$screen-tablet} {
                 height: 415px;
-                margin: 30px auto;
+                margin: 30px auto 0 auto;
             }
         }
     }

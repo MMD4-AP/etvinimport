@@ -2,6 +2,7 @@ class DetailsDisclosure extends HTMLElement {
   constructor() {
     super();
     this.mainDetailsToggle = this.querySelector('details');
+    this.header = this.querySelector('.header');
     this.content = this.mainDetailsToggle.querySelector('summary').nextElementSibling;
 
     this.mainDetailsToggle.addEventListener('focusout', this.onFocusOut.bind(this));
@@ -15,12 +16,15 @@ class DetailsDisclosure extends HTMLElement {
   }
 
   onToggle() {
-    if (!this.animations) this.animations = this.content.getAnimations();
+    if (!this.animations) {
+      this.animations = this.content.getAnimations();
+    }
 
     if (this.mainDetailsToggle.hasAttribute('open')) {
       this.animations.forEach(animation => animation.play());
     } else {
       this.animations.forEach(animation => animation.cancel());
+
     }
   }
 

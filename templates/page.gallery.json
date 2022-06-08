@@ -1,0 +1,70 @@
+{
+  "sections": {
+    "165458764869338383": {
+      "type": "main-hero",
+      "blocks": {
+        "1654587648f56d81b2-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Vin til maden",
+            "heading_size": "h1"
+          }
+        },
+        "1654587648f56d81b2-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Find netop den vin, der passer til dig og dine behov<\/p>",
+            "text_style": "body"
+          }
+        },
+        "1654587648f56d81b2-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1654587648f56d81b2-0",
+        "1654587648f56d81b2-1",
+        "1654587648f56d81b2-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/smagstypeguide.jpg",
+        "display_scroll_to": "none"
+      }
+    },
+    "main": {
+      "type": "main-guide",
+      "blocks": {
+        "14fcaedc-7f86-4ab3-b943-ca853d8d768d": {
+          "type": "question",
+          "settings": {
+            "question_title": "Hvilken vintype du foretrækker du?",
+            "answers": "'Hvid', 'Mousserende', 'Portvin', 'Rosé', 'Boblende'"
+          }
+        },
+        "47a10a7b-5c95-4bbf-8445-b7003fdc93b2": {
+          "type": "question",
+          "settings": {
+            "question_title": "Vælg hvilken smagstype, du ønsker din vin har",
+            "answers": "'Sødlig', 'Let', 'Fyldig', 'Tør', 'Aromatisk', 'Fed'"
+          }
+        }
+      },
+      "block_order": [
+        "14fcaedc-7f86-4ab3-b943-ca853d8d768d",
+        "47a10a7b-5c95-4bbf-8445-b7003fdc93b2"
+      ],
+      "settings": {
+        "guide_title": "",
+        "guide_description": ""
+      }
+    }
+  },
+  "order": [
+    "165458764869338383",
+    "main"
+  ]
+}
