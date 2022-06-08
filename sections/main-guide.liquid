@@ -28,11 +28,7 @@
                 </div>
             </Transition>
                 <div v-if="guideCompleted">
-                    <div v-if="userOptions" class="guide__options">
-                        <h4>Dine valg:</h4>
-                        <span v-for="(option, index) in userOptions" :key="index" v-text="option"></span>
-                    </div>
-                    <h4>Anbefalinger:</h4>
+                    <h4 class="guide-recommendations">Vi anbefaler disse vine ud fra dine valg:</h4>
                     <div v-if="guideCompleted && results">
                         <ul class="grid product-grid grid--2-col-tablet-down grid--4-col-desktop">
                             <li v-for="(product, index) in results" :key="index" class="grid__item">
@@ -73,6 +69,10 @@
                                 </a>
                             </li>
                         </ul>
+                        <div v-if="userOptions" class="guide__options">
+                            <h4>Dine valg:</h4>
+                            <span v-for="(option, index) in userOptions" :key="index" v-text="option"></span>
+                        </div>
                     </div>
                     <div v-if="guideCompleted && !results">
                         Vi fandt desværre ingen anbefalinger. Prøv guiden igen.
@@ -104,9 +104,12 @@
         </div>
     </template>
     <template v-else>
-        <div class="guide page-width">
+        <div class="guide page-width guide-loading">
             <p class="text-center">
-                Gode vin tager tid, det samme gør denne vinguide. Vent venligst mens vinguiden indlæses 🍷 
+                God vin bliver bedre med alderen.
+            </p>
+            <p class="text-center">
+                Vent venligst mens vinguiden indlæses.. 🍷 
             </p>
         </div>
     </template>
