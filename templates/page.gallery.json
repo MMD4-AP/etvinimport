@@ -13,7 +13,7 @@
         "1654587648f56d81b2-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Lad os guide dig til at vælge den rette vin til måltidet<\/p>",
+            "text": "<p>Find netop den vin, der passer til dig og dine behov<\/p>",
             "text_style": "body"
           }
         },
@@ -32,16 +32,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/madguide.jpg",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-1",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "display_scroll_to": "none"
       }
     },
     "main": {
@@ -57,8 +48,8 @@
         "47a10a7b-5c95-4bbf-8445-b7003fdc93b2": {
           "type": "question",
           "settings": {
-            "question_title": "Hvilken smagstype foretrækker du?",
-            "answers": "'Sødlig', 'Let', 'Tør'"
+            "question_title": "Vælg hvilken smagstype, du ønsker din vin har",
+            "answers": "'Sødlig', 'Let', 'Fyldig', 'Tør', 'Aromatisk', 'Fed'"
           }
         }
       },
