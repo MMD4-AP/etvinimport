@@ -17,9 +17,8 @@
                         <label v-for="(option, index) in getCurrentQuestion.options" :key="index">
                             <input type="radio" 
                             :value="index"
-                            class="link animate-arrow"
                             >
-                            <span v-text="option" @click="addToUserOptions(option); nextQuestion()" class="icon-wrap"></span>
+                            <span v-text="option" @click="addToUserOptions(option); nextQuestion()"></span>
                         </label>
                     </div>
                     <div v-if="userOptions.length" class="guide__options">
@@ -139,7 +138,8 @@
                 userOptions: [],
                 results: [],
                 selectedQuantity: 1,
-                notFound: false
+                notFound: false,
+                hejHej: 'test'
             }
         },
         methods: {
@@ -167,6 +167,7 @@
                 } else {
                     this.guideCompleted = true
                     this.filteredProducts()
+                    console.log(this.filteredProducts())
                 }
             },
             filteredProducts() {
@@ -175,7 +176,7 @@
 
                 filterdResults = this.allProducts.filter((item) =>
                     searchFilters.some((a) => searchParams.includes(item[a]))
-                );
+                )
                 this.results = filterdResults.slice(0,4);
                 return this.results
             },

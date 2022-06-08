@@ -25,7 +25,7 @@
                 {
                     "id": {{ product.id }},
                     "title": {{ product.title | json }},
-                    "brand": {{ product.vendor | json }},
+                    "vingård": {{ product.vendor | json }},
                     "tags": [
                         {% for tag in product.tags %}
                             "{{ tag }}"
@@ -55,7 +55,7 @@
                     "featured_media": "{{ product.featured_image | image_url }}",
                     "url": "{{ product.url }}",
                     "price": "{{ product.price_min | money_without_trailing_zeros }}",
-                    "produkttype": {{ product.type | json }}
+                    "vintype": {{ product.type | json }}
                 }
                 {% unless forloop.last %},{% endunless %}
             {% endfor %}
