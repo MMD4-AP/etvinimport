@@ -72,6 +72,7 @@
           <div class="footer-block__details-content footer-block-image {{ block.settings.alignment }}">
               {%- assign footer_logo = 'logo-white.png' | asset_img_url: '300x' -%}
               {%- assign image_size = block.settings.image_width | append: 'x' -%}
+              <a href="/">
               <img
                 src="{{ footer_logo }}"
                 alt="ET Vinimports logo i hvid"
@@ -80,6 +81,7 @@
                 height="{{ block.settings.image.height }}"
                 style="max-width: min(100%, {{ block.settings.image_width }}px);"
               >
+            </a>
           </div>
           <div class="footer-block grid__item newsletter">
             {%- if section.settings.newsletter_enable -%}
