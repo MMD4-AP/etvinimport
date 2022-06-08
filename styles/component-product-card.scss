@@ -7,6 +7,12 @@ a {
     }
 }
 .card {
+    position: relative;
+    .organic {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+    }
     display: flex;
     flex-direction: column;
     align-content: center;

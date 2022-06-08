@@ -67,13 +67,33 @@
   &__description {
     margin-top: 64px;
   }
-
+  &__specs {
+    display: grid;
+    grid-template-columns: 1fr;
+    @media screen and (min-width: 768px) {
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-auto-columns: 1fr;
+      grid-auto-flow: column;
+      grid-column-gap: 3rem;
+    }
+    &-item {
+      color: #6B705C;
+      padding: 0 0 10px 0;
+      border-bottom: 1px solid #B7B7A4;;
+      p {
+        span {
+          font-weight: 600;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
 }
 section {
   .product__info {
     h3 {
       color: #fff;
-      background-color: #6B705C;
+      background-color: #B7B7A4;
       padding: 22px 0;
       text-align: center;
     }

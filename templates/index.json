@@ -15,15 +15,15 @@
           "type": "announcement",
           "settings": {
             "announcement_icon": "shopify:\/\/shop_images\/checkmark.png",
-            "announcement_text": "Sikker fragt",
+            "announcement_text": "Sikker levering af kvalitetsvin",
             "button_link": ""
           }
         },
         "e8da2a00-a214-4693-9266-42c1c5d1d5b3": {
           "type": "announcement",
           "settings": {
-            "announcement_icon": "shopify:\/\/shop_images\/newsletter.png",
-            "announcement_text": "Kundeklub med fordele",
+            "announcement_icon": "shopify:\/\/shop_images\/kundeklub.png",
+            "announcement_text": "Bliv en del af vores vinklub hvor du forkæles med god vin",
             "button_link": "shopify:\/\/pages\/vinklub"
           }
         }
@@ -73,7 +73,7 @@
         "button_link": "",
         "collection": "alsace",
         "products_to_show": 12,
-        "show_secondary_image": true,
+        "show_secondary_image": false,
         "show_vendor": true,
         "show_rating": false
       }
@@ -164,41 +164,6 @@
         "cta_padding_top": 64,
         "cta_padding_bottom": 0
       }
-    },
-    "guide_section": {
-      "type": "main-guide",
-      "blocks": {
-        "14fcaedc-7f86-4ab3-b943-ca853d8d768d": {
-          "type": "question",
-          "settings": {
-            "question_title": "Hvilken vintype du foretrækker du?",
-            "answers": "'Hvid', 'Mousserende', 'Portvin', 'Rosé', 'Boblende'"
-          }
-        },
-        "47a10a7b-5c95-4bbf-8445-b7003fdc93b2": {
-          "type": "question",
-          "settings": {
-            "question_title": "Hvilken smagstype foretrækker du?",
-            "answers": "'Sødlig', 'Let', 'Tør'"
-          }
-        },
-        "1bacab52-a39f-41d4-9d79-4706de313557": {
-          "type": "question",
-          "settings": {
-            "question_title": "Hvilket land skal vinen være fra?",
-            "answers": "'Fransk'"
-          }
-        }
-      },
-      "block_order": [
-        "14fcaedc-7f86-4ab3-b943-ca853d8d768d",
-        "47a10a7b-5c95-4bbf-8445-b7003fdc93b2",
-        "1bacab52-a39f-41d4-9d79-4706de313557"
-      ],
-      "settings": {
-        "guide_title": "Smagsguide",
-        "guide_description": ""
-      }
     }
   },
   "order": [
@@ -207,7 +172,6 @@
     "featured_collection",
     "1654538378b158ed5e",
     "featured-collection-1",
-    "16546221009a774651",
-    "guide_section"
+    "16546221009a774651"
   ]
 }

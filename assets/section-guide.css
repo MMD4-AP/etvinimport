@@ -21,6 +21,20 @@
 #app .guide__reset {
   margin: 30px auto;
 }
+#app .guide-loading p {
+  font-family: var(--font-heading-family);
+  font-size: 3.5rem;
+  color: #6B705C;
+}
+#app .guide-loading p:not(:first-of-type) {
+  margin-top: 10px;
+}
+#app .guide-recommendations {
+  font-size: 3.5rem;
+  color: #6B705C;
+  text-align: center;
+  margin-bottom: 64px;
+}
 #app .question {
   display: flex;
   flex-direction: column;
