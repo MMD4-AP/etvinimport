@@ -1,0 +1,104 @@
+{
+  "sections": {
+    "165458764869338383": {
+      "type": "main-hero",
+      "blocks": {
+        "1654587648f56d81b2-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "ET Vinklub",
+            "heading_size": "h1"
+          }
+        },
+        "1654587648f56d81b2-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Det er ligegyldigt, om glasset er halvt tomt eller halvt fyldt. Der er helt klart plads til mere vin<\/p>",
+            "text_style": "body"
+          }
+        },
+        "1654587648f56d81b2-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1654587648f56d81b2-0",
+        "1654587648f56d81b2-1",
+        "1654587648f56d81b2-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/vinklubhero.jpg",
+        "display_scroll_to": "none"
+      }
+    },
+    "165460350729abf9f3": {
+      "type": "page",
+      "settings": {
+        "page": "vinklub",
+        "heading_size": "h2",
+        "display_heading": "none",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "16546035500ca0218d": {
+      "type": "rich-text",
+      "blocks": {
+        "16546035507d8820bb-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>De bedste vinhilsner fra ET – Vinimport<\/p>"
+          }
+        },
+        "16546035507d8820bb-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Torben & Eli",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "16546035507d8820bb-1",
+        "16546035507d8820bb-0"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": false,
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    },
+    "16546043322db804da": {
+      "type": "rich-text",
+      "blocks": {
+        "1654604332562b9bfc-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Tilmelding:<\/strong><\/p><p>Eli Sandlykke:<\/p><p>eli@etvinimport.dk eller på 3120 5460<\/p><p>Torben Friis Nielsen:<\/p><p>torben@etvinimport.dk eller på 2193 2244<\/p><p><\/p><p><em><strong>OBS:<\/strong><\/em><em> Opsigelse er 1 uge før leverings måned.<\/em><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1654604332562b9bfc-1"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "165458764869338383",
+    "165460350729abf9f3",
+    "16546035500ca0218d",
+    "16546043322db804da"
+  ]
+}

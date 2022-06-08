@@ -15,7 +15,6 @@
 }
 .hero.page-index {
   height: calc(100vh - 77px);
-  height: calc(100vh - 80px);
 }
 .hero.page-index img {
   height: 100%;
@@ -42,29 +41,4 @@
   color: #fff;
   max-width: 60ch;
   text-align: center;
-}
-.hero .scroll-to {
-  height: fit-content;
-  width: fit-content;
-  margin: 0 auto;
-  position: relative;
-  bottom: 14rem;
-  cursor: pointer;
-}
-.hero .scroll-index {
-  bottom: 18rem;
-}
-.hero .scroll-arrow {
-  animation: scrollArrow 2s infinite;
-}
-@keyframes scrollArrow {
-  0% {
-    margin-top: 0;
-  }
-  50% {
-    margin-top: 20px;
-  }
-  100% {
-    margin-top: 0;
-  }
 }

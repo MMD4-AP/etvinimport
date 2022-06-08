@@ -29,6 +29,10 @@
               {%- if settings.predictive_search_show_price -%}
                 {% render 'price', product: product, use_variant: true, show_badges: false %} 
               {%- endif -%}
+              <div class="predictive-search-card__origin">
+                {% render 'country', product: product %}
+                {% render 'grape-sort', product: product %}
+              </div>
             </div>
           </a>
         </li>

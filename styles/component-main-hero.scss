@@ -15,7 +15,9 @@
         object-fit: cover;
     }
     &.page-index {
-        height: 100vh;
+        height: calc(100vh - 77px);
+        height: calc(100vh - 80px);
+        
 
         img {
             height: 100%;
@@ -36,9 +38,41 @@
         }
         h1 {
             color: #fff;
+            text-align: center;
+
         }
         p {
             color: #fff;
+            max-width: 60ch;
+            text-align: center;
         }
     }
+
+    .scroll-to {
+        height: fit-content;
+        width: fit-content;
+        margin: 0 auto;
+        position: relative;
+        bottom: 14rem;
+        cursor: pointer;
+    }
+    .scroll-index {
+        bottom: 18rem;
+    }
+    .scroll-arrow {
+        animation: scrollArrow 2s infinite;
+    }
+
+    @keyframes scrollArrow {
+        0% {
+          margin-top: 0;
+        }
+        50% {
+          margin-top: 20px;
+        }
+        100% {
+          margin-top: 0;
+        }
+      }
 }
+

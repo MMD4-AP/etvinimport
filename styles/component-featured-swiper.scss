@@ -1,4 +1,7 @@
 .featured-products {
+    .card {
+        width: 240px;
+    }
     .featured-swiper {
         width: 100%;
         height: 100%;
@@ -8,8 +11,8 @@
         }
         .swiper-slide {
             text-align: center;
-            font-size: 18px;
-    
+            font-size: 1.8rem;
+            height: auto;
             /* Center slide text vertically */
             display: -webkit-box;
             display: -ms-flexbox;
@@ -23,6 +26,8 @@
             -ms-flex-align: center;
             -webkit-align-items: center;
             align-items: center;
+
+
         }
     
         .swiper-slide img {

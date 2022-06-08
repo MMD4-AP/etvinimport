@@ -34,7 +34,7 @@
   <link id="ModelViewerOverride" rel="stylesheet" href="{{ 'component-model-viewer-ui.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
 
-<section class="page-width section-{{ section.id }}-padding test" id="product_page">
+<section class="page-width section-{{ section.id }}-padding" id="product_page">
   {% render 'breadcrumbs' %}
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.gallery_layout }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
@@ -144,7 +144,7 @@
           <div class="variant-select">
             {% for product_option in product.options_with_values %}
               <label for="{{ product_option.name }}">
-                {{ product_option.name }} test
+                {{ product_option.name }}
               </label>
               <select id="{{ product_option.name }}" v-model="variantSelection.option{{ product_option.position }}" @change="setProductVariant">
                 {% for value in product_option.values %}
@@ -181,7 +181,7 @@
           <form class="card__add"  @click="addToCart(currentVariantID)">
             <input type="hidden" name="id" :value="currentVariantID" />
             <input min="1" type="number" id="quantity" name="quantity" :value="selectedQuantity"/>
-            <input type="submit" value="Læg i kurv" class="btn" />
+            <input type="submit" value="Læg i kurv" class="button" />
           </form>
           </div>
 
@@ -254,13 +254,27 @@
       </div>
     </modal-dialog>
   {%- endfor -%}
-
   {%- if product.description != blank -%}
-    <div class="product__description rte">
-      {{ product.description }}
-    </div>
-  {%- endif -%}
-
+    <section class="product__info">
+      {%- if product.description != blank -%}
+      <div class="product__description rte">
+        <div>
+          <h3>Beskrivelse</h3>
+          {{ product.description }}
+        </div>
+      </div>
+    {%- endif -%}
+    {%- if product.metafields.meta.country != blank -%}
+      <div class="product__specs rte">
+        <div>
+          <h3>Specifikationer</h3>
+          {{ product.metafields.meta.country }}
+        </div>
+      </div>
+    {%- endif -%}
+    </section>
+  {% endif %}
+  
 </section>
 
 {% javascript %}
@@ -402,7 +416,7 @@
           {% endfor %}
         ],
         currentPrice: null,
-        cartAddFetchURL: 'http://127.0.0.1:9292/' + 'cart/add.js',
+        cartAddFetchURL: window.Shopify.routes.root + 'cart/add.js',
       }
     },
     methods: {

@@ -13,7 +13,7 @@
     "gradient_background_2": "",
     "type_header_font": "playfair_display_n4",
     "heading_scale": 125,
-    "type_body_font": "montserrat_n4",
+    "type_body_font": "ibm_plex_sans_n4",
     "body_scale": 100,
     "page_width": 1400,
     "spacing_sections": 20,
@@ -107,30 +107,6 @@
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
-        "blocks": {
-          "announcement-bar-0": {
-            "type": "announcement",
-            "disabled": true,
-            "settings": {
-              "text": "Welcome to our store",
-              "color_scheme": "accent-1",
-              "link": ""
-            }
-          },
-          "12bf2cb9-875f-47da-890d-0610c11b0284": {
-            "type": "announcement",
-            "disabled": true,
-            "settings": {
-              "text": "Welcome to our store",
-              "color_scheme": "accent-1",
-              "link": ""
-            }
-          }
-        },
-        "block_order": [
-          "announcement-bar-0",
-          "12bf2cb9-875f-47da-890d-0610c11b0284"
-        ],
         "settings": {
         }
       },
@@ -205,7 +181,15 @@
     },
     "content_for_index": [
 
-    ]
+    ],
+    "blocks": {
+      "15512464928232516002": {
+        "type": "shopify:\/\/apps\/onlyage-age-verification-18\/blocks\/app-embed\/1c7f3065-3d8f-46dc-acaf-e43ee578b3ab",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   },
   "presets": {
     "Default": {

@@ -13,7 +13,7 @@
         "1653072482252f0267-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Tekst<\/p>",
+            "text": "<p>Det er ligegyldigt, om glasset er halvt tomt eller halvt fyldt. Der er helt klart plads til mere vin<\/p>",
             "text_style": "body"
           }
         }
@@ -23,7 +23,7 @@
         "1653072482252f0267-1"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/bi.png",
+        "image": "shopify:\/\/shop_images\/vinklubhero.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -39,13 +39,6 @@
     "main": {
       "type": "main-article",
       "blocks": {
-        "title": {
-          "type": "title",
-          "settings": {
-            "blog_show_date": false,
-            "blog_show_author": false
-          }
-        },
         "content": {
           "type": "content",
           "settings": {
@@ -53,7 +46,6 @@
         }
       },
       "block_order": [
-        "title",
         "content"
       ],
       "settings": {

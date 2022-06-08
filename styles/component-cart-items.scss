@@ -1,3 +1,17 @@
+cart-remove-button .button-remove {
+  &:hover {
+    .lid {
+      color: #fff;
+      transform: translate(0,-2px);
+      -webkit-transform: translate(0,-2px);
+      -moz-transform: translate(0,-2px);
+    }
+    .trashcan {
+      color: #fff;
+    }
+  }
+}
+
 .cart-items td,
 .cart-items th {
   padding: 0;
