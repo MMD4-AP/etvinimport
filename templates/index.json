@@ -75,7 +75,9 @@
         "products_to_show": 12,
         "show_secondary_image": false,
         "show_vendor": true,
-        "show_rating": false
+        "show_rating": false,
+        "featured_margin_top": 36,
+        "featured_margin_bottom": 36
       }
     },
     "1654538378b158ed5e": {
@@ -84,7 +86,7 @@
         "1654538378a059f6a5-0": {
           "type": "heading",
           "settings": {
-            "cta_heading": "Få de bedste vine til årstiden",
+            "cta_heading": "Få de bedste vine til årstiden test",
             "cta_heading_size": "h1"
           }
         },
@@ -126,7 +128,9 @@
         "products_to_show": 8,
         "show_secondary_image": false,
         "show_vendor": true,
-        "show_rating": false
+        "show_rating": false,
+        "featured_margin_top": 36,
+        "featured_margin_bottom": 36
       }
     },
     "16546221009a774651": {
