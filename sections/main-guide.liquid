@@ -1,7 +1,6 @@
 {{ 'section-guide.css' | asset_url | stylesheet_tag }}
 {{ 'component-product-card.css' | asset_url | stylesheet_tag }}
 
-
 <div id="app">
     <template v-if="allProducts">
         <div class="guide page-width">
@@ -141,8 +140,7 @@
                 userOptions: [],
                 results: [],
                 selectedQuantity: 1,
-                notFound: false,
-                hejHej: 'test'
+                notFound: false
             }
         },
         methods: {
