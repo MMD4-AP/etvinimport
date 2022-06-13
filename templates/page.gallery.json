@@ -51,11 +51,19 @@
             "question_title": "Vælg hvilken smagstype, du ønsker din vin har",
             "answers": "'Sødlig', 'Let', 'Fyldig', 'Tør', 'Aromatisk', 'Fed'"
           }
+        },
+        "a601d4de-a485-45f2-8cfc-7993a8c01775": {
+          "type": "question",
+          "settings": {
+            "question_title": "Skriv spørgsmålet",
+            "answers": "'Hvid', 'Mousserende', 'Portvin'"
+          }
         }
       },
       "block_order": [
         "14fcaedc-7f86-4ab3-b943-ca853d8d768d",
-        "47a10a7b-5c95-4bbf-8445-b7003fdc93b2"
+        "47a10a7b-5c95-4bbf-8445-b7003fdc93b2",
+        "a601d4de-a485-45f2-8cfc-7993a8c01775"
       ],
       "settings": {
         "guide_title": "",
