@@ -48,7 +48,7 @@
         "47a10a7b-5c95-4bbf-8445-b7003fdc93b2": {
           "type": "question",
           "settings": {
-            "question_title": "Vælg hvilken smagstype, du ønsker din vin har",
+            "question_title": "Vælg hvilken smagstype du ønsker din vin har",
             "answers": "'Sødlig', 'Let', 'Fyldig', 'Tør', 'Aromatisk', 'Fed'"
           }
         }
