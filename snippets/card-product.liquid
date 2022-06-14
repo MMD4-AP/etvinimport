@@ -32,6 +32,30 @@
       </defs>
     </svg>
     {% endif %}
+    {% if card_product.variants[1] %}
+      {% assign option1 = card_product.variants[0].option1 | slice: 0 | append: '00' %}
+      {% assign option2 = card_product.variants[1].option1 | slice: 0 | append: '00' %}
+      {% assign option2_amount = card_product.variants[1].option1 | slice: 0 %}
+      {% assign price1 = card_product.variants[0].price | divided_by: option1 %}
+      {% assign price2 = card_product.variants[1].price %}
+      {% assign option2_single_price = price2 | divided_by: option2 %}
+      {% assign diff = price1 | minus: option2_single_price | append: '.00' %}
+      {% assign savings = diff | divided_by: price1 | times: 100 | floor %}
+
+      {% if savings > 19 and savings < 71 and price1 > option2_single_price %}
+        <div class="multi-buy">
+          {% capture calculate_savings %}
+            <p>
+              Ved køb af {{ option2_amount }}
+              <span>
+                Spar {{ savings }}%
+              </span>
+            </p>
+          {% endcapture %}
+          {{ calculate_savings }}
+        </div>
+      {% endif %}
+    {% endif %}
     <div class="card__media">
       {% if card_product.featured_media %}
         <a href="{{ card_product.url }}">

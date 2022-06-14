@@ -52,7 +52,6 @@
         <div class="product__options">
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
           {%- for block in section.blocks -%}
-          
             {%- case block.type -%}
             {%- when '@app' -%}
               {% render block %}
