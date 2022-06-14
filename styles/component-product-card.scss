@@ -171,3 +171,51 @@ a {
         }
     }
 }
+.product__media-wrapper {
+    position: relative;
+
+    .organic {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+    }
+    .multi-buy {
+        font-size: 1.2rem;
+        margin: 0;
+        position: absolute;
+        top: 110px;
+        right: 100px;
+        width: 85px;
+        padding: 5px;
+        height: 85px;
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #7a7a6c;
+        border-radius: 100%;
+        z-index: 1;
+        text-align: center;
+        p {
+            color: #fff;
+            span {
+                font-weight: 600;
+            }
+        }
+
+        @media #{$screen-mobile} {
+            right: 30%;
+
+        }
+        @media #{$screen-tablet} {
+            top: 150px;
+            right: 25%;
+            // right: 150px;
+            width: 120px;
+            height: 120px;
+            p {
+
+            }
+        }
+    }
+}

@@ -39,8 +39,35 @@
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.gallery_layout }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper">
+      {% if product.metafields.meta.organic %}
+        {% render 'icon-organic' %}
+      {% endif %}
       <div>
-        {%- for media in product.media -%}
+      {% if product.variants[1] %}
+        {% assign option1 = product.variants[0].option1 | slice: 0 | append: '00' %}
+        {% assign option2 = product.variants[1].option1 | slice: 0 | append: '00' %}
+        {% assign option2_amount = product.variants[1].option1 | slice: 0 %}
+        {% assign price1 = product.variants[0].price | divided_by: option1 %}
+        {% assign price2 = product.variants[1].price %}
+        {% assign option2_single_price = price2 | divided_by: option2 %}
+        {% assign diff = price1 | minus: option2_single_price | append: '.00' %}
+        {% assign savings = diff | divided_by: price1 | times: 100 | floor %}
+  
+        {% if savings > 19 and savings < 71 and price1 > option2_single_price %}
+          <div class="multi-buy">
+            {% capture calculate_savings %}
+              <p>
+                Ved køb af {{ option2_amount }}
+                <span>
+                  Spar {{ savings }}%
+                </span>
+              </p>
+            {% endcapture %}
+            {{ calculate_savings }}
+          </div>
+        {% endif %}
+      {% endif %}
+      {%- for media in product.media -%}
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
             {%- assign media_position = media_position | default: 0 | plus: 1 -%}
             {% render 'product-thumbnail', media: media, position: media_position, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true, media_width: media_width, lazy_load: true %}
