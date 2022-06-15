@@ -1,5 +1,31 @@
 {
   "sections": {
+    "165532059399ee7346": {
+      "type": "main-hero",
+      "blocks": {
+        "165532059391c154d7-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Handelsbetingelser",
+            "heading_size": "h1"
+          }
+        },
+        "165532059391c154d7-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "165532059391c154d7-0",
+        "165532059391c154d7-2"
+      ],
+      "settings": {
+        "display_scroll_to": "none"
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
@@ -9,6 +35,7 @@
     }
   },
   "order": [
+    "165532059399ee7346",
     "main"
   ]
 }
