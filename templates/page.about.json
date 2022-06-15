@@ -6,14 +6,14 @@
         "1654603325ff998ff8-0": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text",
+            "heading": "Om ET Vinimport",
             "heading_size": "h1"
           }
         },
         "1654603325ff998ff8-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>ET Vinimport arbejder med en niche i vinbranchen, hvor vi handler med mindre vinbønder rundt om på kloden.<\/p>",
             "text_style": "body"
           }
         },
@@ -31,6 +31,8 @@
         "1654603325ff998ff8-2"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/vinaften_502f539f-2521-4a3b-8c4e-c98aa6e62337.jpg",
+        "display_scroll_to": "none"
       }
     },
     "main": {
@@ -39,30 +41,10 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
-    },
-    "165433831139077657": {
-      "type": "main-guide",
-      "blocks": {
-        "1654338311b830ed68-0": {
-          "type": "question",
-          "settings": {
-            "question_title": "Skriv spørgsmålet",
-            "answers": "'Hvid', 'Mousserende', 'Portvin'"
-          }
-        }
-      },
-      "block_order": [
-        "1654338311b830ed68-0"
-      ],
-      "settings": {
-        "guide_title": "Vinguide",
-        "guide_description": "Dette er en vinguide"
-      }
     }
   },
   "order": [
     "1654603325b6a362d4",
-    "main",
-    "165433831139077657"
+    "main"
   ]
 }
