@@ -1,68 +1,14 @@
 {
   "sections": {
-    "1654603325b6a362d4": {
-      "type": "main-hero",
-      "blocks": {
-        "1654603325ff998ff8-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
-          }
-        },
-        "1654603325ff998ff8-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "text_style": "body"
-          }
-        },
-        "1654603325ff998ff8-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "1654603325ff998ff8-0",
-        "1654603325ff998ff8-1",
-        "1654603325ff998ff8-2"
-      ],
-      "settings": {
-      }
-    },
     "main": {
       "type": "main-page",
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
-    },
-    "165433831139077657": {
-      "type": "main-guide",
-      "blocks": {
-        "1654338311b830ed68-0": {
-          "type": "question",
-          "settings": {
-            "question_title": "Skriv spørgsmålet",
-            "answers": "'Hvid', 'Mousserende', 'Portvin'"
-          }
-        }
-      },
-      "block_order": [
-        "1654338311b830ed68-0"
-      ],
-      "settings": {
-        "guide_title": "Vinguide",
-        "guide_description": "Dette er en vinguide"
-      }
     }
   },
   "order": [
-    "1654603325b6a362d4",
-    "main",
-    "165433831139077657"
+    "main"
   ]
 }
