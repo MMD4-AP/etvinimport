@@ -28,6 +28,7 @@
     "sass": "^1.51.0"
   },
   "devDependencies": {
-    "concurrently": "^7.1.0"
+    "concurrently": "^7.1.0",
+    "gulp-purgecss": "^4.1.3"
   }
 }

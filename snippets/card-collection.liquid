@@ -11,17 +11,7 @@
     {% render 'card-collection' %}
 {% endcomment %}
 
-{%- liquid
-  assign ratio = 1
-  if card_collection.featured_image and media_aspect_ratio == 'portrait'
-    assign ratio = 0.8
-  elsif card_collection.featured_image and media_aspect_ratio == 'adapt'
-    assign ratio = card_collection.featured_image.aspect_ratio
-  endif
-  if ratio == 0 or ratio == nil
-    assign ratio = 1
-  endif
--%}
+
 
 <div class="card-list-wrapper animate-arrow">
   <div class="card
@@ -36,6 +26,7 @@
       {%- if card_collection.featured_image -%}
         <div class="card__media">
           <div class="media media--transparent media--hover-effect">
+            {% assign image = card_collection.featured_image | image_url %}
             <img
               srcset="{%- if card_collection.featured_image.width >= 165 -%}{{ card_collection.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
                 {%- if card_collection.featured_image.width >= 330 -%}{{ card_collection.featured_image | image_url: width: 330 }} 330w,{%- endif -%}
