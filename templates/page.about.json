@@ -1,0 +1,50 @@
+{
+  "sections": {
+    "1654603325b6a362d4": {
+      "type": "main-hero",
+      "blocks": {
+        "1654603325ff998ff8-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Om ET Vinimport",
+            "heading_size": "h1"
+          }
+        },
+        "1654603325ff998ff8-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>ET Vinimport arbejder med en niche i vinbranchen, hvor vi handler med mindre vinbønder rundt om på kloden.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "1654603325ff998ff8-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1654603325ff998ff8-0",
+        "1654603325ff998ff8-1",
+        "1654603325ff998ff8-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/vinaften_502f539f-2521-4a3b-8c4e-c98aa6e62337.jpg",
+        "display_scroll_to": "none"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "1654603325b6a362d4",
+    "main"
+  ]
+}
