@@ -26,8 +26,8 @@
         "16555774534fb5ae2f-2": {
           "type": "button",
           "settings": {
-            "button_label": "Find vej tilbage",
-            "button_link": "shopify:\/\/collections"
+            "button_label": "Find vej tilbage!",
+            "button_link": "\/collections\/all"
           }
         }
       },
