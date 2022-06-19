@@ -177,7 +177,7 @@
           "settings": {
             "category_title": "Test",
             "category_image": "shopify:\/\/shop_images\/vinklubhero.jpg",
-            "button_label": "Tekst til kategorilink",
+            "button_label": "Røvin",
             "button_link": ""
           }
         },
@@ -186,7 +186,7 @@
           "settings": {
             "category_title": "Kategorititel",
             "category_image": "shopify:\/\/shop_images\/smagstypeguide.jpg",
-            "button_label": "Tekst til kategorilink",
+            "button_label": "Hvidvin",
             "button_link": ""
           }
         },
@@ -195,7 +195,7 @@
           "settings": {
             "category_title": "Kategorititel",
             "category_image": "shopify:\/\/shop_images\/vinogost.jpg",
-            "button_label": "Tekst til kategorilink",
+            "button_label": "Mousserende",
             "button_link": ""
           }
         },
