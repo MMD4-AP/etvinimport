@@ -116,6 +116,53 @@
         "cta_padding_bottom": 0
       }
     },
+    "16556414283a422c2f": {
+      "type": "categories-section",
+      "blocks": {
+        "16556414283f9464de-0": {
+          "type": "heading",
+          "settings": {
+            "category_image": "shopify:\/\/shop_images\/jeff-siepman-hK9hIPgF3QU-unsplash.jpg",
+            "button_label": "Røvin",
+            "button_link": "shopify:\/\/collections\/rodvin"
+          }
+        },
+        "3c585113-7f14-4f22-b879-84747ac63d9e": {
+          "type": "heading",
+          "settings": {
+            "category_image": "shopify:\/\/shop_images\/celina-albertz-mGhlWTP118Y-unsplash_1.jpg",
+            "button_label": "Hvidvin",
+            "button_link": "shopify:\/\/collections\/hvidvin"
+          }
+        },
+        "489f008d-8d98-45d2-8d16-6ff3de15bc1a": {
+          "type": "heading",
+          "settings": {
+            "category_image": "shopify:\/\/shop_images\/michelle-mcewen-HPM3jVF8_as-unsplash.jpg",
+            "button_label": "Mousserende",
+            "button_link": "shopify:\/\/collections\/mousserende-vin"
+          }
+        },
+        "e51c3187-4de6-45f1-a57b-7e301173664e": {
+          "type": "heading",
+          "settings": {
+            "category_image": "shopify:\/\/shop_images\/vincenzo-landino-02rhSkQndPw-unsplash.jpg",
+            "button_label": "Rosévin",
+            "button_link": "shopify:\/\/collections\/rosevin"
+          }
+        }
+      },
+      "block_order": [
+        "16556414283f9464de-0",
+        "3c585113-7f14-4f22-b879-84747ac63d9e",
+        "489f008d-8d98-45d2-8d16-6ff3de15bc1a",
+        "e51c3187-4de6-45f1-a57b-7e301173664e"
+      ],
+      "settings": {
+        "categories_section_padding_top": 64,
+        "categories_section_padding_bottom": 64
+      }
+    },
     "featured-collection-1": {
       "type": "featured-collection",
       "settings": {
@@ -168,57 +215,6 @@
         "cta_padding_top": 64,
         "cta_padding_bottom": 0
       }
-    },
-    "16556414283a422c2f": {
-      "type": "categories-section",
-      "blocks": {
-        "16556414283f9464de-0": {
-          "type": "heading",
-          "settings": {
-            "category_title": "Test",
-            "category_image": "shopify:\/\/shop_images\/jeff-siepman-hK9hIPgF3QU-unsplash.jpg",
-            "button_label": "Røvin",
-            "button_link": "shopify:\/\/collections\/rodvin"
-          }
-        },
-        "3c585113-7f14-4f22-b879-84747ac63d9e": {
-          "type": "heading",
-          "settings": {
-            "category_title": "Kategorititel",
-            "category_image": "shopify:\/\/shop_images\/celina-albertz-mGhlWTP118Y-unsplash_1.jpg",
-            "button_label": "Hvidvin",
-            "button_link": "shopify:\/\/collections\/hvidvin"
-          }
-        },
-        "489f008d-8d98-45d2-8d16-6ff3de15bc1a": {
-          "type": "heading",
-          "settings": {
-            "category_title": "Kategorititel",
-            "category_image": "shopify:\/\/shop_images\/michelle-mcewen-HPM3jVF8_as-unsplash.jpg",
-            "button_label": "Mousserende",
-            "button_link": "shopify:\/\/collections\/mousserende-vin"
-          }
-        },
-        "e51c3187-4de6-45f1-a57b-7e301173664e": {
-          "type": "heading",
-          "settings": {
-            "category_title": "Kategorititel",
-            "category_image": "shopify:\/\/shop_images\/vincenzo-landino-02rhSkQndPw-unsplash.jpg",
-            "button_label": "Rosévin",
-            "button_link": "shopify:\/\/collections\/rosevin"
-          }
-        }
-      },
-      "block_order": [
-        "16556414283f9464de-0",
-        "3c585113-7f14-4f22-b879-84747ac63d9e",
-        "489f008d-8d98-45d2-8d16-6ff3de15bc1a",
-        "e51c3187-4de6-45f1-a57b-7e301173664e"
-      ],
-      "settings": {
-        "categories_section_padding_top": 64,
-        "categories_section_padding_bottom": 64
-      }
     }
   },
   "order": [
@@ -226,8 +222,8 @@
     "hero",
     "featured_collection",
     "1654538378b158ed5e",
+    "16556414283a422c2f",
     "featured-collection-1",
-    "16546221009a774651",
-    "16556414283a422c2f"
+    "16546221009a774651"
   ]
 }
