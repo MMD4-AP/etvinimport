@@ -1,23 +1,2 @@
-const featuredSwiper = new Swiper('.featured-swiper', {
-    navigation: {
-        // nextEl: ".swiper-button-next",
-        // prevEl: ".swiper-button-prev",
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    focusableElements: 'button, input',
-    breakpoints: {
-    // when window width is >= 320px
-        500: {
-            slidesPerView: 1
-        },
-        // when window width is >= 480px
-        768: {
-            slidesPerView: 2
-        },
-        // when window width is >= 640px
-        990: {
-            slidesPerView: 4
-        }
-    }
-});
+const featuredSwiper=new Swiper(".featured-swiper",{navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"},focusableElements:"button, input",breakpoints:{500:{slidesPerView:1},768:{slidesPerView:2},990:{slidesPerView:4}}});
+//# sourceMappingURL=swiper.js.map

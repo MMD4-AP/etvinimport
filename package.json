@@ -23,6 +23,7 @@
   "homepage": "https://github.com/MMD4-AP/etvinimport#readme",
   "dependencies": {
     "gulp": "^4.0.2",
+    "gulp-minifier": "^3.5.0",
     "gulp-sass": "^5.1.0",
     "node-sass": "^7.0.1",
     "sass": "^1.51.0"

@@ -26,6 +26,7 @@
     </div>
     {% if card_product.metafields.meta.organic %}
       {% render 'icon-organic' %}
+      
     {% endif %}
     {% if card_product.variants[1] %}
       {% assign option1 = card_product.variants[0].option1 | slice: 0 | append: '00' %}
