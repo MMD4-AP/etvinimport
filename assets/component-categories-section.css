@@ -8,6 +8,12 @@ section.categories-section {
 section.categories-section div {
   position: relative;
   overflow: hidden;
+  color: #ffffff;
+}
+section.categories-section div h3 {
+  color: #ffffff;
+  font-weight: 600;
+  margin: 0;
 }
 section.categories-section div img {
   width: 100%;
