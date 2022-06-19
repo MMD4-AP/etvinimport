@@ -1,42 +1,44 @@
 {{ 'component-categories-section.css' | asset_url | stylesheet_tag }}
-<section class="categories-section page-width" style="margin-top: {{ section.settings.categories_section_padding_top }}px; margin-bottom: {{ section.settings.categories_section_padding_bottom }}px;">
-  <h2 class="title {{ section.settings.heading_size }} text-{{ section.settings.heading_alignment }}">{{ section.settings.section_title | escape }}</h2>
-  {% for category in section.blocks %}
-    <div class="cat-{{ forloop.index}}">
-      <a href="{{ category.settings.button_link }}">
-        {%- if category.settings.category_image != blank -%}
-        <img
-          srcset="{%- if category.settings.category_image.width >= 165 -%}{{ category.settings.category_image | image_url: width: 165 }} 165w,{%- endif -%}
-            {%- if category.settings.category_image.width >= 360 -%}{{ category.settings.category_image | image_url: width: 360 }} 360w,{%- endif -%}
-            {%- if category.settings.category_image.width >= 535 -%}{{ category.settings.category_image | image_url: width: 535 }} 535w,{%- endif -%}
-            {%- if category.settings.category_image.width >= 750 -%}{{ category.settings.category_image | image_url: width: 750 }} 750w,{%- endif -%}
-            {%- if category.settings.image.width >= 1070 -%}{{ category.settings.category_image | image_url: width: 1070 }} 1070w,{%- endif -%}
-            {%- if category.settings.category_image.width >= 1500 -%}{{ category.settings.category_image | image_url: width: 1500 }} 1500w,{%- endif -%}
-            {{ category.settings.category_image | image_url }} {{ category.settings.category_image.width }}w"
-          src="{{ category.settings.category_image | image_url: width: 1500 }}"
-          sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
-          alt="{{ category.settings.category_image.alt | escape }}"
-          loading="lazy"
-          width="{{ category.settings.category_image.width }}"
-          height="{{ category.settings.category_image.height }}"
-        >
-        {%- else -%}
-        <img src="{{ 'placeholder-category.jpg' | asset_img_url: '500x' }}" />
-        {%- endif -%}
-        <div>
-
-          <a role="link" href="{{ category.settings.button_link }}" class="animate-arrow" {{ block.shopify_attributes }}>
-            <h3>
-              {{ category.settings.button_label }}
-              <span class="icon-wrap"><svg viewBox="0 0 14 10" fill="none" aria-hidden="true" focusable="false" role="presentation" class="icon icon-arrow" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z" fill="currentColor"></path></svg></span>
-            </h3>
-          
-          </a>
-        </div>
-      </a>
-    </div>
-  {% endfor %}
-</section>
+<div  style="margin-top: {{ section.settings.categories_section_padding_top }}px; margin-bottom: {{ section.settings.categories_section_padding_bottom }}px;">
+  <h2 class="title {{ section.settings.category_heading_size }} text-{{ section.settings.category_heading_alignment }}">{{ section.settings.section_title | escape }}</h2>
+  <div class="categories-section page-width">
+    {% for category in section.blocks %}
+      <div class="cat-{{ forloop.index}}">
+        <a href="{{ category.settings.button_link }}">
+          {%- if category.settings.category_image != blank -%}
+          <img
+            srcset="{%- if category.settings.category_image.width >= 165 -%}{{ category.settings.category_image | image_url: width: 165 }} 165w,{%- endif -%}
+              {%- if category.settings.category_image.width >= 360 -%}{{ category.settings.category_image | image_url: width: 360 }} 360w,{%- endif -%}
+              {%- if category.settings.category_image.width >= 535 -%}{{ category.settings.category_image | image_url: width: 535 }} 535w,{%- endif -%}
+              {%- if category.settings.category_image.width >= 750 -%}{{ category.settings.category_image | image_url: width: 750 }} 750w,{%- endif -%}
+              {%- if category.settings.image.width >= 1070 -%}{{ category.settings.category_image | image_url: width: 1070 }} 1070w,{%- endif -%}
+              {%- if category.settings.category_image.width >= 1500 -%}{{ category.settings.category_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+              {{ category.settings.category_image | image_url }} {{ category.settings.category_image.width }}w"
+            src="{{ category.settings.category_image | image_url: width: 1500 }}"
+            sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+            alt="{{ category.settings.category_image.alt | escape }}"
+            loading="lazy"
+            width="{{ category.settings.category_image.width }}"
+            height="{{ category.settings.category_image.height }}"
+          >
+          {%- else -%}
+          <img src="{{ 'placeholder-category.jpg' | asset_img_url: '500x' }}" />
+          {%- endif -%}
+          <div>
+  
+            <a role="link" href="{{ category.settings.button_link }}" class="animate-arrow" {{ block.shopify_attributes }}>
+              <h3>
+                {{ category.settings.button_label }}
+                <span class="icon-wrap"><svg viewBox="0 0 14 10" fill="none" aria-hidden="true" focusable="false" role="presentation" class="icon icon-arrow" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z" fill="currentColor"></path></svg></span>
+              </h3>
+            
+            </a>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
 
 {% schema %}
 {
@@ -50,6 +52,46 @@
       "default":"Gå på opdagelse i vores vine",
       "label":"Sektionstitel"
     },
+    {
+      "type":"select",
+      "id":"category_heading_size",
+      "options":[
+         {
+            "value":"h2",
+            "label":"t:sections.all.heading_size.options__1.label"
+         },
+         {
+            "value":"h1",
+            "label":"t:sections.all.heading_size.options__2.label"
+         },
+         {
+            "value":"h0",
+            "label":"t:sections.all.heading_size.options__3.label"
+         }
+      ],
+      "default":"h1",
+      "label":"t:sections.all.heading_size.label"
+   },
+   {
+      "type":"select",
+      "id":"category_heading_alignment",
+      "options":[
+         {
+            "value":"left",
+            "label":"Venstrestillet"
+         },
+         {
+            "value":"center",
+            "label":"Centreret"
+         },
+         {
+            "value":"right",
+            "label":"Højrestillet"
+         }
+      ],
+      "default":"center",
+      "label":"Teskstjustering"
+   },
     {
       "type": "header",
       "content": "Sektionsmargin i top og bund"
