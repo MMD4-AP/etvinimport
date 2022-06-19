@@ -1,8 +1,11 @@
 const featuredSwiper = new Swiper('.featured-swiper', {
     navigation: {
+        // nextEl: ".swiper-button-next",
+        // prevEl: ".swiper-button-prev",
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
+    focusableElements: 'button, input',
     breakpoints: {
     // when window width is >= 320px
         500: {

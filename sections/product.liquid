@@ -204,11 +204,11 @@
               </div>
             </noscript>
           {%- when 'buy_buttons' -%}
-          <form class="card__add"  @click="addToCart(currentVariantID)">
-            <input type="hidden" name="id" :value="currentVariantID" />
-            <input min="1" type="number" id="quantity" name="quantity" :value="selectedQuantity"/>
-            <input type="submit" value="Læg i kurv" class="button" />
-          </form>
+            <form class="card__add"  @click="addToCart(currentVariantID, $event)">
+              <input type="hidden" name="id" :value="currentVariantID" />
+              <input min="1" type="number" id="quantity" name="quantity" :value="selectedQuantity"/>
+              <input type="submit" value="Læg i kurv" class="button" />
+            </form>
           </div>
 
             <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
@@ -482,10 +482,12 @@
         ],
         currentPrice: null,
         cartAddFetchURL: window.Shopify.routes.root + 'cart/add.js',
+        notification: document.querySelector('#cart-notification')
       }
     },
     methods: {
-      async addToCart(ID) {
+      async addToCart(ID, event) {
+        event.preventDefault();
         let formData = {
           'items': [{
            'id': this.currentVariantID,
@@ -500,6 +502,8 @@
           body: JSON.stringify(formData)
         })
         .then(response => {
+          this.notification.classList.add('active');
+          this.notification.classList.add('animate');
           return response.json();
         })
         .catch((error) => {
