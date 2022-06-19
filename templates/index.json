@@ -175,29 +175,45 @@
         "16556414283f9464de-0": {
           "type": "heading",
           "settings": {
-            "cta_heading": "Image with text",
-            "cta_heading_size": "h1"
+            "category_title": "Kategorititel",
+            "category_image": "shopify:\/\/shop_images\/vinklubhero.jpg",
+            "button_label": "Tekst til kategorilink",
+            "button_link": ""
           }
         },
-        "16556414283f9464de-1": {
-          "type": "text",
+        "3c585113-7f14-4f22-b879-84747ac63d9e": {
+          "type": "heading",
           "settings": {
-            "cta_text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "cta_text_style": "body"
+            "category_title": "Kategorititel",
+            "category_image": "shopify:\/\/shop_images\/smagstypeguide.jpg",
+            "button_label": "Tekst til kategorilink",
+            "button_link": ""
           }
         },
-        "16556414283f9464de-2": {
-          "type": "button",
+        "489f008d-8d98-45d2-8d16-6ff3de15bc1a": {
+          "type": "heading",
           "settings": {
-            "cta_button_label": "",
-            "cta_button_link": ""
+            "category_title": "Kategorititel",
+            "category_image": "shopify:\/\/shop_images\/vinogost.jpg",
+            "button_label": "Tekst til kategorilink",
+            "button_link": ""
+          }
+        },
+        "e51c3187-4de6-45f1-a57b-7e301173664e": {
+          "type": "heading",
+          "settings": {
+            "category_title": "Kategorititel",
+            "category_image": "shopify:\/\/shop_images\/vinguide-cta.jpg",
+            "button_label": "Rødvin",
+            "button_link": "\/collections\/roedvin"
           }
         }
       },
       "block_order": [
         "16556414283f9464de-0",
-        "16556414283f9464de-1",
-        "16556414283f9464de-2"
+        "3c585113-7f14-4f22-b879-84747ac63d9e",
+        "489f008d-8d98-45d2-8d16-6ff3de15bc1a",
+        "e51c3187-4de6-45f1-a57b-7e301173664e"
       ],
       "settings": {
         "categories_section_padding_top": 36,
