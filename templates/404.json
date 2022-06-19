@@ -2,11 +2,48 @@
   "sections": {
     "main": {
       "type": "main-404",
+      "disabled": true,
       "settings": {
+      }
+    },
+    "1655577453142f6e6f": {
+      "type": "main-hero",
+      "blocks": {
+        "16555774534fb5ae2f-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Er du faret vild i vinrankerne?",
+            "heading_size": "h1"
+          }
+        },
+        "16555774534fb5ae2f-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lad os hjælpe dig tilbage, så du kan håndplukke den perfekte drue!<\/p>",
+            "text_style": "body"
+          }
+        },
+        "4c8b3339-30a1-4fbd-a761-7ca3a9900474": {
+          "type": "button",
+          "settings": {
+            "button_label": "Find vej tilbage",
+            "button_link": "shopify:\/\/collections"
+          }
+        }
+      },
+      "block_order": [
+        "16555774534fb5ae2f-0",
+        "16555774534fb5ae2f-1",
+        "4c8b3339-30a1-4fbd-a761-7ca3a9900474"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/markus-winkler-YAIHVoCLhQc-unsplash_1.jpg",
+        "display_scroll_to": "none"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "1655577453142f6e6f"
   ]
 }
