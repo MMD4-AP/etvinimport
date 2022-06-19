@@ -59,7 +59,7 @@
         "text"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Skaermbillede_2022-05-18_kl._21.48.36.png",
+        "image": "shopify:\/\/shop_images\/lukas-kulla-vyOpe3tvwxU-unsplash.jpg",
         "display_scroll_to": "flex"
       }
     },
@@ -160,6 +160,8 @@
       ],
       "settings": {
         "section_title": "Gå på opdagelse i vores vin",
+        "category_heading_size": "h1",
+        "category_heading_alignment": "center",
         "categories_section_padding_top": 64,
         "categories_section_padding_bottom": 64
       }
