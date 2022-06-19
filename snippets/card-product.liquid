@@ -17,6 +17,13 @@
 {%- if card_product and card_product != empty -%}
 
   <div class="card">
+    <div class="card__badge">
+      {%- if card_product.available == false -%}
+        <span class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}">{{ 'products.product.sold_out' | t }}</span>
+      {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
+        <span class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}">{{ 'products.product.on_sale' | t }}</span>
+      {%- endif -%}
+    </div>
     {% if card_product.metafields.meta.organic %}
       {% render 'icon-organic' %}
     {% endif %}

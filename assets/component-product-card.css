@@ -13,6 +13,11 @@ a {
   height: 100%;
   background: linear-gradient(to bottom, #B7B7A4 46%, transparent 0%);
 }
+.card__badge {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
 .card .organic {
   position: absolute;
   top: 5px;
