@@ -49,7 +49,7 @@ a {
   -moz-appearance: none;
   appearance: none;
 }
-.card__add button {
+.card__add .button {
   width: 100%;
 }
 .card__content {

@@ -1,13 +1,12 @@
 <form class="card__add" method="post" action="/cart/add" onclick="addedToCart(event)">
     <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
     <input min="1" type="number" id="quantity" name="quantity" value="1" />
-    <a type="submit" value="Læg i kurv" class="button">Læg i kurv</a>
+    <button type="submit" value="Læg i kurv" class="button">Læg i kurv</button>
 </form>
 
 <script>
     const cartNotification = document.querySelector('#cart-notification');
     const addedToCart = (event) => {
-        event.preventDefault();
         cartNotification.classList.add('active');
         cartNotification.classList.add('animate');
     }

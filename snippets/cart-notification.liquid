@@ -14,7 +14,10 @@
       <div class="cart-notification__header">
         <h2 class="cart-notification__heading caption-large text-body">{%- render 'icon-checkmark' -%} {{ 'general.cart.item_added' | t }}</h2>
         <button type="button" class="cart-notification__close modal__close-button link link--text focus-inset" aria-label="{{ 'accessibility.close' | t }}">
-          <svg class="icon icon-close" aria-hidden="true" focusable="false"><use href="#icon-close"></svg>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <use href="#icon-close"></use>
+              <path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" fill="black"/>
+            </svg>
         </button>
       </div>
       <div class="cart-notification__links">
