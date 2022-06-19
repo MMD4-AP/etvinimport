@@ -6,7 +6,21 @@ section {
         grid-column-gap: 20px;
         grid-row-gap: 20px;
         
-        
+        div {
+            position: relative;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            > div {
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+            }
+        }
         .cat-1 { grid-area: 1 / 1 / 3 / 3; }
         .cat-2 { grid-area: 1 / 3 / 3 / 5; }
         .cat-3 { grid-area: 1 / 5 / 5 / 7; }
