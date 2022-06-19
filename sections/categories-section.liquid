@@ -2,21 +2,21 @@
 <section class="categories-section {{ template.name }}" style="margin-top: {{ section.settings.categories_section_padding_top }}px; margin-bottom: {{ section.settings.categories_section_padding_bottom }}px;">
   {% for category in section.blocks %}
     <div class="cat-{{ forloop.index}}">
-      {%- if section.blocks.settings.category_image != blank -%}
+      {%- if blocks.settings.category_image != blank -%}
       <img
-        srcset="{%- if section.blocks.settings.category_image.width >= 165 -%}{{ section.blocks.settings.category_image | image_url: width: 165 }} 165w,{%- endif -%}
-          {%- if section.blocks.settings.category_image.width >= 360 -%}{{ section.blocks.settings.category_image | image_url: width: 360 }} 360w,{%- endif -%}
-          {%- if section.blocks.settings.category_image.width >= 535 -%}{{ section.blocks.settings.category_image | image_url: width: 535 }} 535w,{%- endif -%}
-          {%- if section.blocks.settings.category_image.width >= 750 -%}{{ section.blocks.settings.category_image | image_url: width: 750 }} 750w,{%- endif -%}
-          {%- if section.blocks.settings.image.width >= 1070 -%}{{ section.blocks.settings.category_image | image_url: width: 1070 }} 1070w,{%- endif -%}
-          {%- if section.blocks.settings.category_image.width >= 1500 -%}{{ section.blocks.settings.category_image | image_url: width: 1500 }} 1500w,{%- endif -%}
-          {{ section.blocks.settings.category_image | image_url }} {{ section.blocks.settings.category_image.width }}w"
-        src="{{ section.blocks.settings.category_image | image_url: width: 1500 }}"
+        srcset="{%- if blocks.settings.category_image.width >= 165 -%}{{ blocks.settings.category_image | image_url: width: 165 }} 165w,{%- endif -%}
+          {%- if blocks.settings.category_image.width >= 360 -%}{{ blocks.settings.category_image | image_url: width: 360 }} 360w,{%- endif -%}
+          {%- if blocks.settings.category_image.width >= 535 -%}{{ blocks.settings.category_image | image_url: width: 535 }} 535w,{%- endif -%}
+          {%- if blocks.settings.category_image.width >= 750 -%}{{ blocks.settings.category_image | image_url: width: 750 }} 750w,{%- endif -%}
+          {%- if blocks.settings.image.width >= 1070 -%}{{ blocks.settings.category_image | image_url: width: 1070 }} 1070w,{%- endif -%}
+          {%- if blocks.settings.category_image.width >= 1500 -%}{{ blocks.settings.category_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+          {{ blocks.settings.category_image | image_url }} {{ blocks.settings.category_image.width }}w"
+        src="{{ blocks.settings.category_image | image_url: width: 1500 }}"
         sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
-        alt="{{ section.blocks.settings.category_image.alt | escape }}"
+        alt="{{ blocks.settings.category_image.alt | escape }}"
         loading="lazy"
-        width="{{ section.blocks.settings.category_image.width }}"
-        height="{{ section.blocks.settings.category_image.height }}"
+        width="{{ blocks.settings.category_image.width }}"
+        height="{{ blocks.settings.category_image.height }}"
       >
       {%- else -%}
       <img src="{{ 'placeholder-category.jpg' | asset_img_url: '500x' }}" />
