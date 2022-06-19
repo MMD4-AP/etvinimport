@@ -1,5 +1,6 @@
 {{ 'component-categories-section.css' | asset_url | stylesheet_tag }}
 <section class="categories-section page-width" style="margin-top: {{ section.settings.categories_section_padding_top }}px; margin-bottom: {{ section.settings.categories_section_padding_bottom }}px;">
+  <h2 class="title {{ section.settings.heading_size }} text-{{ section.settings.heading_alignment }}">{{ section.settings.section_title | escape }}</h2>
   {% for category in section.blocks %}
     <div class="cat-{{ forloop.index}}">
       <a href="{{ category.settings.button_link }}">
@@ -43,6 +44,12 @@
   "tag":"section",
   "class": "section",
   "settings": [
+    {
+      "type":"text",
+      "id":"section_title",
+      "default":"Gå på opdagelse i vores vine",
+      "label":"Sektionstitel"
+    },
     {
       "type": "header",
       "content": "Sektionsmargin i top og bund"
