@@ -1,5 +1,5 @@
 {{ 'component-categories-section.css' | asset_url | stylesheet_tag }}
-<section class="categories-section {{ template.name }}" style="margin-top: {{ section.settings.categories_section_padding_top }}px; margin-bottom: {{ section.settings.categories_section_padding_bottom }}px;">
+<section class="categories-section page-width" style="margin-top: {{ section.settings.categories_section_padding_top }}px; margin-bottom: {{ section.settings.categories_section_padding_bottom }}px;">
   {% for category in section.blocks %}
     <div class="cat-{{ forloop.index}}">
       {%- if category.settings.category_image != blank -%}
