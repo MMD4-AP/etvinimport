@@ -176,36 +176,36 @@
           "type": "heading",
           "settings": {
             "category_title": "Test",
-            "category_image": "shopify:\/\/shop_images\/vinklubhero.jpg",
+            "category_image": "shopify:\/\/shop_images\/jeff-siepman-hK9hIPgF3QU-unsplash.jpg",
             "button_label": "Røvin",
-            "button_link": ""
+            "button_link": "shopify:\/\/collections\/rodvin"
           }
         },
         "3c585113-7f14-4f22-b879-84747ac63d9e": {
           "type": "heading",
           "settings": {
             "category_title": "Kategorititel",
-            "category_image": "shopify:\/\/shop_images\/smagstypeguide.jpg",
+            "category_image": "shopify:\/\/shop_images\/celina-albertz-mGhlWTP118Y-unsplash_1.jpg",
             "button_label": "Hvidvin",
-            "button_link": ""
+            "button_link": "shopify:\/\/collections\/hvidvin"
           }
         },
         "489f008d-8d98-45d2-8d16-6ff3de15bc1a": {
           "type": "heading",
           "settings": {
             "category_title": "Kategorititel",
-            "category_image": "shopify:\/\/shop_images\/vinogost.jpg",
+            "category_image": "shopify:\/\/shop_images\/michelle-mcewen-HPM3jVF8_as-unsplash.jpg",
             "button_label": "Mousserende",
-            "button_link": ""
+            "button_link": "shopify:\/\/collections\/mousserende-vin"
           }
         },
         "e51c3187-4de6-45f1-a57b-7e301173664e": {
           "type": "heading",
           "settings": {
             "category_title": "Kategorititel",
-            "category_image": "shopify:\/\/shop_images\/vinguide-cta.jpg",
+            "category_image": "shopify:\/\/shop_images\/vincenzo-landino-02rhSkQndPw-unsplash.jpg",
             "button_label": "Rosévin",
-            "button_link": "\/collections\/roedvin"
+            "button_link": "shopify:\/\/collections\/rosevin"
           }
         }
       },
@@ -216,8 +216,8 @@
         "e51c3187-4de6-45f1-a57b-7e301173664e"
       ],
       "settings": {
-        "categories_section_padding_top": 36,
-        "categories_section_padding_bottom": 36
+        "categories_section_padding_top": 64,
+        "categories_section_padding_bottom": 64
       }
     }
   },
