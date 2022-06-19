@@ -7,7 +7,6 @@ const displayBtn = () => {
       toTopBtn.style.flexDirection = "column";
       toTopBtn.style.justifyContent = "center";
       toTopBtn.style.alignItems = "center";
-      console.log('tester gzip.')
     } else {
       toTopBtn.style.display = "none";
     }
