@@ -21,6 +21,7 @@ section.categories-section .cat-4 {
 }
 @media screen and (min-width: 768px) {
   section.categories-section {
+    height: 800px;
     padding-left: 0;
     padding-right: 0;
     grid-template-columns: repeat(6, 1fr);

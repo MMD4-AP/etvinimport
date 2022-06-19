@@ -14,6 +14,7 @@ section {
         .cat-4 { grid-area: 4 / 1 / 5 / 2; }
 
         @media screen and (min-width: 768px) {
+            height: 800px;
             padding-left: 0;
             padding-right: 0;
             grid-template-columns: repeat(6, 1fr);
