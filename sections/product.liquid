@@ -216,9 +216,13 @@
               <input min="1" type="number" id="quantity" name="quantity" :value="selectedQuantity"/>
               <input type="submit" value="Læg i kurv" class="button" />
             </form>
-          </div>
 
-            <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
+            <div class="card__meal">
+              Denne vin er velegnet til: {{ product.metafields.meta.meal }}
+            </div>
+
+
+          <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
           {%- when 'rating' -%}
             {%- if product.metafields.reviews.rating.value != blank -%}
               {% liquid
