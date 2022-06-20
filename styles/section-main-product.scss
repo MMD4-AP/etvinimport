@@ -19,7 +19,7 @@
   &__media-wrapper {
     padding-left: 0;
   
-    > div {
+    > div:not(.card__badge) {
       height: 245px;
       display: flex;
       justify-content: center;
