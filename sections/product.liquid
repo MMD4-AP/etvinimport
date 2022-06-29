@@ -216,10 +216,11 @@
               <input min="1" type="number" id="quantity" name="quantity" :value="selectedQuantity"/>
               <input type="submit" value="Læg i kurv" class="button" />
             </form>
-
-            <div class="card__meal">
-              Denne vin er velegnet til: {{ product.metafields.meta.meal }}
-            </div>
+            {% if product.metafields.meta.meal %}
+              <div class="card__meal">
+                Denne vin er velegnet til: {{ product.metafields.meta.meal }}
+              </div>
+            {% endif %}
 
 
           <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
